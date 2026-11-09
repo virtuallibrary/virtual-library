@@ -81,21 +81,27 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* Preloader Animation Keyframes */
-    @keyframes drawRing {
-      0% { stroke-dashoffset: 290; }
-      100% { stroke-dashoffset: 0; }
-    }
-    .animate-ring-draw {
-      animation: drawRing 1.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    /* LIGHTWEIGHT HARDWARE-ACCELERATED PRELOADER ANIMATION (ZERO LAG) */
+    .gpu-accel {
+      transform: translate3d(0, 0, 0);
+      will-change: transform, opacity;
     }
 
-    @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.08); opacity: 0.8; }
+    @keyframes introPop {
+      0% { opacity: 0; transform: scale3d(0.85, 0.85, 1); }
+      50% { opacity: 1; transform: scale3d(1.03, 1.03, 1); }
+      100% { opacity: 1; transform: scale3d(1, 1, 1); }
     }
-    .animate-pulse-glow {
-      animation: pulseGlow 2s infinite ease-in-out;
+    .animate-intro-pop {
+      animation: introPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes rotateSpinGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-ring {
+      animation: rotateSpinGlow 2.5s linear infinite;
     }
 
     ::-webkit-scrollbar { width: 6px; }
@@ -108,57 +114,46 @@
 <body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen">
 
   <!-- ============================================================= -->
-  <!-- UPGRADED PRELOADER: EXTENDED ANIMATION & MILESTONES SHOWCASE  -->
+  <!-- LIGHTWEIGHT, ZERO-LAG INTRO SPLASH (1.8s MAX + SKIP BUTTON)   -->
   <!-- ============================================================= -->
-  <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center p-6 transition-all duration-700 ease-in-out">
-    <!-- Ambient backlight flare -->
-    <div class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-accent-rose/20 via-accent-gold/20 to-accent-cyan/20 blur-[100px] pointer-events-none animate-pulse-glow"></div>
+  <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center p-4 transition-opacity duration-300 ease-out gpu-accel">
+    
+    <!-- Instant Skip Button for Mobile/Low-Spec Devices -->
+    <button onclick="dismissPreloader()" class="absolute top-5 right-5 z-20 text-[11px] font-mono text-slate-400 hover:text-white px-3 py-1.5 rounded-full bg-white/5 border border-white/10 active:scale-95 transition">
+      Skip ✕
+    </button>
 
-    <div class="relative flex flex-col items-center max-w-sm w-full text-center z-10">
+    <div class="relative flex flex-col items-center max-w-xs w-full text-center">
       
-      <!-- Central Animated SVG Contour & Scaled Logo Core -->
-      <div class="relative w-32 h-32 flex items-center justify-center mb-6">
-        <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="3" />
-          <circle id="buildCircle" cx="50" cy="50" r="46" fill="none" stroke="url(#preloaderGrad)" stroke-width="3.5"
-                  stroke-dasharray="290" stroke-dashoffset="290" stroke-linecap="round" />
-          <defs>
-            <linearGradient id="preloaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FF2A85" />
-              <stop offset="50%" stop-color="#EAB308" />
-              <stop offset="100%" stop-color="#00F5FF" />
-            </linearGradient>
-          </defs>
-        </svg>
-        
-        <!-- Logo Container -->
-        <div id="buildLogo" class="w-24 h-24 rounded-full overflow-hidden p-[2.5px] bg-gradient-to-tr from-accent-rose via-white/30 to-accent-cyan opacity-0 scale-75 transition-all duration-700 ease-out shadow-[0_0_35px_rgba(234,179,8,0.35)]">
-          <div class="w-full h-full bg-[#0A0C12] rounded-full overflow-hidden flex items-center justify-center">
-            <img src="logo.png" alt="VL Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <span class="font-display font-extrabold text-accent-gold text-2xl tracking-wider hidden">VL</span>
-          </div>
+      <!-- GPU-Accelerated Glowing Spinning Core Logo -->
+      <div class="relative w-24 h-24 mb-4 flex items-center justify-center">
+        <!-- CSS Rotating Gradient Ring -->
+        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-accent-rose via-accent-gold to-accent-cyan p-[2.5px] animate-spin-ring">
+          <div class="w-full h-full bg-[#040507] rounded-full"></div>
+        </div>
+
+        <!-- Center Crisp Logo -->
+        <div class="relative w-20 h-20 rounded-full overflow-hidden p-0.5 bg-black/60 shadow-[0_0_20px_rgba(234,179,8,0.3)] animate-intro-pop">
+          <img src="logo.png" alt="VL" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="font-display font-black text-accent-gold text-xl items-center justify-center h-full w-full hidden">VL</span>
         </div>
       </div>
 
-      <!-- Main Header Text Reveal -->
-      <div id="buildText" class="opacity-0 translate-y-3 transition-all duration-700 ease-out mb-5">
-        <h1 class="font-display font-black tracking-[0.2em] text-white text-xl sm:text-2xl">VIRTUAL LIBRARY</h1>
-        <div class="text-[10px] font-mono tracking-[0.3em] text-amber-400 uppercase mt-1">24/7 Silent Focus Sanctuary</div>
-      </div>
+      <!-- Compact Title Header -->
+      <h1 class="font-display font-black tracking-widest text-white text-lg uppercase">Virtual Library</h1>
+      <div class="text-[9px] font-mono tracking-[0.25em] text-amber-400 uppercase mt-0.5 mb-4">24/7 Silent Focus Sanctuary</div>
 
-      <!-- Rotating Verified Milestone Ticker -->
-      <div id="milestoneTicker" class="opacity-0 transition-opacity duration-500 w-full">
-        <div class="p-3 px-4 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
-          <div id="tickerLabel" class="text-[9px] font-mono tracking-widest text-slate-400 uppercase">Verifying Audits</div>
-          <div id="tickerValue" class="text-xs font-mono font-bold text-amber-300 mt-0.5 flex items-center justify-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Initializing Desk & Face Cams...
-          </div>
+      <!-- Fast-Transition Milestone Strip -->
+      <div class="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3 py-2 text-center backdrop-blur-sm">
+        <div id="quickTickerHeader" class="text-[9px] font-mono uppercase tracking-widest text-slate-400">All-Time Peak Record</div>
+        <div id="quickTickerContent" class="text-xs font-mono font-bold text-amber-300 mt-0.5 transition-all duration-200">
+          Devika Jain &bull; 22h 39m
         </div>
       </div>
 
-      <!-- Progress Track -->
-      <div class="w-36 h-1 bg-white/10 rounded-full mt-6 overflow-hidden">
-        <div id="preloaderBar" class="h-full bg-gradient-to-r from-accent-rose via-accent-gold to-accent-cyan w-0 transition-all duration-[3000ms] ease-out"></div>
+      <!-- Linear Micro Progress Indicator -->
+      <div class="w-28 h-0.5 bg-white/10 rounded-full mt-4 overflow-hidden">
+        <div id="preloaderFastBar" class="h-full bg-gradient-to-r from-accent-rose via-accent-gold to-accent-cyan w-0 transition-all duration-[1700ms] ease-out"></div>
       </div>
 
     </div>
@@ -169,21 +164,21 @@
 
   <!-- RESPONSIVE UNCONGESTED HEADER -->
   <header class="sticky top-[4px] z-50 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
       
-      <!-- Logo & Brand Identity (Optimized for Mobile Screens) -->
-      <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0">
-        <div class="relative w-9 h-9 sm:w-12 sm:h-12 shrink-0 rounded-full p-[1.5px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan group-hover:scale-105 transition-transform duration-300">
+      <!-- Logo & Brand Identity (Zero Congestion on Mobile) -->
+      <a href="#" class="flex items-center gap-2 sm:gap-3.5 group min-w-0">
+        <div class="relative w-8 h-8 sm:w-11 sm:h-11 shrink-0 rounded-full p-[1.5px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan group-hover:scale-105 transition-transform duration-300">
           <div class="w-full h-full bg-obsidian-surface rounded-full overflow-hidden flex items-center justify-center">
             <img src="logo.png" alt="VL" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <span class="font-display font-bold text-accent-gold text-xs sm:text-sm tracking-wider hidden">VL</span>
+            <span class="font-display font-bold text-accent-gold text-xs tracking-wider hidden">VL</span>
           </div>
         </div>
         <div class="flex flex-col min-w-0">
           <span class="font-display font-extrabold text-sm sm:text-lg tracking-wide text-white group-hover:text-amber-300 transition-colors truncate">
             VIRTUAL LIBRARY
           </span>
-          <span class="text-[9px] sm:text-[10px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-slate-400 truncate">
+          <span class="text-[9px] sm:text-[10px] font-mono tracking-wider sm:tracking-[0.18em] uppercase text-slate-400 truncate">
             24/7 Focus Study Session
           </span>
         </div>
@@ -197,13 +192,13 @@
         <a href="#protocols" class="hover:text-white transition-colors">Rules & Protocol</a>
       </nav>
 
-      <!-- Clean Header Action Button -->
-      <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+      <!-- Header Action Button -->
+      <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
         <div class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[11px] font-mono text-emerald-400">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Face & Desk Live
         </div>
         <button onclick="openJoinModal('telegram')"
-           class="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-white text-black font-semibold text-[11px] sm:text-xs tracking-wider uppercase font-mono hover:bg-amber-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300 flex items-center gap-1.5 sm:gap-2">
+           class="px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-xl bg-white text-black font-semibold text-[10px] sm:text-xs tracking-wider uppercase font-mono hover:bg-amber-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300 flex items-center gap-1.5 sm:gap-2">
           <i data-lucide="send" class="w-3.5 h-3.5"></i>
           <span>Join Room</span>
         </button>
@@ -673,60 +668,44 @@
   <script>
     let activeChannel = 'telegram';
 
-    document.addEventListener("DOMContentLoaded", () => {
-      // ===============================================================
-      // 1. EXTENDED LOGO BUILD & MILESTONES PRELOADER (100% AUTOMATED)
-      // ===============================================================
-      const circle = document.getElementById("buildCircle");
-      const logo = document.getElementById("buildLogo");
-      const text = document.getElementById("buildText");
-      const ticker = document.getElementById("milestoneTicker");
-      const tickerLabel = document.getElementById("tickerLabel");
-      const tickerValue = document.getElementById("tickerValue");
-      const bar = document.getElementById("preloaderBar");
+    // FAST PRELOADER DISMISS FUNCTION
+    function dismissPreloader() {
       const preloader = document.getElementById("introPreloader");
-
-      // Phase 0: Progress bar start & Ring Draw
-      if (bar) bar.style.width = "100%";
-      circle.classList.add("animate-ring-draw");
-
-      // Phase 1 (0.5s): Scale up and reveal central logo
+      if (!preloader) return;
+      preloader.style.opacity = "0";
+      preloader.style.pointerEvents = "none";
       setTimeout(() => {
-        logo.classList.remove("opacity-0", "scale-75");
-        logo.classList.add("opacity-100", "scale-100");
-      }, 500);
+        if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+      }, 300);
+    }
 
-      // Phase 2 (1.0s): Reveal Brand Header Text & open ticker box
-      setTimeout(() => {
-        text.classList.remove("opacity-0", "translate-y-3");
-        text.classList.add("opacity-100", "translate-y-0");
-        ticker.classList.remove("opacity-0");
-      }, 1000);
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. FAST LAG-FREE PRELOADER (1.8s MAX TOTAL)
+      const bar = document.getElementById("preloaderFastBar");
+      const tickerHead = document.getElementById("quickTickerHeader");
+      const tickerContent = document.getElementById("quickTickerContent");
 
-      // Phase 3 (1.4s): Highlight Devika Jain Record
-      setTimeout(() => {
-        tickerLabel.textContent = "All-Time Single Day Record";
-        tickerValue.innerHTML = `<span class="text-amber-400 font-extrabold">Devika Jain</span> &bull; 22h 39m`;
-      }, 1400);
+      if (bar) {
+        requestAnimationFrame(() => {
+          bar.style.width = "100%";
+        });
+      }
 
-      // Phase 4 (2.3s): Highlight Vansh Yadav Streak Record
+      // Rapid milestone flip at 0.8s
       setTimeout(() => {
-        tickerLabel.textContent = "All-Time Active Streak Legend";
-        tickerValue.innerHTML = `<span class="text-rose-400 font-extrabold">Vansh Yadav</span> &bull; 351 Days Active`;
-      }, 2300);
+        if (tickerHead && tickerContent) {
+          tickerHead.textContent = "Streak Legend Record";
+          tickerContent.innerHTML = `<span class="text-rose-400 font-bold">Vansh Yadav</span> &bull; 351 Days Active`;
+        }
+      }, 850);
 
-      // Phase 5 (3.2s): Smoothly fade out and display website
+      // Dismiss at 1.75s
       setTimeout(() => {
-        preloader.style.opacity = "0";
-        preloader.style.transform = "scale(1.03)";
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 700);
-      }, 3200);
+        dismissPreloader();
+      }, 1750);
 
       if (typeof lucide !== 'undefined') lucide.createIcons();
 
-      // ===============================================================
       // 2. POPULATE SEPTEMBER MONTHLY AUDIT TABLE
       // ===============================================================
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
