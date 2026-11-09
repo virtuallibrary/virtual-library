@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Library | 24/7 Deep Work Community</title>
+  <meta name="description" content="Official 24/7 camera-monitored silent study community, verified monthly focus reports, streak rankings, and team competitions." />
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              gold: '#F59E0B',
+              amber: '#D97706',
+              dark: '#0A0A0C',
+              surface: '#121217',
+              border: '#1E1E26'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0C; }
+    ::-webkit-scrollbar-thumb { background: #272732; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3F3F50; }
+  </style>
+</head>
+
+<body class="bg-[#0A0A0C] text-neutral-200 antialiased font-sans selection:bg-amber-500 selection:text-black">
+
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0A0A0C]/80 border-b border-[#1E1E26]">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center text-black font-extrabold shadow-lg shadow-amber-500/20 group-hover:scale-105 transition">
+          <i class="fa-solid fa-graduation-cap text-base"></i>
+        </div>
+        <div>
+          <span class="font-extrabold tracking-tight text-white text-base block leading-none">VIRTUAL LIBRARY</span>
+          <span class="text-[10px] text-amber-500 font-mono tracking-widest font-semibold uppercase">Study Collective</span>
+        </div>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-400">
+        <a href="#monthly" class="hover:text-amber-400 transition">Monthly Report</a>
+        <a href="#streaks" class="hover:text-amber-400 transition">Streak Vault</a>
+        <a href="#competitions" class="hover:text-amber-400 transition">Competitions</a>
+        <a href="#rules" class="hover:text-amber-400 transition">Room & Meet Rules</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 24/7 GMeet Active
+        </div>
+        <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer" 
+           class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black bg-amber-400 hover:bg-amber-300 rounded-lg transition flex items-center gap-1.5 shadow-md shadow-amber-500/20">
+          <i class="fa-brands fa-telegram text-sm"></i> <span>Join Room</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 px-6 border-b border-[#1E1E26] overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121217] border border-[#1E1E26] text-xs font-medium text-neutral-300">
+        <i class="fa-solid fa-shield-halved text-amber-400"></i> Zero Slack Policy &bull; Camera Monitored &bull; Desk Angle Only
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+        Disciplined Focus.<br>
+        <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">
+          Uncompromised Consistency.
+        </span>
+      </h1>
+      <p class="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        The official digital command center for Virtual Library. Track verified monthly focus hours, benchmark your streaks against serious aspirants, and inspect competition results.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center pt-2">
+        <a href="#monthly" class="px-6 py-3 bg-[#121217] hover:bg-[#1A1A22] border border-[#1E1E26] text-white text-sm font-semibold rounded-xl transition flex items-center gap-2">
+          <i class="fa-solid fa-chart-simple text-amber-400"></i> View Monthly Standings
+        </a>
+        <a href="#streaks" class="px-6 py-3 bg-[#121217] hover:bg-[#1A1A22] border border-[#1E1E26] text-white text-sm font-semibold rounded-xl transition flex items-center gap-2">
+          <i class="fa-solid fa-fire text-amber-400"></i> Streak Leaderboard
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Monthly Focus Leaderboard -->
+  <section id="monthly" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#1E1E26]">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
+          <i class="fa-solid fa-stopwatch"></i> Verified Study Data
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Monthly Focus Standings</h2>
+        <p class="text-neutral-400 text-sm mt-1">Sorted strictly in descending order by verified study hours.</p>
+      </div>
+      <div id="monthly-badge" class="text-xs font-mono px-3.5 py-1.5 rounded-lg bg-[#121217] border border-[#1E1E26] text-neutral-300">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- Monthly Table -->
+    <div class="overflow-x-auto rounded-2xl border border-[#1E1E26] bg-[#121217]/50 shadow-2xl">
+      <table class="w-full text-left border-collapse text-sm">
+        <thead>
+          <tr class="border-b border-[#1E1E26] bg-[#121217] text-neutral-400 text-xs uppercase tracking-wider font-mono">
+            <th class="py-4 px-6">Rank</th>
+            <th class="py-4 px-6">Member</th>
+            <th class="py-4 px-6">Total Focus Time</th>
+            <th class="py-4 px-6">Active Streak</th>
+            <th class="py-4 px-6 text-right">Room Status</th>
+          </tr>
+        </thead>
+        <tbody id="monthly-table-body" class="divide-y divide-[#1E1E26] text-neutral-300 font-medium">
+          <!-- Rendered via JS in descending order -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 2: Streak Vault (Descending Panel) -->
+  <section id="streaks" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#1E1E26]">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
+          <i class="fa-solid fa-fire"></i> Consistency Index
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Streak Vault</h2>
+        <p class="text-neutral-400 text-sm mt-1">Members ranked strictly in descending order of consecutive verified study days.</p>
+      </div>
+      <div class="text-xs text-neutral-400 bg-[#121217] border border-[#1E1E26] px-3.5 py-1.5 rounded-lg font-mono">
+        Strict Freeze Protection Rules Applied
+      </div>
+    </div>
+
+    <!-- Dynamic Grid for Streaks -->
+    <div id="streak-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Rendered via JS in descending order -->
+    </div>
+  </section>
+
+  <!-- Section 3: Virtual Competition Arena (Seasons 1-5 + 6) -->
+  <section id="competitions" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#1E1E26]">
+    <div class="max-w-3xl mb-12">
+      <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
+        <i class="fa-solid fa-trophy"></i> Team Battles
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Virtual Competition Arena</h2>
+      <p id="comp-description" class="text-neutral-400 text-sm mt-3 leading-relaxed">
+        <!-- Rendered via JS -->
+      </p>
+    </div>
+
+    <!-- Seasons Cards -->
+    <div id="seasons-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Rendered via JS -->
+    </div>
+  </section>
+
+  <!-- Section 4: Rules & Guidelines (Infographics & Conduct) -->
+  <section id="rules" class="py-16 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
+        <i class="fa-solid fa-book"></i> Code of Operations
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Room & Competition Protocol</h2>
+      <p class="text-neutral-400 text-sm mt-2">Compliance is mandatory for every participant. Zero exceptions.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      
+      <!-- Panel 1: Google Meet Rules -->
+      <div class="bg-[#121217] border border-[#1E1E26] rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-video text-amber-400"></i> Daily Google Meet Rules
+            </h3>
+            <span class="text-xs font-mono text-neutral-400 bg-[#1A1A22] px-2.5 py-1 rounded">24/7 Monitored</span>
+          </div>
+          <p class="text-sm text-neutral-400 mb-6">
+            The study room operates on silence and visual accountability. Members failing camera framing checks are dropped immediately by admins.
+          </p>
+
+          <!-- Photo Attachment Placeholder for Meet Rules -->
+          <div class="w-full h-52 rounded-xl border border-dashed border-[#272732] bg-[#0A0A0C] flex flex-col items-center justify-center text-center p-4 mb-6 group overflow-hidden">
+            <!-- Replace 'assets/meet-rules.jpg' with your actual image path -->
+            <img src="assets/meet-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover rounded-lg" alt="Meet Rules">
+            <div class="flex-col items-center justify-center text-neutral-500 gap-2">
+              <i class="fa-regular fa-image text-2xl text-neutral-600"></i>
+              <span class="text-xs font-mono">Place your Meet Rules Infographic in <br><code class="text-amber-400 font-semibold">assets/meet-rules.jpg</code></span>
+            </div>
+          </div>
+
+          <ul class="space-y-3 text-xs text-neutral-300 font-medium">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+              <span><strong>Desk & Hands Angle:</strong> Your camera must clearly capture your desk surface, notebook/device, and hands. Ceilings, fans, or black screens get an instant strike.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+              <span><strong>Permanent Mute:</strong> Audio transmission is forbidden. All discussions, doubt sharing, and queries happen exclusively on Telegram.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+              <span><strong>Anti-AFK Verification:</strong> Leaving the seat with camera running without tagging breaks in the chat will void your tracked time for that block.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Panel 2: Competition Rules -->
+      <div class="bg-[#121217] border border-[#1E1E26] rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-users text-amber-400"></i> Competition Regulations
+            </h3>
+            <span class="text-xs font-mono text-neutral-400 bg-[#1A1A22] px-2.5 py-1 rounded">Squad Protocol</span>
+          </div>
+          <p class="text-sm text-neutral-400 mb-6">
+            Virtual Competition Seasons feature stringent verification. Squads are penalized collectively for individual non-compliance.
+          </p>
+
+          <!-- Photo Attachment Placeholder for Competition Rules -->
+          <div class="w-full h-52 rounded-xl border border-dashed border-[#272732] bg-[#0A0A0C] flex flex-col items-center justify-center text-center p-4 mb-6 group overflow-hidden">
+            <!-- Replace 'assets/competition-rules.jpg' with your actual image path -->
+            <img src="assets/competition-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover rounded-lg" alt="Competition Rules">
+            <div class="flex-col items-center justify-center text-neutral-500 gap-2">
+              <i class="fa-regular fa-image text-2xl text-neutral-600"></i>
+              <span class="text-xs font-mono">Place Competition Infographic in <br><code class="text-amber-400 font-semibold">assets/competition-rules.jpg</code></span>
+            </div>
+          </div>
+
+          <ul class="space-y-3 text-xs text-neutral-300 font-medium">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+              <span><strong>Baseline Hours Target:</strong> Every team member must hit the mandated daily/weekly focus floor to avoid squad deductions.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+              <span><strong>Reserve Replacements:</strong> Inactive or unannounced dropped members are permanently swapped with approved waitlist candidates.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+              <span><strong>Admin Penalty Deduction:</strong> Manual time adjustments are audited daily; fake timer runs result in immediate disqualification.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-20 border-t border-[#1E1E26] bg-[#0A0A0C] py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-500">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono">
+          VL
+        </div>
+        <span>&copy; 2026 Virtual Library Community. Continuous Desk Accountability.</span>
+      </div>
+      <div class="flex items-center gap-6 font-mono">
+        <a href="https://t.me/studyy247" target="_blank" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-telegram"></i> @studyy247
+        </a>
+        <a href="#rules" class="hover:text-neutral-300 transition">Code of Conduct</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script to Auto-Sort and Render Data -->
+  <script src="data.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. RENDER MONTHLY LEADERBOARD (Sorted descending by total minutes)
+      const monthly = VirtualLibraryData.monthlyReport;
+      document.getElementById("monthly-badge").textContent = `Cycle: ${monthly.monthYear}`;
+      
+      const sortedMonthly = [...monthly.participants].sort((a, b) => {
+        const totalMinutesA = (a.hours * 60) + a.minutes;
+        const totalMinutesB = (b.hours * 60) + b.minutes;
+        return totalMinutesB - totalMinutesA;
+      });
+
+      const monthlyTableBody = document.getElementById("monthly-table-body");
+      monthlyTableBody.innerHTML = sortedMonthly.map((item, index) => {
+        const rank = index + 1;
+        let rankBadge = `<span class="font-mono text-neutral-500">#${String(rank).padStart(2, '0')}</span>`;
+        if (rank === 1) rankBadge = `<span class="font-mono font-bold text-amber-400 flex items-center gap-1.5"><i class="fa-solid fa-crown text-xs"></i> #01</span>`;
+        else if (rank === 2) rankBadge = `<span class="font-mono font-bold text-neutral-300 flex items-center gap-1.5"><i class="fa-solid fa-medal text-xs"></i> #02</span>`;
+        else if (rank === 3) rankBadge = `<span class="font-mono font-bold text-amber-700 flex items-center gap-1.5"><i class="fa-solid fa-medal text-xs"></i> #03</span>`;
+
+        return `
+          <tr class="hover:bg-[#1A1A22]/50 transition">
+            <td class="py-4 px-6">${rankBadge}</td>
+            <td class="py-4 px-6 font-semibold text-white">${item.name}</td>
+            <td class="py-4 px-6 font-mono text-amber-300">${item.hours}h ${item.minutes}m</td>
+            <td class="py-4 px-6 font-mono text-emerald-400"><i class="fa-solid fa-fire text-xs mr-1"></i> ${item.streak} Days</td>
+            <td class="py-4 px-6 text-right">
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                ${item.status}
+              </span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // 2. RENDER STREAKS PANEL (Sorted strictly descending by days)
+      const sortedStreaks = [...VirtualLibraryData.streaks].sort((a, b) => b.days - a.days);
+      const streakGrid = document.getElementById("streak-grid");
+      streakGrid.innerHTML = sortedStreaks.map((item, index) => {
+        const rank = index + 1;
+        let borderHighlight = "border-[#1E1E26]";
+        let badgeColor = "bg-[#1A1A22] text-neutral-400";
+
+        if (item.days >= 200) {
+          borderHighlight = "border-amber-500/40 bg-gradient-to-b from-amber-500/5 to-transparent";
+          badgeColor = "bg-amber-500/20 text-amber-400 border border-amber-500/30";
+        } else if (item.days >= 100) {
+          borderHighlight = "border-emerald-500/30";
+          badgeColor = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+        }
+
+        return `
+          <div class="p-5 rounded-2xl bg-[#121217] ${borderHighlight} border flex items-center justify-between hover:border-neutral-600 transition">
+            <div class="flex items-center gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-[#1A1A22] flex items-center justify-center font-mono text-xs font-bold ${rank <= 3 ? 'text-amber-400' : 'text-neutral-500'}">
+                #${rank}
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">${item.name}</h4>
+                <p class="text-[11px] text-neutral-400">${item.note}</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-extrabold font-mono text-amber-400 flex items-center justify-end gap-1">
+                <i class="fa-solid fa-fire text-xs text-orange-500"></i> ${item.days}
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded ${badgeColor}">${item.category}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 3. RENDER COMPETITION ARCHIVE
+      const comps = VirtualLibraryData.competitions;
+      document.getElementById("comp-description").textContent = comps.formatDescription;
+
+      const seasonsContainer = document.getElementById("seasons-container");
+      seasonsContainer.innerHTML = comps.seasons.map((season) => {
+        const isUpcoming = season.status === "Upcoming";
+        return `
+          <div class="p-6 rounded-2xl bg-[#121217] border ${isUpcoming ? 'border-dashed border-amber-500/50 bg-amber-500/[0.02]' : 'border-[#1E1E26]'} flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-mono font-bold tracking-wider uppercase text-amber-400">${season.season}</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded ${isUpcoming ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-neutral-800 text-neutral-400'}">
+                  ${season.status}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">${season.theme}</h3>
+              <p class="text-xs text-neutral-400 mb-6 leading-relaxed">${season.summary}</p>
+            </div>
+
+            <div class="space-y-2 border-t border-[#1E1E26] pt-4 text-xs font-mono">
+              <div class="flex justify-between">
+                <span class="text-neutral-500">Champions:</span>
+                <span class="font-bold ${isUpcoming ? 'text-neutral-500' : 'text-amber-400'}">${season.winningTeam}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-neutral-500">Runners Up:</span>
+                <span class="text-neutral-300">${season.runnerUp}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-neutral-500">Top Focus Performer:</span>
+                <span class="text-neutral-300">${season.topPerformer}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    });
+  </script>
+</body>
+</html>
