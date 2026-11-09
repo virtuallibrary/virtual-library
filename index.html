@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Library | 24/7 Focus Study Session</title>
+  <title>Virtual Library | India's Premier 24/7 Live Focus Sanctuary</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Modern Feather-weight Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
@@ -24,11 +23,11 @@
           },
           colors: {
             obsidian: {
-              DEFAULT: '#050608',
-              surface: '#0B0D13',
-              card: '#10131B',
+              DEFAULT: '#040507',
+              surface: '#0A0C12',
+              card: '#0F121A',
               border: 'rgba(255, 255, 255, 0.08)',
-              borderHover: 'rgba(234, 179, 8, 0.4)',
+              borderHover: 'rgba(234, 179, 8, 0.45)',
             },
             accent: {
               gold: '#EAB308',
@@ -43,56 +42,62 @@
   </script>
 
   <style>
-    /* Indian Flag Sovereign Accent Strip */
+    /* Executive Sovereign Tricolor Accent Strip */
     .india-strip {
       height: 4px;
       width: 100%;
       background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%, #138808 100%);
-      box-shadow: 0 1px 12px rgba(255, 153, 51, 0.3);
+      box-shadow: 0 1px 14px rgba(255, 153, 51, 0.35);
     }
 
-    /* Ambient Dot Grid Pattern */
     .bg-grid-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
     }
 
-    /* Clean Glassmorphic Surfaces */
-    .glass-panel {
-      background: rgba(11, 13, 19, 0.78);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .glass-nav {
+      background: rgba(10, 12, 18, 0.82);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* Subtle cursor glow on cards */
     .card-hover-fx {
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .card-hover-fx:hover {
       border-color: rgba(234, 179, 8, 0.4);
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8);
     }
 
-    /* Custom Minimal Scrollbar */
+    /* Modal Animation */
+    .modal-active {
+      display: flex !important;
+      animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #050608; }
-    ::-webkit-scrollbar-thumb { background: #1E2330; border-radius: 999px; }
+    ::-webkit-scrollbar-track { background: #040507; }
+    ::-webkit-scrollbar-thumb { background: #1C2230; border-radius: 999px; }
     ::-webkit-scrollbar-thumb:hover { background: #EAB308; }
   </style>
 </head>
 
 <body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen">
 
-  <!-- SOVEREIGN TRICOLOR TOP ACCENT -->
+  <!-- SOVEREIGN TOP ACCENT -->
   <div class="india-strip sticky top-0 z-[100]"></div>
 
-  <!-- NAVIGATION BAR -->
-  <header class="sticky top-[4px] z-50 glass-panel border-b border-obsidian-border">
+  <!-- NAVIGATION -->
+  <header class="sticky top-[4px] z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- Circular Logo & Branding -->
+      <!-- Brand Identity & Circular Logo -->
       <a href="#" class="flex items-center gap-3.5 group">
         <div class="relative w-12 h-12 rounded-full p-[1.5px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan group-hover:scale-105 transition-transform duration-300">
           <div class="w-full h-full bg-obsidian-surface rounded-full overflow-hidden flex items-center justify-center">
@@ -101,109 +106,116 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <span class="font-display font-bold text-lg tracking-wide text-white group-hover:text-amber-300 transition-colors">VIRTUAL LIBRARY</span>
+          <span class="font-display font-extrabold text-lg tracking-wide text-white group-hover:text-amber-300 transition-colors">VIRTUAL LIBRARY</span>
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-slate-400">24/7 Focus Study Session</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-slate-400 font-mono">
         <a href="#milestones" class="hover:text-white transition-colors">Hall of Fame</a>
         <a href="#leaderboard" class="hover:text-white transition-colors">Monthly Audit</a>
         <a href="#vault" class="hover:text-white transition-colors">Streak Vault</a>
-        <a href="#protocols" class="hover:text-white transition-colors">Protocols</a>
+        <a href="#protocols" class="hover:text-white transition-colors">Rules & Protocol</a>
       </nav>
 
-      <!-- Action Button -->
+      <!-- Action Button Triggering Member Verification -->
       <div class="flex items-center gap-4">
         <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[11px] font-mono text-emerald-400">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> GMeet Monitored
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Face & Desk Cam Active
         </div>
-        <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer"
+        <button onclick="openJoinModal('telegram')"
            class="px-5 py-2.5 rounded-xl bg-white text-black font-semibold text-xs tracking-wider uppercase font-mono hover:bg-amber-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300 flex items-center gap-2">
           <i data-lucide="send" class="w-3.5 h-3.5"></i>
-          <span>Join Room</span>
-        </a>
+          <span>Enter Library</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative py-24 px-6 border-b border-obsidian-border">
-    <div class="max-w-4xl mx-auto text-center space-y-8">
+  <!-- IMMERSIVE EDITORIAL HERO -->
+  <section class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
+    <!-- Ambient Radiance Background -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
+
+    <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
       
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono tracking-widest text-slate-300 uppercase">
-        <span class="text-amber-400">✦</span> Sovereign Academic Collective &bull; Built in India
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-slate-300 uppercase">
+        <span class="text-amber-400">✦</span> 24/7 Silent Study Sanctuary &bull; Built in India
       </div>
 
-      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl -tracking-[0.03em] text-white leading-[1.08]">
-        Architects of Habit.<br>
+      <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.06]">
+        India’s Unbroken Circle of<br>
         <span class="bg-gradient-to-r from-amber-200 via-rose-300 to-cyan-200 bg-clip-text text-transparent">
-          Masters of Time.
+          Disciplined Minds.
         </span>
       </h1>
 
       <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
-        The premier silent study environment for resolute aspirants. Verified camera feeds, rigorous accountability audits, and unyielding daily consistency.
+        Where serious aspirants build life-defining careers. Choose your angle—desk view or face view—turn on your camera, join silent rooms, and let accountability do the rest.
       </p>
 
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-2 font-mono text-xs tracking-wider uppercase">
-        <a href="#leaderboard" class="px-7 py-3.5 rounded-xl bg-obsidian-surface border border-white/15 text-white hover:border-amber-400/80 hover:bg-white/[0.04] transition-all flex items-center gap-2.5 shadow-lg">
-          <i data-lucide="bar-chart-3" class="w-4 h-4 text-amber-400"></i> Explore Audit Reports
-        </a>
-        <a href="#vault" class="px-7 py-3.5 rounded-xl bg-obsidian-surface border border-white/15 text-white hover:border-cyan-400/80 hover:bg-white/[0.04] transition-all flex items-center gap-2.5 shadow-lg">
-          <i data-lucide="flame" class="w-4 h-4 text-rose-400"></i> Active Streak Standings
-        </a>
+      <!-- PRIMARY GLOBAL SEARCH BAR: "SEARCH YOUR NAME" -->
+      <div class="pt-4 max-w-xl mx-auto">
+        <div class="relative group">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500/30 via-rose-500/30 to-cyan-500/30 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+          <div class="relative flex items-center bg-obsidian-card border border-white/15 rounded-2xl p-2 shadow-2xl">
+            <i data-lucide="search" class="w-5 h-5 text-amber-400 ml-3 shrink-0"></i>
+            <input type="text" id="globalNameSearchInput" onkeyup="handleGlobalSearch(event)" placeholder="Search your name (e.g. Vansh, Devika, Ekus, Jimmy)..."
+                   class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm px-3 py-2 outline-none font-mono" />
+            <button onclick="triggerDossierSearch()" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-mono font-bold text-xs uppercase tracking-wider transition-colors shrink-0 flex items-center gap-1.5">
+              <span>View Dossier</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+        <p class="text-[11px] font-mono text-slate-500 mt-2 text-center">Type your name and hit Enter to inspect your all-time streaks, rankings, and audits.</p>
       </div>
 
-      <!-- Live Hero Stats Ticker -->
-      <div class="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-        <div class="p-5 rounded-2xl bg-obsidian-card/80 border border-obsidian-border text-center">
-          <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Logged Hours</div>
-          <div class="font-display font-bold text-2xl text-white mt-1">2,400+ hrs</div>
-          <div class="text-[10px] text-emerald-400 font-mono mt-0.5">Audited Desk Feeds</div>
-        </div>
-        <div class="p-5 rounded-2xl bg-obsidian-card/80 border border-obsidian-border text-center">
-          <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Active Roster</div>
-          <div class="font-display font-bold text-2xl text-accent-gold mt-1">32 Scholars</div>
-          <div class="text-[10px] text-amber-300 font-mono mt-0.5">Daily Habit Streaks</div>
-        </div>
-        <div class="p-5 rounded-2xl bg-obsidian-card/80 border border-obsidian-border text-center">
-          <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Room Availability</div>
-          <div class="font-display font-bold text-2xl text-cyan-400 mt-1">24 / 7 / 365</div>
-          <div class="text-[10px] text-cyan-300 font-mono mt-0.5">Zero Downtime</div>
-        </div>
+      <!-- Quick Section Anchor Tags -->
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2 font-mono text-xs uppercase tracking-wider text-slate-400">
+        <a href="#leaderboard" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-amber-400"></i> Monthly Rankings
+        </a>
+        <span class="text-slate-700">&bull;</span>
+        <a href="#vault" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="flame" class="w-3.5 h-3.5 text-rose-400"></i> Active Streak Vault
+        </a>
+        <span class="text-slate-700">&bull;</span>
+        <a href="#protocols" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-cyan-400"></i> Room Guidelines
+        </a>
       </div>
 
     </div>
   </section>
 
-  <!-- HALL OF FAME MILESTONES -->
+  <!-- HALL OF FAME PINNACLES -->
   <section id="milestones" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="max-w-2xl mx-auto text-center mb-16 space-y-3">
       <div class="text-[11px] font-mono tracking-[0.25em] text-accent-gold uppercase font-bold">Pinnacle Standards</div>
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Hall of Fame Records</h2>
-      <p class="text-slate-400 text-sm">Recognizing historical peak benchmarks documented and verified by Virtual Library audits.</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Hall of Fame Records</h2>
+      <p class="text-slate-400 text-sm">Recognizing historical pinnacle records documented across verified Virtual Library audits.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- Record 1: Devika Jain (Highlighted) -->
+      <!-- Record 1: Devika Jain Highlighted -->
       <div class="p-8 rounded-2xl bg-gradient-to-b from-amber-500/[0.08] to-obsidian-card border border-amber-500/40 card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-amber-400 tracking-wider uppercase mb-4">
-            <span>Single-Day Peak</span>
+            <span>Single-Day Benchmark</span>
             <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
           </div>
           <div class="font-display font-extrabold text-4xl text-white tracking-tight">22h 39m</div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
           <div class="text-white font-bold text-base tracking-wide">Devika Jain</div>
-          <div class="text-xs font-mono text-amber-400/90 mt-0.5">All-Time Peak Record</div>
+          <div class="text-xs font-mono text-amber-400/90 mt-0.5 font-semibold">Highest Single Day Record</div>
         </div>
       </div>
 
-      <!-- Record 2: Vansh Yadav -->
+      <!-- Record 2: Vansh Yadav Longest Streak -->
       <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-rose-400 tracking-wider uppercase mb-4">
@@ -214,18 +226,18 @@
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
           <div class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
-          <div class="text-xs font-mono text-slate-400 mt-0.5">Unbroken Desk Streak</div>
+          <div class="text-xs font-mono text-slate-400 mt-0.5">Active #1 Desk Streak</div>
         </div>
       </div>
 
-      <!-- Record 3: Apex Club -->
+      <!-- Record 3: 300+ Days Apex Club -->
       <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-cyan-400 tracking-wider uppercase mb-4">
-            <span>Apex 300+ Club</span>
+            <span>Apex 300+ Tier</span>
             <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">03 <span class="text-xl text-slate-400 font-sans font-normal">Scholars</span></div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight">03 <span class="text-xl text-slate-400 font-sans font-normal">Members</span></div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
           <div class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Vandana</div>
@@ -244,7 +256,7 @@
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
           <div class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
-          <div class="text-xs font-mono text-slate-400 mt-0.5">September 2026 Audit</div>
+          <div class="text-xs font-mono text-slate-400 mt-0.5">September 2026 Champion</div>
         </div>
       </div>
 
@@ -256,14 +268,14 @@
     <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-cyan-400 uppercase font-bold">Official Records</div>
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Monthly Performance Audit</h2>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Monthly Performance Audit</h2>
         <p class="text-slate-400 text-sm">Verified camera-checked study hours and recorded attendance logs.</p>
       </div>
 
-      <!-- Unified Real-time Search -->
+      <!-- Filter Input Specific to Tables -->
       <div class="w-full md:w-80 relative">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"></i>
-        <input type="text" id="memberSearchInput" onkeyup="filterLeaderboards()" placeholder="Search scholar name..." 
+        <input type="text" id="tableFilterInput" onkeyup="filterBothViews(this.value)" placeholder="Filter table or streaks..." 
                class="w-full bg-obsidian-card border border-obsidian-border focus:border-amber-400/80 text-white placeholder-slate-500 text-sm rounded-xl pl-10 pr-4 py-3 outline-none font-mono transition-all" />
       </div>
     </div>
@@ -274,29 +286,29 @@
         <span class="flex items-center gap-2 text-slate-200 font-semibold tracking-wider uppercase">
           <span class="w-2 h-2 rounded-full bg-accent-gold"></span> Cycle: September 2026
         </span>
-        <span class="hidden sm:block">Ranked by Verified Desk Time</span>
+        <span class="hidden sm:block">Ranked by Total Audited Time</span>
       </div>
 
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse">
           <thead>
             <tr class="border-b border-white/5 text-slate-400 text-[11px] font-mono uppercase tracking-widest bg-white/[0.01]">
-              <th class="py-4 px-6 font-semibold">Standing</th>
-              <th class="py-4 px-6 font-semibold">Scholar</th>
+              <th class="py-4 px-6 font-semibold">Rank</th>
+              <th class="py-4 px-6 font-semibold">Scholar Name</th>
               <th class="py-4 px-6 text-right font-semibold">Active Days</th>
-              <th class="py-4 px-6 text-right font-semibold">Desk Output</th>
+              <th class="py-4 px-6 text-right font-semibold">Audited Time</th>
             </tr>
           </thead>
           <tbody id="monthlyTableBody" class="divide-y divide-white/5 text-sm font-medium">
-            <!-- Dynamically populated from data.js -->
+            <!-- Populated via data.js -->
           </tbody>
         </table>
       </div>
 
-      <!-- Zero-State Search Feedback -->
+      <!-- Zero-State Search Notification -->
       <div id="monthlyZeroState" class="hidden p-12 text-center">
-        <i data-lucide="alert-circle" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
-        <p class="text-sm font-mono text-slate-400">No verified scholar matches your search term.</p>
+        <i data-lucide="search-x" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
+        <p class="text-sm font-mono text-slate-400">No scholar found matching this filter query.</p>
       </div>
     </div>
   </section>
@@ -306,7 +318,7 @@
     <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-14">
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-rose-400 uppercase font-bold">Unbroken Discipline</div>
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Active Streak Vault</h2>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Active Streak Vault</h2>
         <p class="text-slate-400 text-sm">Ranked in descending order with categorized discipline tiers.</p>
       </div>
       <div class="text-xs font-mono text-slate-400 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
@@ -314,106 +326,88 @@
       </div>
     </div>
 
-    <!-- Responsive Grid -->
+    <!-- Responsive Streak Grid -->
     <div id="streakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Dynamically populated from data.js -->
+      <!-- Populated via data.js -->
     </div>
 
-    <!-- Zero-State Search Feedback -->
+    <!-- Zero-State Grid Notification -->
     <div id="streakZeroState" class="hidden p-12 text-center rounded-2xl border border-obsidian-border bg-obsidian-card">
-      <i data-lucide="alert-circle" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
-      <p class="text-sm font-mono text-slate-400">No active streaks match your search query.</p>
+      <i data-lucide="search-x" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
+      <p class="text-sm font-mono text-slate-400">No active streaks match this filter query.</p>
     </div>
   </section>
 
-  <!-- ROOM PROTOCOLS & LIGHTBOX-ENABLED INFOGRAPHICS -->
+  <!-- EXPANDED RULES & PROTOCOLS (CLEAN LARGE DISPLAY) -->
   <section id="protocols" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="max-w-2xl mx-auto text-center mb-16 space-y-3">
-      <div class="text-[11px] font-mono tracking-[0.25em] text-slate-400 uppercase font-bold">Operational Standard</div>
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Protocols & Directives</h2>
-      <p class="text-slate-400 text-sm">Click either chart below to inspect in high-resolution full view.</p>
+      <div class="text-[11px] font-mono tracking-[0.25em] text-slate-400 uppercase font-bold">Operational Framework</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Room Protocols & Guidelines</h2>
+      <p class="text-slate-400 text-sm">Inspect our official guidelines below. Click any image to view in fullscreen high-resolution.</p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-8">
+    <div class="grid lg:grid-cols-2 gap-10">
       
       <!-- Panel 1: Google Meet Protocols -->
-      <div class="rounded-2xl bg-obsidian-card border border-obsidian-border p-8 flex flex-col justify-between">
+      <div class="rounded-3xl bg-obsidian-card border border-obsidian-border p-8 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
             <div>
-              <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-widest block font-bold">Visual Standard</span>
-              <h3 class="font-display font-bold text-xl text-white mt-1">Daily Meeting Guidelines</h3>
+              <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-widest block font-bold">Camera Protocol</span>
+              <h3 class="font-display font-bold text-2xl text-white mt-1">Google Meet Room Rules</h3>
             </div>
-            <span class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-800">24/7 Monitored</span>
+            <span class="text-xs font-mono px-3.5 py-1 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-800 font-bold">24/7 Verified</span>
           </div>
 
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Visual desk accountability is mandatory. The environment is strictly silent—no microphonic interference is permitted.
+            Both <strong>Face Cam</strong> and <strong>Desk Cam</strong> setups are completely permitted. Microphones remain permanently muted.
           </p>
 
-          <!-- Interactive Lightbox Trigger Container -->
-          <div onclick="openLightbox('meet-rules.jpg', 'Google Meet Rules')" 
-               class="cursor-zoom-in group relative w-full h-72 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center p-3 mb-6 overflow-hidden">
-            <img src="meet-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300" alt="Meeting Guidelines">
-            <div class="hidden flex-col items-center justify-center text-slate-500 gap-2">
-              <i data-lucide="image" class="w-8 h-8 text-slate-600"></i>
-              <span class="text-xs font-mono">Infographic: <code class="text-slate-300">meet-rules.jpg</code></span>
+          <!-- Large High-Visibility Graphic Container with Zoom Button -->
+          <div class="relative w-full min-h-[460px] max-h-[600px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center p-4 overflow-hidden group">
+            <img src="meet-rules.jpg" onclick="openLightbox('meet-rules.jpg', 'Daily Google Meet Rules')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-300" alt="Daily Meet Rules">
+            
+            <div class="hidden flex-col items-center justify-center text-slate-500 gap-3 text-center p-6">
+              <i data-lucide="image" class="w-12 h-12 text-slate-700"></i>
+              <span class="text-xs font-mono text-slate-400">Place <code class="text-cyan-400 font-bold">meet-rules.jpg</code> in the root folder to display infographic.</span>
             </div>
-            <div class="absolute bottom-3 right-3 bg-black/80 text-white text-[10px] font-mono px-2 py-1 rounded border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-              <i data-lucide="maximize-2" class="w-3 h-3"></i> Expand View
-            </div>
-          </div>
 
-          <div class="space-y-3 text-xs text-slate-300">
-            <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
-              <span><strong>Desk & Hands Angle:</strong> Frame must capture your work surface, study notes, or screen continuously.</span>
-            </div>
-            <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
-              <span><strong>Audio Muted:</strong> Microphones must stay permanently muted to prevent noise disruption.</span>
-            </div>
+            <!-- Prominent Zoom Overlay Pill -->
+            <button onclick="openLightbox('meet-rules.jpg', 'Daily Google Meet Rules')" class="absolute top-4 right-4 bg-black/80 hover:bg-black text-white text-xs font-mono px-3 py-2 rounded-xl border border-white/20 shadow-xl flex items-center gap-1.5 transition">
+              <i data-lucide="maximize-2" class="w-4 h-4 text-cyan-400"></i> Click to Zoom Fullscreen
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- Panel 2: Competition Directives -->
-      <div class="rounded-2xl bg-obsidian-card border border-obsidian-border p-8 flex flex-col justify-between">
+      <!-- Panel 2: Competition Regulations -->
+      <div class="rounded-3xl bg-obsidian-card border border-obsidian-border p-8 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
             <div>
-              <span class="text-[11px] font-mono text-rose-400 uppercase tracking-widest block font-bold">Team Rigor</span>
-              <h3 class="font-display font-bold text-xl text-white mt-1">Competition Directives</h3>
+              <span class="text-[11px] font-mono text-rose-400 uppercase tracking-widest block font-bold">Squad Discipline</span>
+              <h3 class="font-display font-bold text-2xl text-white mt-1">Competition Directives</h3>
             </div>
-            <span class="text-xs font-mono px-3 py-1 rounded-full bg-rose-950/60 text-rose-300 border border-rose-800">Team Audited</span>
+            <span class="text-xs font-mono px-3.5 py-1 rounded-full bg-rose-950/60 text-rose-300 border border-rose-800 font-bold">Squad Audited</span>
           </div>
 
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Structured seasons require collective integrity. Unannounced absences result in immediate reserve swaps.
+            Seasonal competitions hold squads to rigorous minimum weekly focus hours. Unannounced dropouts are replaced by waitlist reserves.
           </p>
 
-          <!-- Interactive Lightbox Trigger Container -->
-          <div onclick="openLightbox('competition-rules.jpg', 'Competition Rules')" 
-               class="cursor-zoom-in group relative w-full h-72 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center p-3 mb-6 overflow-hidden">
-            <img src="competition-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300" alt="Competition Directives">
-            <div class="hidden flex-col items-center justify-center text-slate-500 gap-2">
-              <i data-lucide="image" class="w-8 h-8 text-slate-600"></i>
-              <span class="text-xs font-mono">Infographic: <code class="text-slate-300">competition-rules.jpg</code></span>
+          <!-- Large High-Visibility Graphic Container with Zoom Button -->
+          <div class="relative w-full min-h-[460px] max-h-[600px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center p-4 overflow-hidden group">
+            <img src="competition-rules.jpg" onclick="openLightbox('competition-rules.jpg', 'Squad Competition Directives')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-300" alt="Competition Regulations">
+            
+            <div class="hidden flex-col items-center justify-center text-slate-500 gap-3 text-center p-6">
+              <i data-lucide="image" class="w-12 h-12 text-slate-700"></i>
+              <span class="text-xs font-mono text-slate-400">Place <code class="text-rose-400 font-bold">competition-rules.jpg</code> in the root folder to display infographic.</span>
             </div>
-            <div class="absolute bottom-3 right-3 bg-black/80 text-white text-[10px] font-mono px-2 py-1 rounded border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-              <i data-lucide="maximize-2" class="w-3 h-3"></i> Expand View
-            </div>
-          </div>
 
-          <div class="space-y-3 text-xs text-slate-300">
-            <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
-              <span><strong>Weekly Log Target:</strong> Squad participants log between 5 to 10 hours minimum to retain standing.</span>
-            </div>
-            <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
-              <span><strong>Reserve Replacements:</strong> Sudden drops activate waitlisted aspirants without point waivers.</span>
-            </div>
+            <!-- Prominent Zoom Overlay Pill -->
+            <button onclick="openLightbox('competition-rules.jpg', 'Squad Competition Directives')" class="absolute top-4 right-4 bg-black/80 hover:bg-black text-white text-xs font-mono px-3 py-2 rounded-xl border border-white/20 shadow-xl flex items-center gap-1.5 transition">
+              <i data-lucide="maximize-2" class="w-4 h-4 text-rose-400"></i> Click to Zoom Fullscreen
+            </button>
           </div>
         </div>
       </div>
@@ -421,31 +415,31 @@
     </div>
   </section>
 
-  <!-- ADMINISTRATIVE CONTACT & CLIPBOARD ACTIONS -->
+  <!-- DIRECT CONTACT & COMMUNICATION DESK -->
   <section id="contact" class="py-24 px-6 max-w-4xl mx-auto">
-    <div class="rounded-3xl bg-gradient-to-b from-obsidian-card to-obsidian-surface border border-obsidian-border p-10 sm:p-14 text-center space-y-6">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300 uppercase tracking-wider">
-        <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-400"></i> Helpdesk & Administrative Oversight
+    <div class="rounded-3xl bg-gradient-to-b from-obsidian-card to-obsidian-surface border border-obsidian-border p-10 sm:p-14 text-center space-y-6 shadow-2xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-slate-300 uppercase tracking-wider">
+        <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-400"></i> Official Communication Portal
       </div>
       
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Administrative Support</h2>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Need to Connect with Admin?</h2>
       <p class="text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
-        For streak freezes, attendance adjustments, rule clarifications, or room invitations, contact our administration desk directly.
+        Choose your preferred channel below. Existing members are routed straight through, while new scholars complete a brief security check.
       </p>
 
       <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center font-mono text-xs uppercase tracking-wider">
-        <!-- One-Click Copy Telegram Handle -->
-        <button onclick="copyToClipboard('@VirtualLibraryAdmin', this)"
-           class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-black font-bold hover:bg-amber-300 transition-colors flex items-center justify-center gap-2">
-          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-          <span>Copy @VirtualLibraryAdmin</span>
+        <!-- Direct Telegram Routing -->
+        <button onclick="openJoinModal('telegram')"
+           class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white text-black font-bold hover:bg-amber-300 transition-colors flex items-center justify-center gap-2.5 shadow-lg">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Direct Telegram DM</span>
         </button>
 
-        <!-- One-Click Copy Email Address -->
-        <button onclick="copyToClipboard('virtualfocusmod@gmail.com', this)"
-           class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-obsidian-surface border border-white/10 text-slate-200 hover:border-amber-400/60 transition-colors flex items-center justify-center gap-2">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400"></i>
-          <span>Copy Support Email</span>
+        <!-- Direct Email Routing -->
+        <button onclick="openJoinModal('email')"
+           class="w-full sm:w-auto px-7 py-4 rounded-xl bg-obsidian-surface border border-white/10 text-slate-200 hover:border-amber-400/60 transition-colors flex items-center justify-center gap-2.5 shadow-lg">
+          <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+          <span>Official Email Desk</span>
         </button>
       </div>
     </div>
@@ -458,42 +452,164 @@
         <div class="w-8 h-8 rounded-full bg-obsidian-card border border-white/10 flex items-center justify-center text-white font-display font-bold text-xs">
           VL
         </div>
-        <span class="text-slate-400 font-medium">Virtual Library &bull; Operating Continuous Desk Oversight</span>
+        <span class="text-slate-400 font-medium">Virtual Library &bull; 24/7 Silent Focus Syndicate</span>
       </div>
 
       <div class="flex flex-wrap items-center gap-6">
-        <a href="https://t.me/studyy247" target="_blank" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="send" class="w-3 h-3"></i> Telegram @studyy247
+        <a href="javascript:void(0)" onclick="openJoinModal('telegram')" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="send" class="w-3 h-3"></i> Telegram Channel
         </a>
-        <a href="https://t.me/VirtualLibraryAdmin" target="_blank" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="user-check" class="w-3 h-3"></i> DM @VirtualLibraryAdmin
+        <a href="javascript:void(0)" onclick="openJoinModal('telegram')" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="user-check" class="w-3 h-3"></i> Admin Desk
         </a>
-        <a href="mailto:virtualfocusmod@gmail.com" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+        <a href="javascript:void(0)" onclick="openJoinModal('email')" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
           <i data-lucide="mail" class="w-3 h-3"></i> Support Email
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- FULLSCREEN INFOGRAPHIC LIGHTBOX MODAL -->
-  <div id="imageLightbox" class="fixed inset-0 z-[200] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center">
-      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-slate-400 hover:text-white font-mono text-xs flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">
+  <!-- ============================================================= -->
+  <!-- MODAL 1: SCHOLAR DOSSIER MODAL ("SEARCH YOUR NAME")          -->
+  <!-- ============================================================= -->
+  <div id="dossierModal" class="fixed inset-0 z-[250] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-2xl bg-obsidian-card border border-obsidian-border rounded-3xl p-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+      
+      <!-- Close Button -->
+      <button onclick="closeDossierModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-xl bg-white/5 hover:bg-white/10 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="dossierModalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- MODAL 2: MEMBER ROUTING & QUESTIONNAIRE MODAL (DM / EMAIL)   -->
+  <!-- ============================================================= -->
+  <div id="joinModal" class="fixed inset-0 z-[250] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-xl bg-obsidian-card border border-obsidian-border rounded-3xl p-8 max-h-[92vh] overflow-y-auto shadow-2xl">
+      
+      <!-- Close Button -->
+      <button onclick="closeJoinModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-xl bg-white/5 hover:bg-white/10 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Step 1: Member Status Inquirer -->
+      <div id="modalStep1" class="space-y-6">
+        <div class="space-y-2">
+          <div class="text-[11px] font-mono tracking-widest text-accent-gold uppercase font-bold">Access Verification</div>
+          <h3 class="font-display font-bold text-2xl text-white">Select Membership Status</h3>
+          <p class="text-slate-400 text-sm">Please identify whether you are currently active in our library or joining our community for the first time.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+          <button onclick="handleStatusSelection('old')" class="p-6 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-emerald-400/80 text-left transition group">
+            <div class="w-10 h-10 rounded-xl bg-emerald-950/70 border border-emerald-500/50 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="user-check" class="w-5 h-5"></i>
+            </div>
+            <div class="text-white font-bold text-base">Existing Member</div>
+            <div class="text-xs text-slate-400 font-mono mt-1">Already registered in our Google Meet or Telegram roster.</div>
+          </button>
+
+          <button onclick="handleStatusSelection('new')" class="p-6 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-amber-400/80 text-left transition group">
+            <div class="w-10 h-10 rounded-xl bg-amber-950/70 border border-amber-500/50 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="user-plus" class="w-5 h-5"></i>
+            </div>
+            <div class="text-white font-bold text-base">New Joiner</div>
+            <div class="text-xs text-slate-400 font-mono mt-1">First-time joining. Complete 4 quick security questions.</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: New Joiner Questionnaire (Clean Answers-Only Copy) -->
+      <div id="modalStep2" class="hidden space-y-6">
+        <div class="space-y-2 border-b border-white/10 pb-4">
+          <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Security Pre-Screening</div>
+          <h3 class="font-display font-bold text-2xl text-white">New Scholar Verification</h3>
+          <p class="text-slate-400 text-xs">Fill in your answers below. Clicking send will copy <strong>only your answers</strong> directly to your clipboard.</p>
+        </div>
+
+        <form id="newJoinerForm" onsubmit="submitNewJoinerForm(event)" class="space-y-4 text-xs font-mono">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">1.) What are you Preparing for? *</label>
+            <input type="text" id="q_prep" required placeholder="e.g. UPSC CSE, NEET, CA, GATE, State PSC" 
+                   class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-slate-600 outline-none focus:border-amber-400 transition" />
+          </div>
+
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">2.) What would be your Meet Name? *</label>
+            <input type="text" id="q_meetname" required placeholder="Your exact display name on Google Meet" 
+                   class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-slate-600 outline-none focus:border-amber-400 transition" />
+          </div>
+
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">3.) Are You Fine with CAMERA ON Study? *</label>
+            <select id="q_camera" required class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-4 py-2.5 text-white outline-none focus:border-amber-400 transition">
+              <option value="Yes, Camera ON (Desk Angle)">Yes, Camera ON (Desk Angle)</option>
+              <option value="Yes, Camera ON (Face Angle)">Yes, Camera ON (Face Angle)</option>
+              <option value="Yes, Comfortable with both Face & Desk cam">Yes, Comfortable with both Face & Desk cam</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">4.) How did you get to know about us? *</label>
+            <input type="text" id="q_source" required placeholder="e.g. Telegram search, Friend recommendation, YouTube" 
+                   class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-slate-600 outline-none focus:border-amber-400 transition" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-1">
+            <div>
+              <label class="block text-slate-400 mb-1">Your Full Name & City (Optional)</label>
+              <input type="text" id="q_namecity" placeholder="e.g. Vansh, Rajasthan" 
+                     class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-3 py-2 text-white placeholder-slate-600 outline-none focus:border-amber-400" />
+            </div>
+            <div>
+              <label class="block text-slate-400 mb-1">Specific Query / Message</label>
+              <input type="text" id="q_query" placeholder="e.g. Joining study slot" 
+                     class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-3 py-2 text-white placeholder-slate-600 outline-none focus:border-amber-400" />
+            </div>
+          </div>
+
+          <div class="pt-4 flex items-center justify-between gap-4">
+            <button type="button" onclick="backToStep1()" class="text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+            </button>
+            <button type="submit" class="px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-bold uppercase tracking-wider flex items-center gap-2 transition">
+              <span id="submitBtnLabel">Copy Answers & Proceed</span>
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- MODAL 3: FULLSCREEN IMAGE LIGHTBOX MODAL                      -->
+  <!-- ============================================================= -->
+  <div id="imageLightbox" class="fixed inset-0 z-[300] bg-black/92 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative max-w-5xl w-full max-h-[92vh] flex flex-col items-center">
+      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-slate-400 hover:text-white font-mono text-xs flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20 transition">
         <i data-lucide="x" class="w-4 h-4"></i> Close [ESC]
       </button>
-      <img id="lightboxImg" src="" alt="Enlarged graphic" class="max-w-full max-h-[82vh] object-contain rounded-xl border border-white/10 shadow-2xl">
+      <img id="lightboxImg" src="" alt="Enlarged graphic" class="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-2xl">
       <div id="lightboxCaption" class="mt-3 text-xs font-mono text-slate-400"></div>
     </div>
   </div>
 
-  <!-- SCRIPT ENGINE -->
+  <!-- SCRIPT ENGINE & LOGIC -->
   <script src="data.js"></script>
   <script>
+    let activeChannel = 'telegram'; // 'telegram' or 'email'
+
     document.addEventListener("DOMContentLoaded", () => {
-      // Initialize Lucide Vector Icons
       if (typeof lucide !== 'undefined') lucide.createIcons();
 
-      // 1. POPULATE MONTHLY AUDIT TABLE
+      // 1. POPULATE SEPTEMBER MONTHLY REPORT
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
         const monthly = VirtualLibraryData.monthlyReport.participants;
         const tbody = document.getElementById("monthlyTableBody");
@@ -524,7 +640,7 @@
         }).join('');
       }
 
-      // 2. POPULATE STREAK VAULT (WITH TIER BADGES)
+      // 2. POPULATE STREAK VAULT
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
         const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
         const grid = document.getElementById("streakGrid");
@@ -532,7 +648,7 @@
           const rank = index + 1;
           const isFrozen = item.status === "FROZEN";
 
-          // Dynamic Discipline Tiers
+          // Dynamic Tier Calculation
           let tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Contender</span>`;
           if (item.streak >= 300) {
             tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-500/50">Sovereign Apex</span>`;
@@ -573,47 +689,262 @@
         }).join('');
       }
 
-      // Re-run Lucide on newly injected template tags
       if (typeof lucide !== 'undefined') lucide.createIcons();
     });
 
-    // UNIFIED SEARCH WITH ZERO-STATE DETECTION
-    function filterLeaderboards() {
-      const query = document.getElementById('memberSearchInput').value.toLowerCase().trim();
-      
+    // ==========================================
+    // GLOBAL DOSSIER SEARCH ("Search Your Name")
+    // ==========================================
+    function handleGlobalSearch(event) {
+      if (event.key === 'Enter') {
+        triggerDossierSearch();
+      }
+    }
+
+    function triggerDossierSearch() {
+      const query = document.getElementById('globalNameSearchInput').value.trim();
+      if (!query) return;
+
+      const qLower = query.toLowerCase();
+      let matchedStreak = null;
+      let streakRank = null;
+      let matchedMonthly = null;
+      let monthlyRank = null;
+      let milestonesFound = [];
+
+      // Inspect Streaks
+      if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
+        const sortedStreaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
+        sortedStreaks.forEach((item, index) => {
+          if (item.name.toLowerCase().includes(qLower)) {
+            matchedStreak = item;
+            streakRank = index + 1;
+          }
+        });
+      }
+
+      // Inspect Monthly Standings
+      if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
+        VirtualLibraryData.monthlyReport.participants.forEach((p, index) => {
+          if (p.name.toLowerCase().includes(qLower)) {
+            matchedMonthly = p;
+            monthlyRank = index + 1;
+          }
+        });
+      }
+
+      // Inspect All-Time Milestones
+      if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.milestones) {
+        const m = VirtualLibraryData.milestones;
+        if (m.peakDailyRecord && m.peakDailyRecord.holder.toLowerCase().includes(qLower)) {
+          milestonesFound.push({ title: "Highest Single-Day Focus Record", stat: m.peakDailyRecord.time });
+        }
+        if (m.peakStreakRecord && m.peakStreakRecord.holder.toLowerCase().includes(qLower)) {
+          milestonesFound.push({ title: "All-Time Active Streak Legend", stat: m.peakStreakRecord.streak });
+        }
+        if (m.septemberPeak && m.septemberPeak.holder.toLowerCase().includes(qLower)) {
+          milestonesFound.push({ title: "September 2026 Monthly Champion", stat: m.septemberPeak.time });
+        }
+        if (m.apexClubCount && m.apexClubCount.members.toLowerCase().includes(qLower)) {
+          milestonesFound.push({ title: "Apex 300+ Days Unbroken Member", stat: "Active Tier" });
+        }
+      }
+
+      const modal = document.getElementById('dossierModal');
+      const container = document.getElementById('dossierModalContent');
+
+      if (!matchedStreak && !matchedMonthly && milestonesFound.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 space-y-4">
+            <div class="w-12 h-12 rounded-full bg-rose-950/60 text-rose-400 border border-rose-800 flex items-center justify-center mx-auto">
+              <i data-lucide="user-x" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-display font-bold text-2xl text-white">No Record Located</h4>
+            <p class="text-slate-400 text-sm max-w-sm mx-auto">Could not find official verification records under "<strong class="text-white">${query}</strong>". Check spelling or browse the full registry.</p>
+          </div>
+        `;
+      } else {
+        const scholarName = matchedStreak?.name || matchedMonthly?.name || query.toUpperCase();
+
+        let milestoneCards = milestonesFound.map(m => `
+          <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold block">Hall of Fame Benchmark</span>
+              <span class="text-sm font-bold text-white">${m.title}</span>
+            </div>
+            <span class="font-mono font-extrabold text-amber-300 text-base">${m.stat}</span>
+          </div>
+        `).join('');
+
+        container.innerHTML = `
+          <div class="space-y-6">
+            <div class="border-b border-white/10 pb-4">
+              <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Verified Scholar Dossier</div>
+              <h3 class="font-display font-extrabold text-3xl text-white tracking-tight mt-1">${scholarName}</h3>
+              <p class="text-xs font-mono text-emerald-400 mt-1 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Official Registry Verified Scholar
+              </p>
+            </div>
+
+            <!-- Milestones Area -->
+            ${milestonesFound.length > 0 ? `
+              <div class="space-y-2">
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Pinnacle Benchmark Entries</div>
+                <div class="grid gap-2">${milestoneCards}</div>
+              </div>
+            ` : ''}
+
+            <!-- Metrics Grid -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <!-- Streak Stats -->
+              <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>Streak Vault Standing</span>
+                  <span class="text-rose-400 font-bold">${matchedStreak ? '#' + String(streakRank).padStart(2, '0') : 'Unranked'}</span>
+                </div>
+                <div class="font-display font-extrabold text-3xl text-amber-400">
+                  ${matchedStreak ? matchedStreak.streak + ' <span class="text-sm text-slate-400 font-sans font-normal">Days</span>' : 'N/A'}
+                </div>
+                <div class="text-[11px] font-mono text-slate-400">Status: <strong class="text-white">${matchedStreak?.status || 'N/A'}</strong></div>
+              </div>
+
+              <!-- Monthly Stats -->
+              <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>September 2026 Rank</span>
+                  <span class="text-cyan-400 font-bold">${matchedMonthly ? '#' + String(monthlyRank).padStart(2, '0') : 'Unranked'}</span>
+                </div>
+                <div class="font-display font-extrabold text-3xl text-white">
+                  ${matchedMonthly ? matchedMonthly.time : 'N/A'}
+                </div>
+                <div class="text-[11px] font-mono text-slate-400">Days Logged: <strong class="text-white">${matchedMonthly?.daysAppeared || 0} Days</strong></div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-slate-400 font-mono">
+              Participating in: <strong>24/7 Monitored Sessions</strong> &bull; Face & Desk Verified Feeds.
+            </div>
+          </div>
+        `;
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('modal-active');
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function closeDossierModal() {
+      const modal = document.getElementById('dossierModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('modal-active');
+    }
+
+    // ==========================================
+    // FILTERING (BOTH MONTHLY & STREAKS)
+    // ==========================================
+    function filterBothViews(query) {
+      const q = query.toLowerCase().trim();
+
+      // Filter Monthly Rows
       let visibleRows = 0;
       document.querySelectorAll('.member-row').forEach(row => {
         const name = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
-        const match = name.includes(query);
+        const match = name.includes(q);
         row.style.display = match ? '' : 'none';
         if (match) visibleRows++;
       });
       document.getElementById('monthlyZeroState').style.display = (visibleRows === 0) ? 'block' : 'none';
 
+      // Filter Streak Cards
       let visibleCards = 0;
       document.querySelectorAll('.streak-card').forEach(card => {
         const name = card.querySelector('.streak-name')?.textContent.toLowerCase() || '';
-        const match = name.includes(query);
+        const match = name.includes(q);
         card.style.display = match ? 'flex' : 'none';
         if (match) visibleCards++;
       });
       document.getElementById('streakZeroState').style.display = (visibleCards === 0) ? 'block' : 'none';
     }
 
-    // ONE-CLICK COPY HELPER
-    function copyToClipboard(text, btnElement) {
-      navigator.clipboard.writeText(text).then(() => {
-        const originalHTML = btnElement.innerHTML;
-        btnElement.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i><span>Copied!</span>`;
-        if (typeof lucide !== 'undefined') lucide.createIcons();
+    // ==========================================
+    // MEMBER ROUTING MODAL LOGIC (DM / EMAIL)
+    // ==========================================
+    function openJoinModal(channel) {
+      activeChannel = channel;
+      document.getElementById('modalStep1').classList.remove('hidden');
+      document.getElementById('modalStep2').classList.add('hidden');
+      
+      const modal = document.getElementById('joinModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('modal-active');
+    }
+
+    function closeJoinModal() {
+      const modal = document.getElementById('joinModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('modal-active');
+    }
+
+    function handleStatusSelection(status) {
+      if (status === 'old') {
+        // Direct redirection for verified old members
+        if (activeChannel === 'telegram') {
+          window.open('https://t.me/VirtualLibraryAdmin', '_blank');
+        } else {
+          window.location.href = 'mailto:virtualfocusmod@gmail.com?subject=Virtual%20Library%20Member%20Check-In';
+        }
+        closeJoinModal();
+      } else {
+        // Switch to the mandatory questions form for new joiners
+        document.getElementById('modalStep1').classList.add('hidden');
+        document.getElementById('modalStep2').classList.remove('hidden');
+      }
+    }
+
+    function backToStep1() {
+      document.getElementById('modalStep2').classList.add('hidden');
+      document.getElementById('modalStep1').classList.remove('hidden');
+    }
+
+    // SUBMIT & CLIPBOARD ONLY ANSWERS
+    function submitNewJoinerForm(event) {
+      event.preventDefault();
+
+      const prep = document.getElementById('q_prep').value.trim();
+      const meetname = document.getElementById('q_meetname').value.trim();
+      const camera = document.getElementById('q_camera').value;
+      const source = document.getElementById('q_source').value.trim();
+      const nameCity = document.getElementById('q_namecity').value.trim();
+      const query = document.getElementById('q_query').value.trim();
+
+      // ANSWERS ONLY (No question text included as requested)
+      const answersOnlyPayload = 
+`Exam: ${prep}
+Meet Name: ${meetname}
+Camera Setup: ${camera}
+Referral Source: ${source}${nameCity ? '\nIdentity & City: ' + nameCity : ''}${query ? '\nQuery: ' + query : ''}`;
+
+      // Copy payload to clipboard
+      navigator.clipboard.writeText(answersOnlyPayload).then(() => {
+        const btn = document.getElementById('submitBtnLabel');
+        btn.textContent = "Answers Copied to Clipboard!";
+
         setTimeout(() => {
-          btnElement.innerHTML = originalHTML;
-          if (typeof lucide !== 'undefined') lucide.createIcons();
-        }, 2000);
+          if (activeChannel === 'telegram') {
+            window.open('https://t.me/VirtualLibraryAdmin', '_blank');
+          } else {
+            const subject = encodeURIComponent('New Member Verification - ' + meetname);
+            const body = encodeURIComponent(answersOnlyPayload);
+            window.location.href = `mailto:virtualfocusmod@gmail.com?subject=${subject}&body=${body}`;
+          }
+          closeJoinModal();
+        }, 800);
       });
     }
 
-    // LIGHTBOX CONTROLS
+    // ==========================================
+    // LIGHTBOX / ZOOM LOGIC
+    // ==========================================
     function openLightbox(imgSrc, caption) {
       const modal = document.getElementById('imageLightbox');
       document.getElementById('lightboxImg').src = imgSrc;
@@ -629,7 +960,11 @@
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeDossierModal();
+        closeJoinModal();
+      }
     });
   </script>
 </body>
