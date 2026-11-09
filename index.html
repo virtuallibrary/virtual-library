@@ -81,6 +81,15 @@
       to { opacity: 1; transform: scale(1); }
     }
 
+    /* Automated SVG Ring Build Keyframes */
+    @keyframes drawRing {
+      0% { stroke-dashoffset: 290; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .animate-ring-draw {
+      animation: drawRing 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    }
+
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #040507; }
     ::-webkit-scrollbar-thumb { background: #1C2230; border-radius: 999px; }
@@ -89,6 +98,45 @@
 </head>
 
 <body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen">
+
+  <!-- ============================================================= -->
+  <!-- AUTOMATED INTRO LOGO BUILD PRELOADER (100% Code-Animated)     -->
+  <!-- ============================================================= -->
+  <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+    <div class="relative flex flex-col items-center">
+      
+      <!-- SVG Animated Contour Ring Tracing -->
+      <div class="relative w-28 h-28 flex items-center justify-center">
+        <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="3" />
+          <circle id="buildCircle" cx="50" cy="50" r="46" fill="none" stroke="url(#preloaderGrad)" stroke-width="3.5"
+                  stroke-dasharray="290" stroke-dashoffset="290" stroke-linecap="round" />
+          <defs>
+            <linearGradient id="preloaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF2A85" />
+              <stop offset="50%" stop-color="#EAB308" />
+              <stop offset="100%" stop-color="#00F5FF" />
+            </linearGradient>
+          </defs>
+        </svg>
+        
+        <!-- Center Logo Core Reveal -->
+        <div id="buildLogo" class="w-20 h-20 rounded-full overflow-hidden p-[2px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan opacity-0 scale-75 transition-all duration-700 ease-out shadow-[0_0_25px_rgba(234,179,8,0.35)]">
+          <div class="w-full h-full bg-[#0A0C12] rounded-full overflow-hidden flex items-center justify-center">
+            <img src="logo.png" alt="VL" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="font-display font-bold text-accent-gold text-lg tracking-wider hidden">VL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography Staggered Reveal -->
+      <div id="buildText" class="mt-6 text-center opacity-0 translate-y-3 transition-all duration-700 ease-out">
+        <div class="font-display font-black tracking-[0.25em] text-white text-base">VIRTUAL LIBRARY</div>
+        <div class="text-[9px] font-mono tracking-[0.35em] text-amber-400/90 uppercase mt-1">24/7 Focus Study Session</div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- SOVEREIGN TOP ACCENT -->
   <div class="india-strip sticky top-0 z-[100]"></div>
@@ -135,7 +183,6 @@
 
   <!-- IMMERSIVE EDITORIAL HERO -->
   <section class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
-    <!-- Ambient Radiance Background -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
 
     <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
@@ -272,7 +319,6 @@
         <p class="text-slate-400 text-sm">Verified camera-checked study hours and recorded attendance logs.</p>
       </div>
 
-      <!-- Filter Input Specific to Tables -->
       <div class="w-full md:w-80 relative">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"></i>
         <input type="text" id="tableFilterInput" onkeyup="filterBothViews(this.value)" placeholder="Filter table or streaks..." 
@@ -338,7 +384,7 @@
     </div>
   </section>
 
-  <!-- EXPANDED RULES & PROTOCOLS (CLEAN LARGE DISPLAY) -->
+  <!-- EXPANDED RULES & PROTOCOLS -->
   <section id="protocols" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="max-w-2xl mx-auto text-center mb-16 space-y-3">
       <div class="text-[11px] font-mono tracking-[0.25em] text-slate-400 uppercase font-bold">Operational Framework</div>
@@ -363,7 +409,7 @@
             Both <strong>Face Cam</strong> and <strong>Desk Cam</strong> setups are completely permitted. Microphones remain permanently muted.
           </p>
 
-          <!-- Large High-Visibility Graphic Container with Zoom Button -->
+          <!-- Large Graphic Container with Zoom Overlay -->
           <div class="relative w-full min-h-[460px] max-h-[600px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center p-4 overflow-hidden group">
             <img src="meet-rules.jpg" onclick="openLightbox('meet-rules.jpg', 'Daily Google Meet Rules')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-300" alt="Daily Meet Rules">
             
@@ -372,7 +418,6 @@
               <span class="text-xs font-mono text-slate-400">Place <code class="text-cyan-400 font-bold">meet-rules.jpg</code> in the root folder to display infographic.</span>
             </div>
 
-            <!-- Prominent Zoom Overlay Pill -->
             <button onclick="openLightbox('meet-rules.jpg', 'Daily Google Meet Rules')" class="absolute top-4 right-4 bg-black/80 hover:bg-black text-white text-xs font-mono px-3 py-2 rounded-xl border border-white/20 shadow-xl flex items-center gap-1.5 transition">
               <i data-lucide="maximize-2" class="w-4 h-4 text-cyan-400"></i> Click to Zoom Fullscreen
             </button>
@@ -395,7 +440,7 @@
             Seasonal competitions hold squads to rigorous minimum weekly focus hours. Unannounced dropouts are replaced by waitlist reserves.
           </p>
 
-          <!-- Large High-Visibility Graphic Container with Zoom Button -->
+          <!-- Large Graphic Container with Zoom Overlay -->
           <div class="relative w-full min-h-[460px] max-h-[600px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center p-4 overflow-hidden group">
             <img src="competition-rules.jpg" onclick="openLightbox('competition-rules.jpg', 'Squad Competition Directives')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-300" alt="Competition Regulations">
             
@@ -404,7 +449,6 @@
               <span class="text-xs font-mono text-slate-400">Place <code class="text-rose-400 font-bold">competition-rules.jpg</code> in the root folder to display infographic.</span>
             </div>
 
-            <!-- Prominent Zoom Overlay Pill -->
             <button onclick="openLightbox('competition-rules.jpg', 'Squad Competition Directives')" class="absolute top-4 right-4 bg-black/80 hover:bg-black text-white text-xs font-mono px-3 py-2 rounded-xl border border-white/20 shadow-xl flex items-center gap-1.5 transition">
               <i data-lucide="maximize-2" class="w-4 h-4 text-rose-400"></i> Click to Zoom Fullscreen
             </button>
@@ -474,25 +518,18 @@
   <!-- ============================================================= -->
   <div id="dossierModal" class="fixed inset-0 z-[250] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="relative w-full max-w-2xl bg-obsidian-card border border-obsidian-border rounded-3xl p-8 max-h-[90vh] overflow-y-auto shadow-2xl">
-      
-      <!-- Close Button -->
       <button onclick="closeDossierModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-xl bg-white/5 hover:bg-white/10 transition">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
-
-      <div id="dossierModalContent">
-        <!-- Injected via JavaScript -->
-      </div>
+      <div id="dossierModalContent"></div>
     </div>
   </div>
 
   <!-- ============================================================= -->
-  <!-- MODAL 2: MEMBER ROUTING & QUESTIONNAIRE MODAL (DM / EMAIL)   -->
+  <!-- MODAL 2: MEMBER ROUTING & QUESTIONNAIRE MODAL                -->
   <!-- ============================================================= -->
   <div id="joinModal" class="fixed inset-0 z-[250] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="relative w-full max-w-xl bg-obsidian-card border border-obsidian-border rounded-3xl p-8 max-h-[92vh] overflow-y-auto shadow-2xl">
-      
-      <!-- Close Button -->
       <button onclick="closeJoinModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-xl bg-white/5 hover:bg-white/10 transition">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
@@ -524,12 +561,12 @@
         </div>
       </div>
 
-      <!-- Step 2: New Joiner Questionnaire (Clean Answers-Only Copy) -->
+      <!-- Step 2: New Joiner Questionnaire -->
       <div id="modalStep2" class="hidden space-y-6">
         <div class="space-y-2 border-b border-white/10 pb-4">
           <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Security Pre-Screening</div>
           <h3 class="font-display font-bold text-2xl text-white">New Scholar Verification</h3>
-          <p class="text-slate-400 text-xs">Fill in your answers below. Clicking send will copy <strong>only your answers</strong> directly to your clipboard.</p>
+          <p class="text-slate-400 text-xs">Fill in your answers below. Clicking submit will copy <strong>only your answers</strong> directly to your clipboard.</p>
         </div>
 
         <form id="newJoinerForm" onsubmit="submitNewJoinerForm(event)" class="space-y-4 text-xs font-mono">
@@ -604,12 +641,42 @@
   <!-- SCRIPT ENGINE & LOGIC -->
   <script src="data.js"></script>
   <script>
-    let activeChannel = 'telegram'; // 'telegram' or 'email'
+    let activeChannel = 'telegram';
 
     document.addEventListener("DOMContentLoaded", () => {
+      // 1. RUN INTRO LOGO BUILD ANIMATION SEQUENCE (100% AUTOMATIC)
+      const circle = document.getElementById("buildCircle");
+      const logo = document.getElementById("buildLogo");
+      const text = document.getElementById("buildText");
+      const preloader = document.getElementById("introPreloader");
+
+      // Draw SVG Ring
+      circle.classList.add("animate-ring-draw");
+
+      // Reveal Central Logo
+      setTimeout(() => {
+        logo.classList.remove("opacity-0", "scale-75");
+        logo.classList.add("opacity-100", "scale-100");
+      }, 400);
+
+      // Reveal Brand Header Text
+      setTimeout(() => {
+        text.classList.remove("opacity-0", "translate-y-3");
+        text.classList.add("opacity-100", "translate-y-0");
+      }, 950);
+
+      // Dismiss Splash Screen Smoothly
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+        preloader.style.transform = "scale(1.03)";
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 700);
+      }, 1900);
+
       if (typeof lucide !== 'undefined') lucide.createIcons();
 
-      // 1. POPULATE SEPTEMBER MONTHLY REPORT
+      // 2. POPULATE SEPTEMBER MONTHLY REPORT
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
         const monthly = VirtualLibraryData.monthlyReport.participants;
         const tbody = document.getElementById("monthlyTableBody");
@@ -640,7 +707,7 @@
         }).join('');
       }
 
-      // 2. POPULATE STREAK VAULT
+      // 3. POPULATE STREAK VAULT
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
         const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
         const grid = document.getElementById("streakGrid");
@@ -648,7 +715,6 @@
           const rank = index + 1;
           const isFrozen = item.status === "FROZEN";
 
-          // Dynamic Tier Calculation
           let tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Contender</span>`;
           if (item.streak >= 300) {
             tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-500/50">Sovereign Apex</span>`;
@@ -712,7 +778,6 @@
       let monthlyRank = null;
       let milestonesFound = [];
 
-      // Inspect Streaks
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
         const sortedStreaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
         sortedStreaks.forEach((item, index) => {
@@ -723,7 +788,6 @@
         });
       }
 
-      // Inspect Monthly Standings
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
         VirtualLibraryData.monthlyReport.participants.forEach((p, index) => {
           if (p.name.toLowerCase().includes(qLower)) {
@@ -733,7 +797,6 @@
         });
       }
 
-      // Inspect All-Time Milestones
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.milestones) {
         const m = VirtualLibraryData.milestones;
         if (m.peakDailyRecord && m.peakDailyRecord.holder.toLowerCase().includes(qLower)) {
@@ -786,7 +849,6 @@
               </p>
             </div>
 
-            <!-- Milestones Area -->
             ${milestonesFound.length > 0 ? `
               <div class="space-y-2">
                 <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Pinnacle Benchmark Entries</div>
@@ -794,9 +856,7 @@
               </div>
             ` : ''}
 
-            <!-- Metrics Grid -->
             <div class="grid sm:grid-cols-2 gap-4">
-              <!-- Streak Stats -->
               <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
                 <div class="flex items-center justify-between text-xs font-mono text-slate-400">
                   <span>Streak Vault Standing</span>
@@ -808,7 +868,6 @@
                 <div class="text-[11px] font-mono text-slate-400">Status: <strong class="text-white">${matchedStreak?.status || 'N/A'}</strong></div>
               </div>
 
-              <!-- Monthly Stats -->
               <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
                 <div class="flex items-center justify-between text-xs font-mono text-slate-400">
                   <span>September 2026 Rank</span>
@@ -822,7 +881,7 @@
             </div>
 
             <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-slate-400 font-mono">
-              Participating in: <strong>24/7 Monitored Sessions</strong> &bull; Face & Desk Verified Feeds.
+              Accountability Protocol: <strong>24/7 Verified Camera Feed</strong> &bull; Face & Desk Permitted.
             </div>
           </div>
         `;
@@ -845,7 +904,6 @@
     function filterBothViews(query) {
       const q = query.toLowerCase().trim();
 
-      // Filter Monthly Rows
       let visibleRows = 0;
       document.querySelectorAll('.member-row').forEach(row => {
         const name = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
@@ -855,7 +913,6 @@
       });
       document.getElementById('monthlyZeroState').style.display = (visibleRows === 0) ? 'block' : 'none';
 
-      // Filter Streak Cards
       let visibleCards = 0;
       document.querySelectorAll('.streak-card').forEach(card => {
         const name = card.querySelector('.streak-name')?.textContent.toLowerCase() || '';
@@ -887,7 +944,6 @@
 
     function handleStatusSelection(status) {
       if (status === 'old') {
-        // Direct redirection for verified old members
         if (activeChannel === 'telegram') {
           window.open('https://t.me/VirtualLibraryAdmin', '_blank');
         } else {
@@ -895,7 +951,6 @@
         }
         closeJoinModal();
       } else {
-        // Switch to the mandatory questions form for new joiners
         document.getElementById('modalStep1').classList.add('hidden');
         document.getElementById('modalStep2').classList.remove('hidden');
       }
@@ -917,14 +972,13 @@
       const nameCity = document.getElementById('q_namecity').value.trim();
       const query = document.getElementById('q_query').value.trim();
 
-      // ANSWERS ONLY (No question text included as requested)
+      // ANSWERS ONLY (No repeated question prompts)
       const answersOnlyPayload = 
 `Exam: ${prep}
 Meet Name: ${meetname}
 Camera Setup: ${camera}
 Referral Source: ${source}${nameCity ? '\nIdentity & City: ' + nameCity : ''}${query ? '\nQuery: ' + query : ''}`;
 
-      // Copy payload to clipboard
       navigator.clipboard.writeText(answersOnlyPayload).then(() => {
         const btn = document.getElementById('submitBtnLabel');
         btn.textContent = "Answers Copied to Clipboard!";
