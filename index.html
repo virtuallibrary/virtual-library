@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Library | Official Platform</title>
-  <meta name="description" content="Official 24/7 camera-monitored silent study community, live streak tracking, verified monthly focus reports, and team competitions." />
+  <title>Virtual Library | 24/7 Focus Study Session</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -20,15 +19,22 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
+            orbitron: ['Orbitron', 'sans-serif'],
           },
           colors: {
-            surface: {
-              base: '#0B0C10',
-              card: '#12141A',
-              cardHover: '#181B22',
-              border: '#1F242D',
-              borderLight: '#2D3543'
+            cyber: {
+              bg: '#05050A',
+              card: '#0D0D19',
+              cardBorder: '#1F1F38',
+              accentPink: '#FF007F',
+              accentCyan: '#00F0FF',
+              textMain: '#FFFFFF',
+              textSub: '#A5A5C7'
             }
+          },
+          boxShadow: {
+            neonPink: '0 0 25px rgba(255, 0, 127, 0.45)',
+            neonCyan: '0 0 25px rgba(0, 240, 255, 0.45)',
           }
         }
       }
@@ -36,182 +42,207 @@
   </script>
 
   <style>
-    ::-webkit-scrollbar { width: 7px; height: 7px; }
-    ::-webkit-scrollbar-track { background: #0B0C10; }
-    ::-webkit-scrollbar-thumb { background: #1F242D; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #2D3543; }
-    .glass-nav {
-      background: rgba(11, 12, 16, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    /* Indian Flag Gradient Top Strip */
+    .india-flag-banner {
+      height: 6px;
+      background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%, #138808 100%);
+      box-shadow: 0 0 15px rgba(255, 153, 51, 0.6), 0 0 15px rgba(19, 136, 8, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #05050A; }
+    ::-webkit-scrollbar-thumb { background: #2A2A50; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FF007F; }
+    
+    .cyber-glass {
+      background: rgba(13, 13, 25, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 240, 255, 0.2);
     }
   </style>
 </head>
 
-<body class="bg-[#0B0C10] text-neutral-200 antialiased font-sans selection:bg-amber-500 selection:text-black">
+<body class="bg-cyber-bg text-cyber-textMain antialiased font-sans selection:bg-cyber-accentPink selection:text-white">
 
-  <!-- TOP NAVIGATION -->
-  <header class="sticky top-0 z-50 glass-nav border-b border-surface-border">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-amber-400 p-[1px] shadow-lg shadow-amber-500/20 group-hover:scale-105 transition duration-200">
-          <div class="w-full h-full bg-[#0B0C10] rounded-[11px] flex items-center justify-center overflow-hidden">
-            <img src="logo.png" alt="VL" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="font-extrabold text-amber-400 font-mono text-sm tracking-tighter hidden items-center justify-center">VL</span>
+  <!-- TOP INDIAN FLAG PRIDE STRIP -->
+  <div class="india-flag-banner"></div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-[6px] z-50 cyber-glass">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      
+      <!-- Circular Logo & Branding -->
+      <a href="#" class="flex items-center gap-4 group">
+        <div class="relative w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-cyber-accentCyan via-purple-500 to-cyber-accentPink shadow-neonPink group-hover:scale-105 transition duration-300">
+          <div class="w-full h-full bg-cyber-bg rounded-full flex items-center justify-center overflow-hidden">
+            <img src="logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="font-black text-cyber-accentCyan font-mono text-lg hidden">VL</span>
           </div>
         </div>
         <div>
-          <span class="font-extrabold tracking-tight text-white text-lg block leading-tight">VIRTUAL LIBRARY</span>
-          <span class="text-[10px] text-amber-500 font-mono tracking-widest font-semibold uppercase">24/7 Focus Collective</span>
+          <span class="font-orbitron font-black tracking-wider text-white text-xl block leading-none bg-gradient-to-r from-white via-cyan-100 to-cyber-accentCyan bg-clip-text text-transparent">VIRTUAL LIBRARY</span>
+          <span class="text-xs text-cyber-accentPink font-mono tracking-widest font-bold uppercase mt-1.5 block">24/7 Focus Study Session</span>
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-400">
-        <a href="#milestones" class="hover:text-amber-400 transition">Hall of Fame</a>
-        <a href="#monthly" class="hover:text-amber-400 transition">Monthly Reports</a>
-        <a href="#streaks" class="hover:text-amber-400 transition">Streak Vault</a>
-        <a href="#competitions" class="hover:text-amber-400 transition">Competitions</a>
-        <a href="#rules" class="hover:text-amber-400 transition">Rules & Protocol</a>
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-cyber-textSub">
+        <a href="#milestones" class="hover:text-cyber-accentCyan transition duration-200">Hall of Fame</a>
+        <a href="#monthly" class="hover:text-cyber-accentCyan transition duration-200">Monthly Reports</a>
+        <a href="#streaks" class="hover:text-cyber-accentCyan transition duration-200">Streak Vault</a>
+        <a href="#rules" class="hover:text-cyber-accentCyan transition duration-200">Rules & Protocol</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> GMeet Live 24/7
+      <!-- CTA Buttons -->
+      <div class="flex items-center gap-4">
+        <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-cyan-400 bg-cyan-950/40 border border-cyan-500/30 px-3.5 py-1.5 rounded-full shadow-inner">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span> Live 24/7
         </div>
         <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer" 
-           class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black bg-amber-400 hover:bg-amber-300 rounded-lg transition flex items-center gap-2 shadow-md shadow-amber-500/10">
-          <i class="fa-brands fa-telegram text-sm"></i> <span>Join Room</span>
+           class="px-5 py-2.5 text-xs font-extrabold uppercase tracking-widest text-black bg-gradient-to-r from-cyber-accentCyan to-blue-400 hover:brightness-110 rounded-xl transition shadow-neonCyan flex items-center gap-2">
+          <i class="fa-brands fa-telegram text-base"></i> <span>Join Room</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative py-24 px-6 border-b border-surface-border overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.08),transparent_70%)] pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card border border-surface-border text-xs font-mono text-neutral-300">
-        <i class="fa-solid fa-shield-halved text-amber-400"></i> Zero AFK &bull; Desk Cam Only &bull; Verified Loggers
+  <section class="relative py-28 px-6 border-b border-cyber-cardBorder overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyber-accentPink/15 blur-[120px] pointer-events-none rounded-full"></div>
+    <div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-cyber-accentCyan/10 blur-[140px] pointer-events-none rounded-full"></div>
+    
+    <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
+      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-cyber-card border border-cyber-cardBorder text-xs font-mono text-cyber-accentCyan shadow-lg">
+        <i class="fa-solid fa-skull-crossbones text-cyber-accentPink animate-pulse"></i> ZERO TOLERANCE FOR PROCRASTINATION &bull; DESK CAM ONLY
       </div>
-      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
-        Disciplined Focus.<br>
-        <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">
-          Unyielding Consistency.
+      
+      <h1 class="text-5xl sm:text-7xl font-orbitron font-black text-white tracking-tight leading-none">
+        DEEP WORK.<br>
+        <span class="bg-gradient-to-r from-cyber-accentPink via-purple-400 to-cyber-accentCyan bg-clip-text text-transparent drop-shadow-lg">
+          QUANTUM FOCUS.
         </span>
       </h1>
-      <p class="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-        The official digital scoreboard for the Virtual Library collective. Inspect verified monthly study hours, search your active streak rank, and review seasonal battle records.
+      
+      <p class="text-cyber-textSub text-base sm:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+        Welcome to the Virtual Library command center. Inspect verified desk hours, track relentless consistency streaks, and eliminate distractions.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center pt-4">
-        <a href="#monthly" class="px-6 py-3 bg-surface-card hover:bg-surface-cardHover border border-surface-border text-white text-sm font-semibold rounded-xl transition flex items-center gap-2">
-          <i class="fa-solid fa-calendar-check text-amber-400"></i> September Report
+      
+      <div class="flex flex-wrap gap-5 justify-center pt-4">
+        <a href="#monthly" class="px-8 py-4 bg-cyber-card hover:bg-zinc-900 border border-cyber-cardBorder text-white text-sm font-bold rounded-2xl transition shadow-xl hover:border-cyber-accentPink flex items-center gap-3 group">
+          <i class="fa-solid fa-chart-line text-cyber-accentPink group-hover:scale-125 transition"></i> September Standings
         </a>
-        <a href="#streaks" class="px-6 py-3 bg-surface-card hover:bg-surface-cardHover border border-surface-border text-white text-sm font-semibold rounded-xl transition flex items-center gap-2">
-          <i class="fa-solid fa-fire text-amber-400"></i> Streak Leaderboard
+        <a href="#streaks" class="px-8 py-4 bg-cyber-card hover:bg-zinc-900 border border-cyber-cardBorder text-white text-sm font-bold rounded-2xl transition shadow-xl hover:border-cyber-accentCyan flex items-center gap-3 group">
+          <i class="fa-solid fa-fire text-amber-400 group-hover:scale-125 transition"></i> Live Streak Vault
         </a>
       </div>
     </div>
   </section>
 
-  <!-- HALL OF FAME / REAL MILESTONES -->
-  <section id="milestones" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
-    <div class="mb-10 text-center max-w-2xl mx-auto">
-      <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
-        <i class="fa-solid fa-trophy"></i> Elite Consistency Arena
+  <!-- HALL OF FAME / MILESTONE ARENA -->
+  <section id="milestones" class="py-24 px-6 max-w-7xl mx-auto border-b border-cyber-cardBorder">
+    <div class="mb-16 text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-950/50 text-purple-300 border border-purple-800 text-xs font-mono uppercase tracking-widest font-bold mb-3">
+        <i class="fa-solid fa-crown text-amber-400"></i> Immortal Records
       </div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Hall of Fame Milestones</h2>
-      <p class="text-neutral-400 text-sm mt-1">Recognizing peak endurance records from active audits.</p>
+      <h2 class="text-4xl sm:text-5xl font-orbitron font-black text-white tracking-tight">Hall of Fame Milestones</h2>
+      <p class="text-cyber-textSub text-base mt-2">Pinnacle achievements etched permanently into Virtual Library history.</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">Peak Streak Record</div>
-        <div class="text-3xl font-extrabold text-amber-400 font-mono flex items-center gap-2">
-          <i class="fa-solid fa-fire text-orange-500"></i> 351
-          <span class="text-xs text-neutral-400 font-sans font-medium">Days</span>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Devika Jain Highlighted Record -->
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-cyber-accentPink/20 via-cyber-card to-cyber-card border-2 border-cyber-accentPink shadow-neonPink relative group overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-cyber-accentPink/10 rounded-full blur-2xl group-hover:scale-150 transition duration-500"></div>
+        <div class="text-[11px] font-mono uppercase tracking-widest text-cyber-accentPink mb-2 font-black">All-Time Peak Output</div>
+        <div class="text-4xl font-extrabold text-white font-mono flex items-center gap-2 my-2">
+          <i class="fa-solid fa-bolt text-amber-400"></i> 22h 39m
         </div>
-        <div class="mt-4 pt-3 border-t border-surface-border">
-          <div class="text-white text-sm font-bold">Vansh Yadav</div>
-          <div class="text-xs text-emerald-400 font-mono mt-0.5">Top Active Streak</div>
-        </div>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">September Month Peak</div>
-        <div class="text-3xl font-extrabold text-amber-400 font-mono flex items-center gap-2">
-          <i class="fa-solid fa-bolt text-amber-300"></i> 415h 30m
-        </div>
-        <div class="mt-4 pt-3 border-t border-surface-border">
-          <div class="text-white text-sm font-bold">Vansh Yadav</div>
-          <div class="text-xs text-neutral-400 font-mono mt-0.5">29 Days Verified</div>
+        <div class="mt-6 pt-4 border-t border-white/10">
+          <div class="text-white text-lg font-black tracking-wide">Devika Jain</div>
+          <div class="text-xs text-cyber-accentPink font-mono mt-1 font-bold">Highest Single Day Record</div>
         </div>
       </div>
 
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">300+ Days Club</div>
-        <div class="text-3xl font-extrabold text-emerald-400 font-mono flex items-center gap-2">
-          <i class="fa-solid fa-crown text-amber-400"></i> 03
-          <span class="text-xs text-neutral-400 font-sans font-medium">Members</span>
+      <!-- Vansh Longest Streak Record -->
+      <div class="p-8 rounded-3xl bg-cyber-card border border-cyber-cardBorder hover:border-amber-500 transition duration-300 relative">
+        <div class="text-[11px] font-mono uppercase tracking-widest text-cyber-textSub mb-2 font-bold">Peak Streak Record</div>
+        <div class="text-4xl font-extrabold text-white font-mono flex items-center gap-2 my-2">
+          <i class="fa-solid fa-fire text-orange-500"></i> 351 <span class="text-base text-cyber-textSub font-sans font-normal">Days</span>
         </div>
-        <div class="mt-4 pt-3 border-t border-surface-border">
-          <div class="text-white text-sm font-bold">Vansh, Ekus, Vandana</div>
-          <div class="text-xs text-neutral-400 font-mono mt-0.5">Apex Consistency</div>
+        <div class="mt-6 pt-4 border-t border-white/5">
+          <div class="text-white text-lg font-bold">Vansh Yadav</div>
+          <div class="text-xs text-emerald-400 font-mono mt-1 font-bold">Absolute Streak Titan</div>
         </div>
       </div>
 
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">Tournament Archive</div>
-        <div class="text-3xl font-extrabold text-amber-400 font-mono flex items-center gap-2">
-          <i class="fa-solid fa-flag-checkered text-amber-400"></i> 05
-          <span class="text-xs text-neutral-400 font-sans font-medium">Seasons</span>
+      <!-- Apex Club -->
+      <div class="p-8 rounded-3xl bg-cyber-card border border-cyber-cardBorder hover:border-cyan-500 transition duration-300 relative">
+        <div class="text-[11px] font-mono uppercase tracking-widest text-cyber-textSub mb-2 font-bold">300+ Days Apex Club</div>
+        <div class="text-4xl font-extrabold text-white font-mono flex items-center gap-2 my-2">
+          <i class="fa-solid fa-shield-halved text-cyan-400"></i> 03 <span class="text-base text-cyber-textSub font-sans font-normal">Legends</span>
         </div>
-        <div class="mt-4 pt-3 border-t border-surface-border">
-          <div class="text-white text-sm font-bold">Season 6 Incoming</div>
-          <div class="text-xs text-amber-500 font-mono mt-0.5">Active Prep</div>
+        <div class="mt-6 pt-4 border-t border-white/5">
+          <div class="text-white text-lg font-bold">Vansh, Ekus, Vandana</div>
+          <div class="text-xs text-cyan-400 font-mono mt-1 font-bold">Unbroken Consistency</div>
         </div>
       </div>
+
+      <!-- September Record -->
+      <div class="p-8 rounded-3xl bg-cyber-card border border-cyber-cardBorder hover:border-purple-500 transition duration-300 relative">
+        <div class="text-[11px] font-mono uppercase tracking-widest text-cyber-textSub mb-2 font-bold">Monthly Peak Record</div>
+        <div class="text-4xl font-extrabold text-white font-mono flex items-center gap-2 my-2">
+          <i class="fa-solid fa-trophy text-purple-400"></i> 415h 30m
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/5">
+          <div class="text-white text-lg font-bold">Vansh Yadav</div>
+          <div class="text-xs text-purple-400 font-mono mt-1 font-bold">September 2026 Champion</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- MONTHLY REPORT SECTION (SEPTEMBER 2026) -->
-  <section id="monthly" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
-    <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-8">
+  <!-- MONTHLY FOCUS REPORT -->
+  <section id="monthly" class="py-24 px-6 max-w-7xl mx-auto border-b border-cyber-cardBorder">
+    <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 mb-12">
       <div>
-        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
-          <i class="fa-solid fa-chart-pie"></i> Official Record
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-950/60 text-cyan-400 border border-cyan-800 text-xs font-mono uppercase tracking-widest font-bold mb-3">
+          <i class="fa-regular fa-calendar-check"></i> Audit Archive
         </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Monthly Focus Standings</h2>
-        <p class="text-neutral-400 text-sm mt-1">
-          Verified hours and total active days logged.
-        </p>
+        <h2 class="text-4xl sm:text-5xl font-orbitron font-black text-white tracking-tight">Monthly Focus Standings</h2>
+        <p class="text-cyber-textSub text-base mt-2">Verified desk camera hours and active appearance days.</p>
       </div>
 
-      <!-- Search & Controls -->
-      <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
-        <div class="bg-surface-card border border-surface-border text-amber-400 text-xs font-mono rounded-xl px-4 py-2.5">
-          Cycle: September 2026
-        </div>
-        <div class="relative flex-1 sm:w-64">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-500 text-xs"></i>
-          <input type="text" id="memberSearchInput" onkeyup="filterLeaderboards()" placeholder="Search participant..."
-                 class="w-full bg-surface-card border border-surface-border text-white placeholder-neutral-500 text-xs rounded-xl pl-9 pr-4 py-2.5 outline-none focus:border-amber-400 transition" />
-        </div>
+      <!-- Single Universal Search Box -->
+      <div class="w-full lg:w-80 relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-cyan-400 text-base"></i>
+        <input type="text" id="memberSearchInput" onkeyup="filterLeaderboards()" placeholder="Search scholar name..."
+               class="w-full bg-cyber-card border-2 border-cyber-cardBorder focus:border-cyber-accentCyan text-white placeholder-zinc-600 text-sm rounded-2xl pl-12 pr-4 py-4 outline-none transition shadow-inner font-semibold" />
       </div>
     </div>
 
-    <!-- Monthly Table Container -->
-    <div class="rounded-2xl border border-surface-border bg-surface-card overflow-hidden shadow-2xl">
-      <div class="overflow-x-auto p-2 sm:p-6">
-        <table class="w-full text-left border-collapse text-sm">
+    <div class="rounded-3xl border-2 border-cyber-cardBorder bg-cyber-card overflow-hidden shadow-2xl">
+      <div class="bg-black/40 px-8 py-4 flex items-center justify-between text-xs font-mono text-cyber-textSub border-b border-cyber-cardBorder">
+        <span class="flex items-center gap-2 text-cyber-accentCyan font-bold uppercase tracking-widest">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyber-accentCyan animate-pulse"></span> Active Cycle: September 2026
+        </span>
+        <span>Verified Loggers</span>
+      </div>
+
+      <div class="overflow-x-auto p-4 sm:p-8">
+        <table class="w-full text-left border-collapse">
           <thead>
-            <tr class="border-b border-surface-border text-neutral-400 text-xs font-mono uppercase tracking-wider">
-              <th class="py-4 px-6">Rank</th>
-              <th class="py-4 px-6">Scholar Name</th>
-              <th class="py-4 px-6">Total Hours</th>
-              <th class="py-4 px-6 text-right">Consistency</th>
+            <tr class="border-b border-white/10 text-cyan-400 text-xs font-mono uppercase tracking-widest font-black">
+              <th class="py-5 px-6">Rank</th>
+              <th class="py-5 px-6">Scholar Name</th>
+              <th class="py-5 px-6 text-right">Active Days</th>
+              <th class="py-5 px-6 text-right">Total Hours</th>
             </tr>
           </thead>
-          <tbody id="monthlyTableBody" class="divide-y divide-surface-border text-neutral-300 font-medium">
+          <tbody id="monthlyTableBody" class="divide-y divide-white/5 font-medium text-lg">
             <!-- Populated via data.js -->
           </tbody>
         </table>
@@ -219,83 +250,72 @@
     </div>
   </section>
 
-  <!-- STREAK VAULT (SORTED DESCENDING) -->
-  <section id="streaks" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
-    <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-8">
+  <!-- LIVE STREAK VAULT -->
+  <section id="streaks" class="py-24 px-6 max-w-7xl mx-auto border-b border-cyber-cardBorder">
+    <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-16">
       <div>
-        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
-          <i class="fa-solid fa-fire"></i> Consecutive Desk Days
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-950/60 text-amber-400 border border-amber-800 text-xs font-mono uppercase tracking-widest font-bold mb-3">
+          <i class="fa-solid fa-fire"></i> Unbroken Consistency
         </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Streak Vault</h2>
-        <p class="text-neutral-400 text-sm mt-1">Ranked strictly in descending order of active unbroken study streaks.</p>
+        <h2 class="text-4xl sm:text-5xl font-orbitron font-black text-white tracking-tight">Live Streak Vault</h2>
+        <p class="text-cyber-textSub text-base mt-2">Ranked strictly in descending order of consecutive active study days.</p>
       </div>
-      <div class="text-xs font-mono text-neutral-400 bg-surface-card border border-surface-border px-3.5 py-1.5 rounded-lg">
+      <div class="text-xs font-mono text-amber-400 bg-amber-950/40 border border-amber-500/30 px-5 py-2.5 rounded-xl font-bold">
         Log Date: 08-Nov-2026
       </div>
     </div>
 
-    <div id="streakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Responsive Grid -->
+    <div id="streakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Populated via data.js -->
     </div>
   </section>
 
-  <!-- COMPETITION ARENA (SEASONS 1-5 + 6) -->
-  <section id="competitions" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
-    <div class="max-w-3xl mb-12">
-      <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
-        <i class="fa-solid fa-trophy"></i> Tournament Archive
+  <!-- RULES & PROTOCOL (No Image Cropping) -->
+  <section id="rules" class="py-24 px-6 max-w-7xl mx-auto border-b border-cyber-cardBorder">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-pink-950/60 text-pink-400 border border-pink-800 text-xs font-mono uppercase tracking-widest font-bold mb-3">
+        <i class="fa-solid fa-triangle-exclamation"></i> Mandatory Compliance
       </div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Virtual Competition Arena</h2>
-      <p id="comp-description" class="text-neutral-400 text-sm mt-3 leading-relaxed">
-        <!-- Loaded via data.js -->
-      </p>
+      <h2 class="text-4xl sm:text-5xl font-orbitron font-black text-white tracking-tight">Room & Protocol Regulations</h2>
+      <p class="text-cyber-textSub text-base mt-2">Zero tolerance for inactivity, dark frames, or microphone breaches.</p>
     </div>
 
-    <div id="seasonsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Populated via data.js -->
-    </div>
-  </section>
-
-  <!-- RULES & PROTOCOL WITH IMAGE SLOTS -->
-  <section id="rules" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
-        <i class="fa-solid fa-scale-balanced"></i> Code of Conduct
-      </div>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Room & Competition Regulations</h2>
-      <p class="text-neutral-400 text-sm mt-2">Zero tolerance for inactivity, dark frames, or unauthorized unmuting.</p>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-8">
+    <div class="grid lg:grid-cols-2 gap-12">
       
       <!-- Panel 1: Meet Rules -->
-      <div class="bg-surface-card border border-surface-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+      <div class="bg-cyber-card border-2 border-cyber-cardBorder rounded-3xl p-8 sm:p-12 flex flex-col justify-between shadow-xl relative overflow-hidden group hover:border-cyan-500 transition duration-300">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-video text-amber-400"></i> Daily Google Meet Rules
-            </h3>
-            <span class="text-xs font-mono text-neutral-400 bg-surface-border px-2.5 py-1 rounded">24/7 Monitored</span>
+          <div class="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
+            <div>
+              <span class="text-xs font-mono text-cyan-400 font-bold tracking-widest uppercase block mb-1">Visual Accountability</span>
+              <h3 class="text-2xl font-orbitron font-black text-white flex items-center gap-3">
+                <i class="fa-solid fa-video text-cyan-400 text-3xl"></i> Daily Google Meet Rules
+              </h3>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-950 border border-cyan-500 text-cyan-300 font-bold">24/7 Monitored</span>
           </div>
-          <p class="text-sm text-neutral-400 mb-6 leading-relaxed">
+
+          <p class="text-cyber-textSub text-base mb-8 leading-relaxed">
             The study room operates entirely on silence and visual desk focus. Participants failing camera checks are promptly removed by active session admins.
           </p>
 
-          <div class="w-full h-56 rounded-xl border border-dashed border-surface-borderLight bg-[#0B0C10] flex flex-col items-center justify-center text-center p-4 mb-6 group overflow-hidden">
-            <img src="meet-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover rounded-lg" alt="Meet Rules">
-            <div class="flex-col items-center justify-center text-neutral-500 gap-2">
-              <i class="fa-regular fa-image text-3xl text-neutral-600 mb-1"></i>
-              <span class="text-xs font-mono text-neutral-400">Save Meet Rules Image in:<br><code class="text-amber-400 font-semibold">meet-rules.jpg</code></span>
+          <!-- Infographic Container (object-contain ensures whole image displays without cut) -->
+          <div class="w-full min-h-[320px] max-h-[500px] rounded-2xl border-2 border-dashed border-zinc-700 bg-black/60 flex flex-col items-center justify-center text-center p-4 mb-10 overflow-hidden relative">
+            <img src="meet-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl" alt="Google Meet Rules">
+            <div class="hidden flex-col items-center justify-center text-zinc-500 gap-3 p-6">
+              <i class="fa-regular fa-image text-5xl text-zinc-700"></i>
+              <span class="text-xs font-mono text-zinc-400 max-w-xs">Upload your file as <code class="text-cyan-400 font-bold block mt-1">meet-rules.jpg</code> in your repo</span>
             </div>
           </div>
 
-          <ul class="space-y-3 text-xs text-neutral-300 font-medium">
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+          <ul class="space-y-4 text-sm text-zinc-200">
+            <li class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+              <i class="fa-solid fa-circle-check text-cyan-400 text-xl mt-1"></i>
               <span><strong>Desk & Hands Angle:</strong> Camera must clearly frame your study table, notes, or workstation. Dark screens or ceiling angles are removed without warning.</span>
             </li>
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+            <li class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+              <i class="fa-solid fa-circle-check text-cyan-400 text-xl mt-1"></i>
               <span><strong>Permanent Audio Mute:</strong> Microphones must never be unmuted. All queries and break notices are posted in the Telegram channel.</span>
             </li>
           </ul>
@@ -303,33 +323,38 @@
       </div>
 
       <!-- Panel 2: Competition Rules -->
-      <div class="bg-surface-card border border-surface-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+      <div class="bg-cyber-card border-2 border-cyber-cardBorder rounded-3xl p-8 sm:p-12 flex flex-col justify-between shadow-xl relative overflow-hidden group hover:border-pink-500 transition duration-300">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-shield-cat text-amber-400"></i> Competition Regulations
-            </h3>
-            <span class="text-xs font-mono text-neutral-400 bg-surface-border px-2.5 py-1 rounded">Squad Battles</span>
+          <div class="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
+            <div>
+              <span class="text-xs font-mono text-pink-400 font-bold tracking-widest uppercase block mb-1">Squad Discipline</span>
+              <h3 class="text-2xl font-orbitron font-black text-white flex items-center gap-3">
+                <i class="fa-solid fa-shield-cat text-pink-400 text-3xl"></i> Competition Regulations
+              </h3>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-pink-950 border border-pink-500 text-pink-300 font-bold">Squad Protocol</span>
           </div>
-          <p class="text-sm text-neutral-400 mb-6 leading-relaxed">
+
+          <p class="text-cyber-textSub text-base mb-8 leading-relaxed">
             Competition seasons have stringent verification. Squad points are deducted collectively for unannounced dropouts or fake timers.
           </p>
 
-          <div class="w-full h-56 rounded-xl border border-dashed border-surface-borderLight bg-[#0B0C10] flex flex-col items-center justify-center text-center p-4 mb-6 group overflow-hidden">
-            <img src="competition-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover rounded-lg" alt="Competition Rules">
-            <div class="flex-col items-center justify-center text-neutral-500 gap-2">
-              <i class="fa-regular fa-image text-3xl text-neutral-600 mb-1"></i>
-              <span class="text-xs font-mono text-neutral-400">Save Competition Rules Image in:<br><code class="text-amber-400 font-semibold">competition-rules.jpg</code></span>
+          <!-- Infographic Container (object-contain ensures whole image displays without cut) -->
+          <div class="w-full min-h-[320px] max-h-[500px] rounded-2xl border-2 border-dashed border-zinc-700 bg-black/60 flex flex-col items-center justify-center text-center p-4 mb-10 overflow-hidden relative">
+            <img src="competition-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl" alt="Competition Rules">
+            <div class="hidden flex-col items-center justify-center text-zinc-500 gap-3 p-6">
+              <i class="fa-regular fa-image text-5xl text-zinc-700"></i>
+              <span class="text-xs font-mono text-zinc-400 max-w-xs">Upload your file as <code class="text-pink-400 font-bold block mt-1">competition-rules.jpg</code> in your repo</span>
             </div>
           </div>
 
-          <ul class="space-y-3 text-xs text-neutral-300 font-medium">
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+          <ul class="space-y-4 text-sm text-zinc-200">
+            <li class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+              <i class="fa-solid fa-circle-check text-pink-400 text-xl mt-1"></i>
               <span><strong>Baseline Threshold:</strong> Every registered squad member must log between 5 to 10 weekly hours minimum to prevent squad point deductions.</span>
             </li>
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
+            <li class="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+              <i class="fa-solid fa-circle-check text-pink-400 text-xl mt-1"></i>
               <span><strong>Reserve Replacements:</strong> Unannounced absences lead to instantaneous replacement by waitlisted applicants.</span>
             </li>
           </ul>
@@ -339,26 +364,29 @@
     </div>
   </section>
 
-  <!-- CONTACT & SUPPORT DESK -->
-  <section id="contact" class="py-16 px-6 max-w-4xl mx-auto">
-    <div class="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border text-center">
-      <div class="max-w-xl mx-auto space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono">
-          <i class="fa-solid fa-envelope"></i> Anonymous Community Desk
+  <!-- ADMIN DESK -->
+  <section id="contact" class="py-24 px-6 max-w-4xl mx-auto">
+    <div class="p-10 sm:p-14 rounded-3xl bg-gradient-to-b from-cyber-card to-black border-2 border-purple-500/40 text-center relative shadow-2xl overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-cyber-accentCyan/10 blur-[100px] pointer-events-none"></div>
+      
+      <div class="max-w-xl mx-auto space-y-6 relative z-10">
+        <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-cyber-accentPink/20 text-cyber-accentPink border border-cyber-accentPink/40 text-xs font-mono font-black uppercase tracking-widest shadow-lg">
+          <i class="fa-solid fa-headset text-base"></i> Official Communication Channels
         </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Need to Contact Virtual Library Admin?</h2>
-        <p class="text-neutral-400 text-sm leading-relaxed">
-          For inquiries, streak freeze requests, or competition registration issues. Reach out via Telegram, or dispatch an email directly to our official desk mailbox.
+        
+        <h2 class="text-4xl sm:text-5xl font-orbitron font-black text-white tracking-tight">Need to Contact Admin?</h2>
+        <p class="text-zinc-300 text-base leading-relaxed font-medium">
+          For streak freezes, query support, room links, or competition updates, reach out directly to the official admin account on Telegram, or drop an email.
         </p>
 
-        <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer"
-             class="w-full sm:w-auto px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition flex items-center justify-center gap-2">
-            <i class="fa-brands fa-telegram text-base"></i> DM @ Virtual Library Admin
+        <div class="pt-6 flex flex-col sm:flex-row gap-5 justify-center items-center font-bold">
+          <a href="https://t.me/VirtualLibraryAdmin" target="_blank" rel="noopener noreferrer"
+             class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:brightness-110 text-black text-xs uppercase tracking-widest rounded-2xl transition flex items-center justify-center gap-3 shadow-cyan-500/30 shadow-xl">
+            <i class="fa-brands fa-telegram text-xl"></i> DM @VirtualLibraryAdmin
           </a>
-          <a href="mailto:virtualfocusmode@gmail.com?subject=Virtual%20Library%20Query"
-             class="w-full sm:w-auto px-6 py-3.5 bg-surface-border hover:bg-surface-borderLight text-white font-mono text-xs rounded-xl border border-surface-borderLight transition flex items-center justify-center gap-2">
-            <i class="fa-solid fa-paper-plane text-amber-400"></i> virtualfocusmode@gmail.com
+          <a href="mailto:virtualfocusmod@gmail.com?subject=Virtual%20Library%20Admin%20Query"
+             class="w-full sm:w-auto px-8 py-4 bg-zinc-900 border-2 border-zinc-700 hover:border-cyber-accentPink text-white font-mono text-xs rounded-2xl transition flex items-center justify-center gap-3 shadow-xl">
+            <i class="fa-solid fa-paper-plane text-cyan-400 text-base"></i> virtualfocusmod@gmail.com
           </a>
         </div>
       </div>
@@ -366,145 +394,112 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-surface-border bg-[#0B0C10] py-12 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-500">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-surface-card border border-surface-border flex items-center justify-center text-amber-400 font-bold font-mono">
+  <footer class="border-t border-cyber-cardBorder bg-black py-16 px-6 text-xs text-zinc-500">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 rounded-full bg-cyber-card border border-cyber-cardBorder flex items-center justify-center text-cyber-accentCyan font-black font-mono text-sm shadow-md">
           VL
         </div>
-        <span>&copy; 2026 Virtual Library Community. All verified records logged.</span>
+        <div>
+          <span class="block text-white font-bold tracking-wider">VIRTUAL LIBRARY</span>
+          <span>&copy; 2026 Continuous Desk Accountability Protocol.</span>
+        </div>
       </div>
 
-      <div class="flex flex-wrap items-center gap-6 font-mono text-[11px]">
-        <a href="https://t.me/studyy247" target="_blank" class="hover:text-amber-400 transition flex items-center gap-1.5">
-          <i class="fa-brands fa-telegram"></i> Telegram (@studyy247)
+      <div class="flex flex-wrap items-center gap-6 font-mono text-xs">
+        <a href="https://t.me/studyy247" target="_blank" class="hover:text-cyan-400 transition flex items-center gap-2">
+          <i class="fa-brands fa-telegram"></i> Channel: @studyy247
         </a>
-        <a href="mailto:virtualfocusmode@gmail.com" class="hover:text-amber-400 transition flex items-center gap-1.5">
-          <i class="fa-solid fa-envelope"></i> virtualfocusmode@gmail.com
+        <a href="https://t.me/VirtualLibraryAdmin" target="_blank" class="hover:text-pink-400 transition flex items-center gap-2">
+          <i class="fa-solid fa-user-shield"></i> DM: @VirtualLibraryAdmin
         </a>
-        <a href="#rules" class="hover:text-neutral-300 transition">Room Protocol</a>
+        <a href="mailto:virtualfocusmod@gmail.com" class="hover:text-purple-400 transition flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i> virtualfocusmod@gmail.com
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- DYNAMIC DATA INJECTION & FILTER SCRIPT -->
+  <!-- SCRIPT ENGINE -->
   <script src="data.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // 1. POPULATE SEPTEMBER MONTHLY
-      const monthly = VirtualLibraryData.monthlyReport.participants;
-      const monthlyTbody = document.getElementById("monthlyTableBody");
-      monthlyTbody.innerHTML = monthly.map((p, index) => {
-        const rank = index + 1;
-        let rankBadge = `<span class="font-mono text-neutral-500">#${String(rank).padStart(2, '0')}</span>`;
-        if (rank === 1) rankBadge = `<span class="font-mono font-bold text-amber-400"><i class="fa-solid fa-crown text-xs mr-1"></i> #01</span>`;
-        else if (rank === 2) rankBadge = `<span class="font-mono font-bold text-neutral-300"><i class="fa-solid fa-medal text-xs mr-1"></i> #02</span>`;
-        else if (rank === 3) rankBadge = `<span class="font-mono font-bold text-amber-700"><i class="fa-solid fa-medal text-xs mr-1"></i> #03</span>`;
+      if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
+        const monthly = VirtualLibraryData.monthlyReport.participants;
+        const monthlyTbody = document.getElementById("monthlyTableBody");
+        monthlyTbody.innerHTML = monthly.map((p, index) => {
+          const rank = index + 1;
+          let rankBadge = `<span class="font-mono text-zinc-500 font-bold">#${String(rank).padStart(2, '0')}</span>`;
+          if (rank === 1) rankBadge = `<span class="font-mono font-black text-amber-400 text-xl"><i class="fa-solid fa-crown text-amber-400 mr-2 drop-shadow"></i>#01</span>`;
+          else if (rank === 2) rankBadge = `<span class="font-mono font-black text-zinc-300 text-lg"><i class="fa-solid fa-medal text-zinc-300 mr-2"></i>#02</span>`;
+          else if (rank === 3) rankBadge = `<span class="font-mono font-black text-amber-700 text-lg"><i class="fa-solid fa-medal text-amber-700 mr-2"></i>#03</span>`;
 
-        let badgeStyle = "border-neutral-700 text-neutral-400 bg-neutral-800/20";
-        if (p.daysAppeared >= 25) badgeStyle = "border-amber-500/30 text-amber-400 bg-amber-500/10";
-        else if (p.daysAppeared >= 15) badgeStyle = "border-neutral-400 text-neutral-200 bg-neutral-700/20";
-        else if (p.daysAppeared >= 8) badgeStyle = "border-emerald-500/30 text-emerald-400 bg-emerald-500/10";
-
-        return `
-          <tr class="hover:bg-surface-cardHover transition member-row">
-            <td class="py-4 px-6">${rankBadge}</td>
-            <td class="py-4 px-6 font-semibold text-white member-name">${p.name}</td>
-            <td class="py-4 px-6 font-mono text-amber-300">${p.time}</td>
-            <td class="py-4 px-6 text-right">
-              <span class="text-[11px] font-mono px-2.5 py-1 rounded-full border ${badgeStyle}">
-                ${p.daysAppeared} Days
-              </span>
-            </td>
-          </tr>
-        `;
-      }).join('');
+          return `
+            <tr class="hover:bg-cyan-950/20 transition member-row">
+              <td class="py-6 px-6">${rankBadge}</td>
+              <td class="py-6 px-6 font-bold text-white member-name tracking-wide">${p.name}</td>
+              <td class="py-6 px-6 font-mono text-right text-zinc-300 font-bold">${p.daysAppeared} Days</td>
+              <td class="py-6 px-6 font-mono text-right text-cyan-400 font-black text-xl">${p.time}</td>
+            </tr>
+          `;
+        }).join('');
+      }
 
       // 2. POPULATE STREAKS (SORTED DESCENDING)
-      const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
-      const streakGrid = document.getElementById("streakGrid");
-      streakGrid.innerHTML = streaks.map((item, index) => {
-        const rank = index + 1;
-        const isFrozen = item.status === "FROZEN";
-        let borderClass = "border-surface-border";
-        let badgeColor = "bg-surface-border text-neutral-400";
-        let streakIcon = isFrozen ? '<i class="fa-regular fa-snowflake text-sky-400 text-xs"></i>' : '<i class="fa-solid fa-fire text-orange-500 text-xs"></i>';
+      if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
+        const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
+        const streakGrid = document.getElementById("streakGrid");
+        streakGrid.innerHTML = streaks.map((item, index) => {
+          const rank = index + 1;
+          const isFrozen = item.status === "FROZEN";
+          let podiumStyling = "bg-cyber-card border-cyber-cardBorder hover:border-zinc-600";
+          
+          if (!isFrozen && rank === 1) {
+            podiumStyling = "bg-gradient-to-br from-amber-500/20 via-cyber-card to-cyber-card border-2 border-amber-500 shadow-xl shadow-amber-500/10";
+          } else if (!isFrozen && rank <= 3) {
+            podiumStyling = "bg-gradient-to-br from-cyan-500/10 via-cyber-card to-cyber-card border-2 border-cyan-500/50 shadow-xl";
+          }
 
-        if (!isFrozen && item.streak >= 300) {
-          borderClass = "border-amber-500/40 bg-gradient-to-b from-amber-500/5 to-transparent";
-          badgeColor = "bg-amber-500/20 text-amber-400 border border-amber-500/30";
-        } else if (!isFrozen && item.streak >= 150) {
-          borderClass = "border-emerald-500/30";
-          badgeColor = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
-        }
-
-        return `
-          <div class="streak-card p-5 rounded-2xl bg-surface-card ${borderClass} border flex items-center justify-between hover:border-neutral-500 transition">
-            <div class="flex items-center gap-3.5">
-              <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold ${rank <= 3 ? 'text-amber-400' : 'text-neutral-500'}">
-                #${rank}
-              </div>
-              <div>
-                <h4 class="text-sm font-bold text-white streak-name">${item.name}</h4>
-                <p class="text-[11px] text-neutral-400">${isFrozen ? 'Frozen Status' : 'Active Grinder'}</p>
-              </div>
-            </div>
-            <div class="text-right">
-              <div class="text-lg font-extrabold font-mono text-amber-400 flex items-center justify-end gap-1.5">
-                ${streakIcon} ${item.streak}
-              </div>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded ${badgeColor}">${item.status}</span>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      // 3. POPULATE COMPETITIONS (SEASONS 1-5 + 6)
-      const comps = VirtualLibraryData.competitions;
-      document.getElementById("comp-description").textContent = comps.formatDescription;
-      const seasonsContainer = document.getElementById("seasonsContainer");
-      seasonsContainer.innerHTML = comps.seasons.map(season => {
-        const isUpcoming = season.status === "Upcoming";
-        return `
-          <div class="p-6 rounded-2xl bg-surface-card border ${isUpcoming ? 'border-dashed border-amber-500/40 bg-amber-500/[0.02]' : 'border-surface-border'} flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-mono font-bold tracking-wider uppercase text-amber-400">${season.season}</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded ${isUpcoming ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-neutral-800 text-neutral-400'}">
-                  ${season.status}
+          return `
+            <div class="streak-card p-8 rounded-3xl ${podiumStyling} border transition duration-300 flex flex-col justify-between">
+              <div class="flex items-center justify-between gap-4 mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center font-mono text-sm font-black text-zinc-400">
+                  #${rank}
+                </div>
+                <span class="text-[10px] font-mono px-3 py-1 rounded-full uppercase tracking-widest font-extrabold ${isFrozen ? 'bg-blue-950 text-blue-300 border border-blue-500' : 'bg-emerald-950/80 text-emerald-300 border border-emerald-500/50'}">
+                  ${item.status}
                 </span>
               </div>
-              <h3 class="text-lg font-bold text-white mb-2">${season.theme}</h3>
-              <p class="text-xs text-neutral-400 mb-6 leading-relaxed">${season.rosterNote}</p>
-            </div>
-            <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
-              <div class="flex justify-between">
-                <span class="text-neutral-500">1st Place:</span>
-                <span class="font-bold ${isUpcoming ? 'text-neutral-500' : 'text-amber-400'}">${season.champion}</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-neutral-500">2nd Place:</span>
-                <span class="text-neutral-300">${season.runnerUp}</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-neutral-500">3rd Place:</span>
-                <span class="text-neutral-400">${season.thirdPlace}</span>
+
+              <div>
+                <h4 class="text-xl font-bold text-white streak-name tracking-wide mb-1">${item.name}</h4>
+                <div class="flex items-center gap-3 mt-4 pt-4 border-t border-white/5">
+                  <span class="text-4xl font-black font-mono text-amber-400">
+                    ${item.streak}
+                  </span>
+                  <span class="text-xs uppercase font-mono tracking-widest text-zinc-300 font-bold block leading-tight">
+                    Consecutive<br>Desk Days
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        `;
-      }).join('');
+          `;
+        }).join('');
+      }
     });
 
-    // SEARCH FILTER
+    // UNIVERSAL SEARCH (FILTERS BOTH MONTHLY AND STREAK SIMULTANEOUSLY)
     function filterLeaderboards() {
       const query = document.getElementById('memberSearchInput').value.toLowerCase().trim();
       
+      // Filter Monthly Rows
       document.querySelectorAll('.member-row').forEach(row => {
         const name = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
         row.style.display = name.includes(query) ? '' : 'none';
       });
 
+      // Filter Streak Cards
       document.querySelectorAll('.streak-card').forEach(card => {
         const name = card.querySelector('.streak-name')?.textContent.toLowerCase() || '';
         card.style.display = name.includes(query) ? 'flex' : 'none';
