@@ -1,5 +1,29 @@
 const VirtualLibraryData = {
-  // 1. SEPTEMBER 2026 MONTHLY REPORT
+  // 1. ALL-TIME MILESTONES & RECORDS
+  milestones: {
+    peakDailyRecord: {
+      holder: "Devika Jain",
+      time: "22h 39m",
+      tag: "All-Time Highest Single Day Record"
+    },
+    peakStreakRecord: {
+      holder: "Vansh Yadav",
+      streak: "351 Days",
+      tag: "All-Time Active Streak Record"
+    },
+    septemberPeak: {
+      holder: "Vansh Yadav",
+      time: "415h 30m",
+      tag: "September 2026 Monthly Champion"
+    },
+    apexClubCount: {
+      count: "03 Members",
+      members: "Vansh (351d), Ekus (335d), Vandana (315d)",
+      tag: "300+ Days Unbroken Tier"
+    }
+  },
+
+  // 2. SEPTEMBER 2026 MONTHLY REPORT
   monthlyReport: {
     monthYear: "September 2026",
     participants: [
@@ -49,7 +73,7 @@ const VirtualLibraryData = {
     ]
   },
 
-  // 2. STREAKS (Extracted from 08-Nov-2026 Audit Log, auto-sorted descending)
+  // 3. STREAKS (Sorted descending by active unbroken days)
   streaks: [
     { name: "VANSH YADAV", streak: 351, status: "ACTIVE" },
     { name: "EKUS ARORA", streak: 335, status: "ACTIVE" },
@@ -83,66 +107,5 @@ const VirtualLibraryData = {
     { name: "KHUSHI ANAND", streak: 1, status: "ACTIVE" },
     { name: "SWARAN C SANTHOSH", streak: 1, status: "ACTIVE" },
     { name: "WAJIDA KHATUN", streak: 1, status: "ACTIVE" }
-  ],
-
-  // 3. VIRTUAL COMPETITION ARCHIVE (Seasons 1-5 from your official HTML/Image results)
-  competitions: {
-    formatDescription: "Virtual Library Competitions are intense multi-squad battles where groups compete on aggregate verified focus hours. Every minute is audited against strict anti-AFK protocols and individual camera standards.",
-    seasons: [
-      {
-        season: "Season 05",
-        status: "Concluded",
-        theme: "Season Final Arena",
-        champion: "BEROZGAR KABOOTAR (773H 26M)",
-        runnerUp: "RAAT KE SHIKARI (691H 48M)",
-        thirdPlace: "ICHHADHAARI NEVLE (661H 16M)",
-        rosterNote: "Champions: Vansh Yadav, Dr. Jagriti Gupta, Rajendra Kumar Sahoo, Ankurit Saikia, Shivani Singh, Anaghaa, Chaitanya Suresh Panzade, Vandana Menon."
-      },
-      {
-        season: "Season 04",
-        status: "Concluded",
-        theme: "Grand Finale",
-        champion: "VAJRAYAAN (1015.5H)",
-        runnerUp: "ANGAREY (921.0H)",
-        thirdPlace: "TANDAV (900.3H)",
-        rosterNote: "Champions: Piyush, Jhalak, Ila Agrawal, Lasya Priya, Pluto, Ankurit Saikia, Rajendra Kumar Sahoo, Chocochips, Akshat Gupta, Vansh Yadav."
-      },
-      {
-        season: "Season 03",
-        status: "Concluded",
-        theme: "Squad Wars",
-        champion: "GULGULEY PAKODE",
-        runnerUp: "TEAM VARCHASVA",
-        thirdPlace: "DHURANDHAR",
-        rosterNote: "Champions: Shruti, Wajida, Garima, Ila Agrawal, Pranav, Khushi, Shreya, Lasya, Monu."
-      },
-      {
-        season: "Season 02",
-        status: "Concluded",
-        theme: "Royal Hall of Fame",
-        champion: "TEAM B (1,095h Total)",
-        runnerUp: "Archived Squads",
-        thirdPlace: "Archived Squads",
-        rosterNote: "Top Performers: Vansh Yadav (#1 - 150h 50m), Jhalak (#2 - 129h 08m), Vaishnav Porwal (#3 - 123h 43m)."
-      },
-      {
-        season: "Season 01",
-        status: "Concluded",
-        theme: "Inception Arena",
-        champion: "Archived Squad",
-        runnerUp: "TEAM BRAHMOS",
-        thirdPlace: "Archived Squad",
-        rosterNote: "Runners-Up Roster: Vansh Yadav (172h 27m), Jhalak (171h 17m), Kanchan Tytler (119h 12m), Ekus Arora (111h 46m)."
-      },
-      {
-        season: "Season 06",
-        status: "Upcoming",
-        theme: "All-Inclusive Arena",
-        champion: "TBD",
-        runnerUp: "TBD",
-        thirdPlace: "TBD",
-        rosterNote: "Requirements: Daily joining, 5–10 weekly focus hours minimum, 10+ streak baseline, strict desk angles, and reserve squad replacements."
-      }
-    ]
-  }
+  ]
 };
