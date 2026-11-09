@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Library | 24/7 Deep Work & Accountability Platform</title>
+  <title>Virtual Library | Official Platform</title>
   <meta name="description" content="Official 24/7 camera-monitored silent study community, live streak tracking, verified monthly focus reports, and team competitions." />
   
-  <!-- Modern Inter & JetBrains Mono Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS & FontAwesome Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -30,12 +28,6 @@
               cardHover: '#181B22',
               border: '#1F242D',
               borderLight: '#2D3543'
-            },
-            accent: {
-              gold: '#F59E0B',
-              amber: '#D97706',
-              emerald: '#10B981',
-              cyan: '#06B6D4'
             }
           }
         }
@@ -44,7 +36,6 @@
   </script>
 
   <style>
-    /* Custom High-Performance Scrollbar */
     ::-webkit-scrollbar { width: 7px; height: 7px; }
     ::-webkit-scrollbar-track { background: #0B0C10; }
     ::-webkit-scrollbar-thumb { background: #1F242D; border-radius: 9999px; }
@@ -59,15 +50,12 @@
 
 <body class="bg-[#0B0C10] text-neutral-200 antialiased font-sans selection:bg-amber-500 selection:text-black">
 
-  <!-- ================= TOP NAVIGATION ================= -->
+  <!-- TOP NAVIGATION -->
   <header class="sticky top-0 z-50 glass-nav border-b border-surface-border">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      
-      <!-- Logo Branding -->
       <a href="#" class="flex items-center gap-3.5 group">
         <div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-amber-400 p-[1px] shadow-lg shadow-amber-500/20 group-hover:scale-105 transition duration-200">
           <div class="w-full h-full bg-[#0B0C10] rounded-[11px] flex items-center justify-center overflow-hidden">
-            <!-- Tries to load assets/logo.png, falls back to custom VL icon -->
             <img src="assets/logo.png" alt="VL" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <span class="font-extrabold text-amber-400 font-mono text-sm tracking-tighter hidden items-center justify-center">VL</span>
           </div>
@@ -78,7 +66,6 @@
         </div>
       </a>
 
-      <!-- Desktop Links -->
       <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-400">
         <a href="#milestones" class="hover:text-amber-400 transition">Hall of Fame</a>
         <a href="#monthly" class="hover:text-amber-400 transition">Monthly Reports</a>
@@ -87,7 +74,6 @@
         <a href="#rules" class="hover:text-amber-400 transition">Rules & Protocol</a>
       </nav>
 
-      <!-- Action Button Group -->
       <div class="flex items-center gap-3">
         <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> GMeet Live 24/7
@@ -100,29 +86,25 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
+  <!-- HERO SECTION -->
   <section class="relative py-24 px-6 border-b border-surface-border overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.08),transparent_70%)] pointer-events-none"></div>
     <div class="max-w-4xl mx-auto text-center relative z-10 space-y-6">
-      
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card border border-surface-border text-xs font-mono text-neutral-300">
         <i class="fa-solid fa-shield-halved text-amber-400"></i> Zero AFK &bull; Desk Cam Only &bull; Verified Loggers
       </div>
-
       <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
-        Precision Accountability.<br>
+        Disciplined Focus.<br>
         <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">
           Unyielding Consistency.
         </span>
       </h1>
-
       <p class="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
         The official digital scoreboard for the Virtual Library collective. Inspect verified monthly study hours, search your active streak rank, and review seasonal battle records.
       </p>
-
       <div class="flex flex-wrap gap-4 justify-center pt-4">
         <a href="#monthly" class="px-6 py-3 bg-surface-card hover:bg-surface-cardHover border border-surface-border text-white text-sm font-semibold rounded-xl transition flex items-center gap-2">
-          <i class="fa-solid fa-calendar-check text-amber-400"></i> Monthly Rankings
+          <i class="fa-solid fa-calendar-check text-amber-400"></i> September Report
         </a>
         <a href="#streaks" class="px-6 py-3 bg-surface-card hover:bg-surface-cardHover border border-surface-border text-white text-sm font-semibold rounded-xl transition flex items-center gap-2">
           <i class="fa-solid fa-fire text-amber-400"></i> Streak Leaderboard
@@ -131,94 +113,84 @@
     </div>
   </section>
 
-  <!-- ================= SECTION: HALL OF FAME / MILESTONES ================= -->
+  <!-- HALL OF FAME / REAL MILESTONES -->
   <section id="milestones" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
     <div class="mb-10 text-center max-w-2xl mx-auto">
       <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
         <i class="fa-solid fa-trophy"></i> Elite Consistency Arena
       </div>
       <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Hall of Fame Milestones</h2>
-      <p class="text-neutral-400 text-sm mt-1">Recognizing peak endurance records and century-streak masters.</p>
+      <p class="text-neutral-400 text-sm mt-1">Recognizing peak endurance records from active audits.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <!-- Record 1 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border relative overflow-hidden group hover:border-amber-500/40 transition">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">All-Time Streak Record</div>
+      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">Peak Streak Record</div>
         <div class="text-3xl font-extrabold text-amber-400 font-mono flex items-center gap-2">
-          <i class="fa-solid fa-fire text-orange-500"></i> 240+
+          <i class="fa-solid fa-fire text-orange-500"></i> 351
           <span class="text-xs text-neutral-400 font-sans font-medium">Days</span>
         </div>
         <div class="mt-4 pt-3 border-t border-surface-border">
-          <div class="text-white text-sm font-bold">Shruti Meena</div>
-          <div class="text-xs text-emerald-400 font-mono mt-0.5">Titan Tier &bull; Active Daily</div>
+          <div class="text-white text-sm font-bold">Vansh Yadav</div>
+          <div class="text-xs text-emerald-400 font-mono mt-0.5">Top Active Streak</div>
         </div>
       </div>
 
-      <!-- Record 2 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border relative overflow-hidden group hover:border-amber-500/40 transition">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">Highest Monthly Focus</div>
+      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">September Month Peak</div>
         <div class="text-3xl font-extrabold text-amber-400 font-mono flex items-center gap-2">
-          <i class="fa-solid fa-bolt text-amber-300"></i> 242h 30m
+          <i class="fa-solid fa-bolt text-amber-300"></i> 415h 30m
         </div>
         <div class="mt-4 pt-3 border-t border-surface-border">
-          <div class="text-white text-sm font-bold">Prachi Sharma</div>
-          <div class="text-xs text-neutral-400 font-mono mt-0.5">October 2026 Champion</div>
+          <div class="text-white text-sm font-bold">Vansh Yadav</div>
+          <div class="text-xs text-neutral-400 font-mono mt-0.5">29 Days Verified</div>
         </div>
       </div>
 
-      <!-- Record 3 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border relative overflow-hidden group hover:border-amber-500/40 transition">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">Century Club (100+ Days)</div>
+      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">300+ Days Club</div>
         <div class="text-3xl font-extrabold text-emerald-400 font-mono flex items-center gap-2">
-          <i class="fa-solid fa-medal text-emerald-400"></i> 04
+          <i class="fa-solid fa-crown text-amber-400"></i> 03
           <span class="text-xs text-neutral-400 font-sans font-medium">Members</span>
         </div>
         <div class="mt-4 pt-3 border-t border-surface-border">
-          <div class="text-white text-sm font-bold">Shruti, Nishant, Prachi, Hazel</div>
-          <div class="text-xs text-neutral-400 font-mono mt-0.5">Unbroken Streak Legends</div>
+          <div class="text-white text-sm font-bold">Vansh, Ekus, Vandana</div>
+          <div class="text-xs text-neutral-400 font-mono mt-0.5">Apex Consistency</div>
         </div>
       </div>
 
-      <!-- Record 4 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border relative overflow-hidden group hover:border-amber-500/40 transition">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">Competitions Completed</div>
+      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border">
+        <div class="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">Tournament Archive</div>
         <div class="text-3xl font-extrabold text-amber-400 font-mono flex items-center gap-2">
           <i class="fa-solid fa-flag-checkered text-amber-400"></i> 05
           <span class="text-xs text-neutral-400 font-sans font-medium">Seasons</span>
         </div>
         <div class="mt-4 pt-3 border-t border-surface-border">
           <div class="text-white text-sm font-bold">Season 6 Incoming</div>
-          <div class="text-xs text-amber-500 font-mono mt-0.5">9 Squads in Arena</div>
+          <div class="text-xs text-amber-500 font-mono mt-0.5">Active Prep</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= SECTION: MONTHLY REPORTS (EMBEDDED LOADER) ================= -->
+  <!-- MONTHLY REPORT SECTION (SEPTEMBER 2026) -->
   <section id="monthly" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
     <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-8">
       <div>
         <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
-          <i class="fa-solid fa-chart-pie"></i> Official Monthly Log
+          <i class="fa-solid fa-chart-pie"></i> Official Record
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Monthly Focus Standings</h2>
         <p class="text-neutral-400 text-sm mt-1">
-          Dynamically displays standalone monthly report files uploaded directly to GitHub.
+          Verified hours and total active days logged.
         </p>
       </div>
 
-      <!-- Controls: Month Selector & Live Search -->
+      <!-- Search & Controls -->
       <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
-        <!-- Month Picker -->
-        <select id="monthSelect" onchange="loadSelectedReport()" 
-                class="bg-surface-card border border-surface-border text-white text-xs font-mono rounded-xl px-4 py-2.5 outline-none focus:border-amber-400 transition cursor-pointer">
-          <option value="october-2026.html" selected>October 2026</option>
-          <option value="september-2026.html">September 2026</option>
-          <option value="august-2026.html">August 2026</option>
-        </select>
-
-        <!-- Live Member Filter -->
+        <div class="bg-surface-card border border-surface-border text-amber-400 text-xs font-mono rounded-xl px-4 py-2.5">
+          Cycle: September 2026
+        </div>
         <div class="relative flex-1 sm:w-64">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-500 text-xs"></i>
           <input type="text" id="memberSearchInput" onkeyup="filterLeaderboards()" placeholder="Search participant..."
@@ -227,94 +199,27 @@
       </div>
     </div>
 
-    <!-- Monthly Report Container (Dynamic Frame & Table fallback) -->
+    <!-- Monthly Table Container -->
     <div class="rounded-2xl border border-surface-border bg-surface-card overflow-hidden shadow-2xl">
-      <div class="border-b border-surface-border bg-[#0E1015] px-6 py-3 flex items-center justify-between text-xs font-mono text-neutral-400">
-        <span id="active-month-indicator" class="flex items-center gap-2 text-amber-400 font-bold">
-          <i class="fa-solid fa-circle text-[8px]"></i> Active Report: October 2026
-        </span>
-        <span class="text-neutral-500 text-[11px]">Sorted Descending &bull; Active Hours</span>
-      </div>
-
-      <!-- Iframe Target: Drops your reports directly without editing index.html -->
-      <div id="reportContainer" class="p-2 sm:p-6">
-        <!-- Embedded Table (October 2026 Baseline) -->
-        <div class="overflow-x-auto">
-          <table id="monthlyTable" class="w-full text-left border-collapse text-sm">
-            <thead>
-              <tr class="border-b border-surface-border text-neutral-400 text-xs font-mono uppercase tracking-wider">
-                <th class="py-4 px-6">Rank</th>
-                <th class="py-4 px-6">Participant</th>
-                <th class="py-4 px-6">Focus Hours</th>
-                <th class="py-4 px-6">Current Streak</th>
-                <th class="py-4 px-6 text-right">Verification</th>
-              </tr>
-            </thead>
-            <tbody id="monthlyTableBody" class="divide-y divide-surface-border text-neutral-300 font-medium">
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono font-bold text-amber-400"><i class="fa-solid fa-crown text-xs mr-1"></i> #01</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Prachi Sharma</td>
-                <td class="py-4 px-6 font-mono text-amber-300">242h 30m</td>
-                <td class="py-4 px-6 font-mono text-emerald-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 142 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono font-bold text-neutral-300"><i class="fa-solid fa-medal text-xs mr-1"></i> #02</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Rajendra Kumar Sahoo</td>
-                <td class="py-4 px-6 font-mono text-amber-300">228h 15m</td>
-                <td class="py-4 px-6 font-mono text-emerald-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 96 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono font-bold text-amber-700"><i class="fa-solid fa-medal text-xs mr-1"></i> #03</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Hazel</td>
-                <td class="py-4 px-6 font-mono text-amber-300">215h 40m</td>
-                <td class="py-4 px-6 font-mono text-emerald-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 110 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono text-neutral-500">#04</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Jimmy</td>
-                <td class="py-4 px-6 font-mono text-amber-300">198h 10m</td>
-                <td class="py-4 px-6 font-mono text-neutral-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 48 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono text-neutral-500">#05</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Sudhanshu</td>
-                <td class="py-4 px-6 font-mono text-amber-300">184h 50m</td>
-                <td class="py-4 px-6 font-mono text-neutral-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 34 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono text-neutral-500">#06</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Keshvi</td>
-                <td class="py-4 px-6 font-mono text-amber-300">172h 20m</td>
-                <td class="py-4 px-6 font-mono text-neutral-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 41 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono text-neutral-500">#07</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Sahiba</td>
-                <td class="py-4 px-6 font-mono text-amber-300">165h 00m</td>
-                <td class="py-4 px-6 font-mono text-neutral-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 29 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-              <tr class="hover:bg-surface-cardHover transition member-row">
-                <td class="py-4 px-6 font-mono text-neutral-500">#08</td>
-                <td class="py-4 px-6 font-semibold text-white member-name">Nishant</td>
-                <td class="py-4 px-6 font-mono text-amber-300">152h 45m</td>
-                <td class="py-4 px-6 font-mono text-emerald-400"><i class="fa-solid fa-fire text-xs mr-1"></i> 162 Days</td>
-                <td class="py-4 px-6 text-right"><span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Audited</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="overflow-x-auto p-2 sm:p-6">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-surface-border text-neutral-400 text-xs font-mono uppercase tracking-wider">
+              <th class="py-4 px-6">Rank</th>
+              <th class="py-4 px-6">Scholar Name</th>
+              <th class="py-4 px-6">Total Hours</th>
+              <th class="py-4 px-6 text-right">Consistency</th>
+            </tr>
+          </thead>
+          <tbody id="monthlyTableBody" class="divide-y divide-surface-border text-neutral-300 font-medium">
+            <!-- Populated via data.js -->
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- ================= SECTION: STREAK VAULT ================= -->
+  <!-- STREAK VAULT (SORTED DESCENDING) -->
   <section id="streaks" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
     <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-8">
       <div>
@@ -322,305 +227,36 @@
           <i class="fa-solid fa-fire"></i> Consecutive Desk Days
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Streak Vault</h2>
-        <p class="text-neutral-400 text-sm mt-1">Ranked strictly in descending order of unbroken daily focus streaks.</p>
+        <p class="text-neutral-400 text-sm mt-1">Ranked strictly in descending order of active unbroken study streaks.</p>
       </div>
       <div class="text-xs font-mono text-neutral-400 bg-surface-card border border-surface-border px-3.5 py-1.5 rounded-lg">
-        Streaks &gt; 50 Days Strictly Protected
+        Log Date: 08-Nov-2026
       </div>
     </div>
 
-    <!-- Streak Cards Grid (Searchable) -->
     <div id="streakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      
-      <!-- Shruti -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-amber-500/30 bg-gradient-to-b from-amber-500/5 to-transparent flex items-center justify-between hover:border-amber-400 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-amber-400">#1</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Shruti Meena</h4>
-            <p class="text-[11px] text-neutral-400">Titan Tier &bull; Daily Streak</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-amber-400 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 240
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Legend</span>
-        </div>
-      </div>
-
-      <!-- Nishant -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-emerald-500/30 flex items-center justify-between hover:border-emerald-400 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-neutral-300">#2</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Nishant</h4>
-            <p class="text-[11px] text-neutral-400">Elite Century Tier</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-emerald-400 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 162
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Elite 150+</span>
-        </div>
-      </div>
-
-      <!-- Prachi -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-emerald-500/30 flex items-center justify-between hover:border-emerald-400 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-amber-700">#3</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Prachi Sharma</h4>
-            <p class="text-[11px] text-neutral-400">Elite Century Tier</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-emerald-400 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 142
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Elite 100+</span>
-        </div>
-      </div>
-
-      <!-- Hazel -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-emerald-500/30 flex items-center justify-between hover:border-emerald-400 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-neutral-400">#4</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Hazel</h4>
-            <p class="text-[11px] text-neutral-400">Elite Century Tier</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-emerald-400 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 110
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Elite 100+</span>
-        </div>
-      </div>
-
-      <!-- Rajendra -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-surface-border flex items-center justify-between hover:border-neutral-500 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-neutral-400">#5</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Rajendra Kumar Sahoo</h4>
-            <p class="text-[11px] text-neutral-400">Approaching 100</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-neutral-200 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 96
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-border text-neutral-400">Veteran</span>
-        </div>
-      </div>
-
-      <!-- Jimmy -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-surface-border flex items-center justify-between hover:border-neutral-500 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-neutral-400">#6</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Jimmy</h4>
-            <p class="text-[11px] text-neutral-400">Contender Tier</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-neutral-200 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 48
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-border text-neutral-400">Contender</span>
-        </div>
-      </div>
-
-      <!-- Keshvi -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-surface-border flex items-center justify-between hover:border-neutral-500 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-neutral-400">#7</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Keshvi</h4>
-            <p class="text-[11px] text-neutral-400">Active Daily</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-neutral-200 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 41
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-border text-neutral-400">Contender</span>
-        </div>
-      </div>
-
-      <!-- Sudhanshu -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-surface-border flex items-center justify-between hover:border-neutral-500 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-neutral-400">#8</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Sudhanshu</h4>
-            <p class="text-[11px] text-neutral-400">Rising Tier</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-neutral-200 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 34
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-border text-neutral-400">Rising</span>
-        </div>
-      </div>
-
-      <!-- Sahiba -->
-      <div class="streak-card p-5 rounded-2xl bg-surface-card border border-surface-border flex items-center justify-between hover:border-neutral-500 transition">
-        <div class="flex items-center gap-3.5">
-          <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold text-neutral-400">#9</div>
-          <div>
-            <h4 class="text-sm font-bold text-white streak-name">Sahiba</h4>
-            <p class="text-[11px] text-neutral-400">Streak Protected</p>
-          </div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-extrabold font-mono text-neutral-200 flex items-center justify-end gap-1">
-            <i class="fa-solid fa-fire text-orange-500 text-xs"></i> 29
-          </div>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-border text-neutral-400">Rising</span>
-        </div>
-      </div>
-
+      <!-- Populated via data.js -->
     </div>
   </section>
 
-  <!-- ================= SECTION: COMPETITION ARENA ================= -->
+  <!-- COMPETITION ARENA (SEASONS 1-5 + 6) -->
   <section id="competitions" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
     <div class="max-w-3xl mb-12">
       <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
-        <i class="fa-solid fa-trophy"></i> Historical Tournament Archive
+        <i class="fa-solid fa-trophy"></i> Tournament Archive
       </div>
       <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Virtual Competition Arena</h2>
-      <p class="text-neutral-400 text-sm mt-3 leading-relaxed">
-        Virtual Library Competitions are intense multi-squad battles where groups compete on aggregate verified focus hours. Every minute is audited against strict anti-AFK protocols and individual camera standards.
+      <p id="comp-description" class="text-neutral-400 text-sm mt-3 leading-relaxed">
+        <!-- Loaded via data.js -->
       </p>
     </div>
 
-    <!-- Seasons Podiums Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Season 6 (Upcoming) -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-dashed border-amber-500/40 bg-amber-500/[0.02] flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold tracking-wider uppercase text-amber-400">Season 06</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Upcoming</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">The All-Inclusive Arena</h3>
-          <p class="text-xs text-neutral-400 mb-6 leading-relaxed">
-            Format requires daily joining, 5–10 weekly focus hours minimum, 10+ streak baseline, strict desk angles, and reserve squad replacements.
-          </p>
-        </div>
-        <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
-          <div class="flex justify-between"><span class="text-neutral-500">Registration:</span><span class="text-amber-400 font-bold">Opening Soon</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Active Squads:</span><span class="text-neutral-300">9 Teams Cap</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Eligibility:</span><span class="text-neutral-300">10+ Days Streak</span></div>
-        </div>
-      </div>
-
-      <!-- Season 5 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold tracking-wider uppercase text-neutral-400">Season 05</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-400">Concluded</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Neon Clash</h3>
-          <p class="text-xs text-neutral-400 mb-6 leading-relaxed">
-            Historic 9-team battle between Vajrayaan, Tandav, Angarey, Berozgar Kabootar, and Ichhadhaari Nevle.
-          </p>
-        </div>
-        <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
-          <div class="flex justify-between"><span class="text-neutral-500">Champion:</span><span class="text-amber-400 font-bold">Team Tandav</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Runner Up:</span><span class="text-neutral-300">Team Vajrayaan</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Top Performer:</span><span class="text-neutral-300">Prachi Sharma</span></div>
-        </div>
-      </div>
-
-      <!-- Season 4 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold tracking-wider uppercase text-neutral-400">Season 04</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-400">Concluded</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Mid-Year Marathon</h3>
-          <p class="text-xs text-neutral-400 mb-6 leading-relaxed">
-            Peak summer endurance cup pushing daily individual hours beyond historical baselines.
-          </p>
-        </div>
-        <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
-          <div class="flex justify-between"><span class="text-neutral-500">Champion:</span><span class="text-amber-400 font-bold">Team Angarey</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Runner Up:</span><span class="text-neutral-300">Team Boys</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Top Performer:</span><span class="text-neutral-300">Rajendra Sahoo</span></div>
-        </div>
-      </div>
-
-      <!-- Season 3 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold tracking-wider uppercase text-neutral-400">Season 03</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-400">Concluded</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Spring Showdown</h3>
-          <p class="text-xs text-neutral-400 mb-6 leading-relaxed">
-            Nocturnal study groups battled morning grinders across 3 intensive qualification rounds.
-          </p>
-        </div>
-        <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
-          <div class="flex justify-between"><span class="text-neutral-500">Champion:</span><span class="text-amber-400 font-bold">Team Girls</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Runner Up:</span><span class="text-neutral-300">Raat ke Shikari</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Top Performer:</span><span class="text-neutral-300">Hazel</span></div>
-        </div>
-      </div>
-
-      <!-- Season 2 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold tracking-wider uppercase text-neutral-400">Season 02</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-400">Concluded</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Winter Crucible</h3>
-          <p class="text-xs text-neutral-400 mb-6 leading-relaxed">
-            High-discipline winter series testing camera adherence in freezing conditions.
-          </p>
-        </div>
-        <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
-          <div class="flex justify-between"><span class="text-neutral-500">Champion:</span><span class="text-amber-400 font-bold">Ichhadhaari Nevle</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Runner Up:</span><span class="text-neutral-300">Berozgar Kabootar</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Top Performer:</span><span class="text-neutral-300">Shruti Meena</span></div>
-        </div>
-      </div>
-
-      <!-- Season 1 -->
-      <div class="p-6 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold tracking-wider uppercase text-neutral-400">Season 01</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-400">Concluded</span>
-          </div>
-          <h3 class="text-lg font-bold text-white mb-2">Inception Cup</h3>
-          <p class="text-xs text-neutral-400 mb-6 leading-relaxed">
-            The founding season that established squad accountability and anti-AFK protocols.
-          </p>
-        </div>
-        <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
-          <div class="flex justify-between"><span class="text-neutral-500">Champion:</span><span class="text-amber-400 font-bold">Andekha Atank</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Runner Up:</span><span class="text-neutral-300">Team Boys</span></div>
-          <div class="flex justify-between"><span class="text-neutral-500">Top Performer:</span><span class="text-neutral-300">Core Elite</span></div>
-        </div>
-      </div>
-
+    <div id="seasonsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Populated via data.js -->
     </div>
   </section>
 
-  <!-- ================= SECTION: RULES & PROTOCOL ================= -->
+  <!-- RULES & PROTOCOL WITH IMAGE SLOTS -->
   <section id="rules" class="py-16 px-6 max-w-7xl mx-auto border-b border-surface-border">
     <div class="text-center max-w-2xl mx-auto mb-12">
       <div class="flex items-center justify-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-400 font-bold mb-1">
@@ -632,7 +268,7 @@
 
     <div class="grid lg:grid-cols-2 gap-8">
       
-      <!-- Panel 1: Google Meet Rules -->
+      <!-- Panel 1: Meet Rules -->
       <div class="bg-surface-card border border-surface-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -645,12 +281,11 @@
             The study room operates entirely on silence and visual desk focus. Participants failing camera checks are promptly removed by active session admins.
           </p>
 
-          <!-- Infographic Placeholder for Meet Rules -->
           <div class="w-full h-56 rounded-xl border border-dashed border-surface-borderLight bg-[#0B0C10] flex flex-col items-center justify-center text-center p-4 mb-6 group overflow-hidden">
             <img src="assets/meet-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover rounded-lg" alt="Meet Rules">
             <div class="flex-col items-center justify-center text-neutral-500 gap-2">
               <i class="fa-regular fa-image text-3xl text-neutral-600 mb-1"></i>
-              <span class="text-xs font-mono text-neutral-400">Save Meet Rules Infographic as:<br><code class="text-amber-400 font-semibold">assets/meet-rules.jpg</code></span>
+              <span class="text-xs font-mono text-neutral-400">Save Meet Rules Image in:<br><code class="text-amber-400 font-semibold">assets/meet-rules.jpg</code></span>
             </div>
           </div>
 
@@ -662,10 +297,6 @@
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
               <span><strong>Permanent Audio Mute:</strong> Microphones must never be unmuted. All queries and break notices are posted in the Telegram channel.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
-              <span><strong>Break Accountability:</strong> Stepping away without tagging a break status in chat invalidates recorded hours for that block.</span>
             </li>
           </ul>
         </div>
@@ -684,12 +315,11 @@
             Competition seasons have stringent verification. Squad points are deducted collectively for unannounced dropouts or fake timers.
           </p>
 
-          <!-- Infographic Placeholder for Competition Rules -->
           <div class="w-full h-56 rounded-xl border border-dashed border-surface-borderLight bg-[#0B0C10] flex flex-col items-center justify-center text-center p-4 mb-6 group overflow-hidden">
             <img src="assets/competition-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover rounded-lg" alt="Competition Rules">
             <div class="flex-col items-center justify-center text-neutral-500 gap-2">
               <i class="fa-regular fa-image text-3xl text-neutral-600 mb-1"></i>
-              <span class="text-xs font-mono text-neutral-400">Save Competition Infographic as:<br><code class="text-amber-400 font-semibold">assets/competition-rules.jpg</code></span>
+              <span class="text-xs font-mono text-neutral-400">Save Competition Rules Image in:<br><code class="text-amber-400 font-semibold">assets/competition-rules.jpg</code></span>
             </div>
           </div>
 
@@ -702,10 +332,6 @@
               <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
               <span><strong>Reserve Replacements:</strong> Unannounced absences lead to instantaneous replacement by waitlisted applicants.</span>
             </li>
-            <li class="flex items-start gap-2.5">
-              <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-              <span><strong>Audit Penalties:</strong> Admin deductions apply daily. Manipulating desk cameras or screen sharing results in permanent disqualification.</span>
-            </li>
           </ul>
         </div>
       </div>
@@ -713,25 +339,24 @@
     </div>
   </section>
 
-  <!-- ================= SECTION: CONTACT / ADMIN DESK ================= -->
+  <!-- CONTACT & SUPPORT DESK -->
   <section id="contact" class="py-16 px-6 max-w-4xl mx-auto">
-    <div class="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border text-center relative overflow-hidden">
+    <div class="p-8 sm:p-10 rounded-3xl bg-surface-card border border-surface-border text-center">
       <div class="max-w-xl mx-auto space-y-4">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono">
           <i class="fa-solid fa-envelope"></i> Anonymous Community Desk
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Need to Contact Virtual Library Admin?</h2>
         <p class="text-neutral-400 text-sm leading-relaxed">
-          For inquiries, streak freeze requests, or competition registration issues. Reach out via Telegram, or send a direct dispatch to our official email desk if you do not use Telegram.
+          For inquiries, streak freeze requests, or competition registration issues. Reach out via Telegram, or dispatch an email directly to our official desk mailbox.
         </p>
 
-        <!-- Direct Action Buttons -->
         <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer"
              class="w-full sm:w-auto px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition flex items-center justify-center gap-2">
             <i class="fa-brands fa-telegram text-base"></i> DM @ Virtual Library Admin
           </a>
-          <a href="mailto:virtualfocusmode@gmail.com?subject=Virtual%20Library%20Query%20from%20Website"
+          <a href="mailto:virtualfocusmode@gmail.com?subject=Virtual%20Library%20Query"
              class="w-full sm:w-auto px-6 py-3.5 bg-surface-border hover:bg-surface-borderLight text-white font-mono text-xs rounded-xl border border-surface-borderLight transition flex items-center justify-center gap-2">
             <i class="fa-solid fa-paper-plane text-amber-400"></i> virtualfocusmode@gmail.com
           </a>
@@ -740,14 +365,14 @@
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="border-t border-surface-border bg-[#0B0C10] py-12 px-6">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-neutral-500">
       <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-lg bg-surface-card border border-surface-border flex items-center justify-center text-amber-400 font-bold font-mono">
           VL
         </div>
-        <span>&copy; 2026 Virtual Library Community. All verified study records logged and preserved.</span>
+        <span>&copy; 2026 Virtual Library Community. All verified records logged.</span>
       </div>
 
       <div class="flex flex-wrap items-center gap-6 font-mono text-[11px]">
@@ -762,70 +387,129 @@
     </div>
   </footer>
 
-  <!-- ================= SCRIPTS ================= -->
+  <!-- DYNAMIC DATA INJECTION & FILTER SCRIPT -->
+  <script src="data.js"></script>
   <script>
-    // 1. LIVE SEARCH FILTER (Searches Monthly Table & Streak Cards Simultaneously)
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. POPULATE SEPTEMBER MONTHLY
+      const monthly = VirtualLibraryData.monthlyReport.participants;
+      const monthlyTbody = document.getElementById("monthlyTableBody");
+      monthlyTbody.innerHTML = monthly.map((p, index) => {
+        const rank = index + 1;
+        let rankBadge = `<span class="font-mono text-neutral-500">#${String(rank).padStart(2, '0')}</span>`;
+        if (rank === 1) rankBadge = `<span class="font-mono font-bold text-amber-400"><i class="fa-solid fa-crown text-xs mr-1"></i> #01</span>`;
+        else if (rank === 2) rankBadge = `<span class="font-mono font-bold text-neutral-300"><i class="fa-solid fa-medal text-xs mr-1"></i> #02</span>`;
+        else if (rank === 3) rankBadge = `<span class="font-mono font-bold text-amber-700"><i class="fa-solid fa-medal text-xs mr-1"></i> #03</span>`;
+
+        let badgeStyle = "border-neutral-700 text-neutral-400 bg-neutral-800/20";
+        if (p.daysAppeared >= 25) badgeStyle = "border-amber-500/30 text-amber-400 bg-amber-500/10";
+        else if (p.daysAppeared >= 15) badgeStyle = "border-neutral-400 text-neutral-200 bg-neutral-700/20";
+        else if (p.daysAppeared >= 8) badgeStyle = "border-emerald-500/30 text-emerald-400 bg-emerald-500/10";
+
+        return `
+          <tr class="hover:bg-surface-cardHover transition member-row">
+            <td class="py-4 px-6">${rankBadge}</td>
+            <td class="py-4 px-6 font-semibold text-white member-name">${p.name}</td>
+            <td class="py-4 px-6 font-mono text-amber-300">${p.time}</td>
+            <td class="py-4 px-6 text-right">
+              <span class="text-[11px] font-mono px-2.5 py-1 rounded-full border ${badgeStyle}">
+                ${p.daysAppeared} Days
+              </span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // 2. POPULATE STREAKS (SORTED DESCENDING)
+      const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
+      const streakGrid = document.getElementById("streakGrid");
+      streakGrid.innerHTML = streaks.map((item, index) => {
+        const rank = index + 1;
+        const isFrozen = item.status === "FROZEN";
+        let borderClass = "border-surface-border";
+        let badgeColor = "bg-surface-border text-neutral-400";
+        let streakIcon = isFrozen ? '<i class="fa-regular fa-snowflake text-sky-400 text-xs"></i>' : '<i class="fa-solid fa-fire text-orange-500 text-xs"></i>';
+
+        if (!isFrozen && item.streak >= 300) {
+          borderClass = "border-amber-500/40 bg-gradient-to-b from-amber-500/5 to-transparent";
+          badgeColor = "bg-amber-500/20 text-amber-400 border border-amber-500/30";
+        } else if (!isFrozen && item.streak >= 150) {
+          borderClass = "border-emerald-500/30";
+          badgeColor = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+        }
+
+        return `
+          <div class="streak-card p-5 rounded-2xl bg-surface-card ${borderClass} border flex items-center justify-between hover:border-neutral-500 transition">
+            <div class="flex items-center gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-surface-border flex items-center justify-center font-mono text-xs font-bold ${rank <= 3 ? 'text-amber-400' : 'text-neutral-500'}">
+                #${rank}
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white streak-name">${item.name}</h4>
+                <p class="text-[11px] text-neutral-400">${isFrozen ? 'Frozen Status' : 'Active Grinder'}</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-extrabold font-mono text-amber-400 flex items-center justify-end gap-1.5">
+                ${streakIcon} ${item.streak}
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded ${badgeColor}">${item.status}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 3. POPULATE COMPETITIONS (SEASONS 1-5 + 6)
+      const comps = VirtualLibraryData.competitions;
+      document.getElementById("comp-description").textContent = comps.formatDescription;
+      const seasonsContainer = document.getElementById("seasonsContainer");
+      seasonsContainer.innerHTML = comps.seasons.map(season => {
+        const isUpcoming = season.status === "Upcoming";
+        return `
+          <div class="p-6 rounded-2xl bg-surface-card border ${isUpcoming ? 'border-dashed border-amber-500/40 bg-amber-500/[0.02]' : 'border-surface-border'} flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xs font-mono font-bold tracking-wider uppercase text-amber-400">${season.season}</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded ${isUpcoming ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' : 'bg-neutral-800 text-neutral-400'}">
+                  ${season.status}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">${season.theme}</h3>
+              <p class="text-xs text-neutral-400 mb-6 leading-relaxed">${season.rosterNote}</p>
+            </div>
+            <div class="space-y-2 border-t border-surface-border pt-4 text-xs font-mono">
+              <div class="flex justify-between">
+                <span class="text-neutral-500">1st Place:</span>
+                <span class="font-bold ${isUpcoming ? 'text-neutral-500' : 'text-amber-400'}">${season.champion}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-neutral-500">2nd Place:</span>
+                <span class="text-neutral-300">${season.runnerUp}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-neutral-500">3rd Place:</span>
+                <span class="text-neutral-400">${season.thirdPlace}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    });
+
+    // SEARCH FILTER
     function filterLeaderboards() {
       const query = document.getElementById('memberSearchInput').value.toLowerCase().trim();
       
-      // Filter Monthly Rows
-      const monthlyRows = document.querySelectorAll('.member-row');
-      monthlyRows.forEach(row => {
-        const nameText = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
-        if (nameText.includes(query)) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
+      document.querySelectorAll('.member-row').forEach(row => {
+        const name = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
+        row.style.display = name.includes(query) ? '' : 'none';
       });
 
-      // Filter Streak Cards
-      const streakCards = document.querySelectorAll('.streak-card');
-      streakCards.forEach(card => {
-        const nameText = card.querySelector('.streak-name')?.textContent.toLowerCase() || '';
-        if (nameText.includes(query)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+      document.querySelectorAll('.streak-card').forEach(card => {
+        const name = card.querySelector('.streak-name')?.textContent.toLowerCase() || '';
+        card.style.display = name.includes(query) ? 'flex' : 'none';
       });
-    }
-
-    // 2. DYNAMIC MONTH REPORT LOADER (Loads external HTML from reports/ folder)
-    function loadSelectedReport() {
-      const selectedFile = document.getElementById('monthSelect').value;
-      const indicator = document.getElementById('active-month-indicator');
-      const container = document.getElementById('reportContainer');
-
-      indicator.innerHTML = `<i class="fa-solid fa-circle text-[8px]"></i> Active Report: ${selectedFile.replace('.html', '').replace('-', ' ').toUpperCase()}`;
-
-      if (selectedFile === "october-2026.html") {
-        // Keeps default baseline or re-fetches
-        location.reload(); 
-        return;
-      }
-
-      // Fetches standalone HTML file dynamically without modifying index.html
-      fetch(`reports/${selectedFile}`)
-        .then(response => {
-          if (!response.ok) throw new Error("Report file not yet created in reports/ folder");
-          return response.text();
-        })
-        .then(htmlContent => {
-          container.innerHTML = htmlContent;
-        })
-        .catch(err => {
-          container.innerHTML = `
-            <div class="p-8 text-center font-mono text-neutral-400 text-xs">
-              <i class="fa-solid fa-folder-open text-2xl text-neutral-600 mb-2 block"></i>
-              No report file found for <span class="text-amber-400 font-bold">${selectedFile}</span>.<br>
-              Upload this report to your GitHub repository under: 
-              <span class="text-white block mt-2 bg-[#0B0C10] p-2 rounded border border-surface-border">reports/${selectedFile}</span>
-            </div>
-          `;
-        });
     }
   </script>
-
 </body>
 </html>
