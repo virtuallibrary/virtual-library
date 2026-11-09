@@ -42,7 +42,7 @@
   </script>
 
   <style>
-    /* Executive Sovereign Tricolor Accent Strip */
+    /* Sovereign Indian Tricolor Accent Strip */
     .india-strip {
       height: 4px;
       width: 100%;
@@ -56,7 +56,7 @@
     }
 
     .glass-nav {
-      background: rgba(10, 12, 18, 0.82);
+      background: rgba(10, 12, 18, 0.85);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -81,13 +81,21 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* Automated SVG Ring Build Keyframes */
+    /* Preloader Animation Keyframes */
     @keyframes drawRing {
       0% { stroke-dashoffset: 290; }
       100% { stroke-dashoffset: 0; }
     }
     .animate-ring-draw {
-      animation: drawRing 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+      animation: drawRing 1.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.08); opacity: 0.8; }
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 2s infinite ease-in-out;
     }
 
     ::-webkit-scrollbar { width: 6px; }
@@ -100,13 +108,16 @@
 <body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen">
 
   <!-- ============================================================= -->
-  <!-- AUTOMATED INTRO LOGO BUILD PRELOADER (100% Code-Animated)     -->
+  <!-- UPGRADED PRELOADER: EXTENDED ANIMATION & MILESTONES SHOWCASE  -->
   <!-- ============================================================= -->
-  <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
-    <div class="relative flex flex-col items-center">
+  <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center p-6 transition-all duration-700 ease-in-out">
+    <!-- Ambient backlight flare -->
+    <div class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-accent-rose/20 via-accent-gold/20 to-accent-cyan/20 blur-[100px] pointer-events-none animate-pulse-glow"></div>
+
+    <div class="relative flex flex-col items-center max-w-sm w-full text-center z-10">
       
-      <!-- SVG Animated Contour Ring Tracing -->
-      <div class="relative w-28 h-28 flex items-center justify-center">
+      <!-- Central Animated SVG Contour & Scaled Logo Core -->
+      <div class="relative w-32 h-32 flex items-center justify-center mb-6">
         <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="3" />
           <circle id="buildCircle" cx="50" cy="50" r="46" fill="none" stroke="url(#preloaderGrad)" stroke-width="3.5"
@@ -120,70 +131,89 @@
           </defs>
         </svg>
         
-        <!-- Center Logo Core Reveal -->
-        <div id="buildLogo" class="w-20 h-20 rounded-full overflow-hidden p-[2px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan opacity-0 scale-75 transition-all duration-700 ease-out shadow-[0_0_25px_rgba(234,179,8,0.35)]">
+        <!-- Logo Container -->
+        <div id="buildLogo" class="w-24 h-24 rounded-full overflow-hidden p-[2.5px] bg-gradient-to-tr from-accent-rose via-white/30 to-accent-cyan opacity-0 scale-75 transition-all duration-700 ease-out shadow-[0_0_35px_rgba(234,179,8,0.35)]">
           <div class="w-full h-full bg-[#0A0C12] rounded-full overflow-hidden flex items-center justify-center">
-            <img src="logo.png" alt="VL" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <span class="font-display font-bold text-accent-gold text-lg tracking-wider hidden">VL</span>
+            <img src="logo.png" alt="VL Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="font-display font-extrabold text-accent-gold text-2xl tracking-wider hidden">VL</span>
           </div>
         </div>
       </div>
 
-      <!-- Typography Staggered Reveal -->
-      <div id="buildText" class="mt-6 text-center opacity-0 translate-y-3 transition-all duration-700 ease-out">
-        <div class="font-display font-black tracking-[0.25em] text-white text-base">VIRTUAL LIBRARY</div>
-        <div class="text-[9px] font-mono tracking-[0.35em] text-amber-400/90 uppercase mt-1">24/7 Focus Study Session</div>
+      <!-- Main Header Text Reveal -->
+      <div id="buildText" class="opacity-0 translate-y-3 transition-all duration-700 ease-out mb-5">
+        <h1 class="font-display font-black tracking-[0.2em] text-white text-xl sm:text-2xl">VIRTUAL LIBRARY</h1>
+        <div class="text-[10px] font-mono tracking-[0.3em] text-amber-400 uppercase mt-1">24/7 Silent Focus Sanctuary</div>
+      </div>
+
+      <!-- Rotating Verified Milestone Ticker -->
+      <div id="milestoneTicker" class="opacity-0 transition-opacity duration-500 w-full">
+        <div class="p-3 px-4 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
+          <div id="tickerLabel" class="text-[9px] font-mono tracking-widest text-slate-400 uppercase">Verifying Audits</div>
+          <div id="tickerValue" class="text-xs font-mono font-bold text-amber-300 mt-0.5 flex items-center justify-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Initializing Desk & Face Cams...
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Track -->
+      <div class="w-36 h-1 bg-white/10 rounded-full mt-6 overflow-hidden">
+        <div id="preloaderBar" class="h-full bg-gradient-to-r from-accent-rose via-accent-gold to-accent-cyan w-0 transition-all duration-[3000ms] ease-out"></div>
       </div>
 
     </div>
   </div>
 
-  <!-- SOVEREIGN TOP ACCENT -->
+  <!-- SOVEREIGN TRICOLOR STRIP -->
   <div class="india-strip sticky top-0 z-[100]"></div>
 
-  <!-- NAVIGATION -->
+  <!-- RESPONSIVE UNCONGESTED HEADER -->
   <header class="sticky top-[4px] z-50 glass-nav">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3">
       
-      <!-- Brand Identity & Circular Logo -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="relative w-12 h-12 rounded-full p-[1.5px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan group-hover:scale-105 transition-transform duration-300">
+      <!-- Logo & Brand Identity (Optimized for Mobile Screens) -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0">
+        <div class="relative w-9 h-9 sm:w-12 sm:h-12 shrink-0 rounded-full p-[1.5px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan group-hover:scale-105 transition-transform duration-300">
           <div class="w-full h-full bg-obsidian-surface rounded-full overflow-hidden flex items-center justify-center">
-            <img src="logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <span class="font-display font-bold text-accent-gold text-sm tracking-wider hidden">VL</span>
+            <img src="logo.png" alt="VL" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="font-display font-bold text-accent-gold text-xs sm:text-sm tracking-wider hidden">VL</span>
           </div>
         </div>
-        <div class="flex flex-col">
-          <span class="font-display font-extrabold text-lg tracking-wide text-white group-hover:text-amber-300 transition-colors">VIRTUAL LIBRARY</span>
-          <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-slate-400">24/7 Focus Study Session</span>
+        <div class="flex flex-col min-w-0">
+          <span class="font-display font-extrabold text-sm sm:text-lg tracking-wide text-white group-hover:text-amber-300 transition-colors truncate">
+            VIRTUAL LIBRARY
+          </span>
+          <span class="text-[9px] sm:text-[10px] font-mono tracking-wider sm:tracking-[0.2em] uppercase text-slate-400 truncate">
+            24/7 Focus Study Session
+          </span>
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-slate-400 font-mono">
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-slate-400 font-mono">
         <a href="#milestones" class="hover:text-white transition-colors">Hall of Fame</a>
         <a href="#leaderboard" class="hover:text-white transition-colors">Monthly Audit</a>
         <a href="#vault" class="hover:text-white transition-colors">Streak Vault</a>
         <a href="#protocols" class="hover:text-white transition-colors">Rules & Protocol</a>
       </nav>
 
-      <!-- Action Button Triggering Member Verification -->
-      <div class="flex items-center gap-4">
-        <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[11px] font-mono text-emerald-400">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Face & Desk Cam Active
+      <!-- Clean Header Action Button -->
+      <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+        <div class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[11px] font-mono text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Face & Desk Live
         </div>
         <button onclick="openJoinModal('telegram')"
-           class="px-5 py-2.5 rounded-xl bg-white text-black font-semibold text-xs tracking-wider uppercase font-mono hover:bg-amber-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300 flex items-center gap-2">
+           class="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-white text-black font-semibold text-[11px] sm:text-xs tracking-wider uppercase font-mono hover:bg-amber-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300 flex items-center gap-1.5 sm:gap-2">
           <i data-lucide="send" class="w-3.5 h-3.5"></i>
-          <span>Enter Library</span>
+          <span>Join Room</span>
         </button>
       </div>
     </div>
   </header>
 
   <!-- IMMERSIVE EDITORIAL HERO -->
-  <section class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
+  <section class="relative min-h-[68vh] flex items-center justify-center px-6 py-20 sm:py-28 border-b border-obsidian-border overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[340px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
 
     <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
       
@@ -191,32 +221,32 @@
         <span class="text-amber-400">✦</span> 24/7 Silent Study Sanctuary &bull; Built in India
       </div>
 
-      <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.06]">
+      <h1 class="font-display font-black text-3xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.1] sm:leading-[1.06]">
         India’s Unbroken Circle of<br>
         <span class="bg-gradient-to-r from-amber-200 via-rose-300 to-cyan-200 bg-clip-text text-transparent">
           Disciplined Minds.
         </span>
       </h1>
 
-      <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+      <p class="text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
         Where serious aspirants build life-defining careers. Choose your angle—desk view or face view—turn on your camera, join silent rooms, and let accountability do the rest.
       </p>
 
       <!-- PRIMARY GLOBAL SEARCH BAR: "SEARCH YOUR NAME" -->
-      <div class="pt-4 max-w-xl mx-auto">
+      <div class="pt-2 max-w-xl mx-auto">
         <div class="relative group">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500/30 via-rose-500/30 to-cyan-500/30 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-          <div class="relative flex items-center bg-obsidian-card border border-white/15 rounded-2xl p-2 shadow-2xl">
-            <i data-lucide="search" class="w-5 h-5 text-amber-400 ml-3 shrink-0"></i>
+          <div class="relative flex items-center bg-obsidian-card border border-white/15 rounded-2xl p-1.5 sm:p-2 shadow-2xl">
+            <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 ml-2.5 sm:ml-3 shrink-0"></i>
             <input type="text" id="globalNameSearchInput" onkeyup="handleGlobalSearch(event)" placeholder="Search your name (e.g. Vansh, Devika, Ekus, Jimmy)..."
-                   class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm px-3 py-2 outline-none font-mono" />
-            <button onclick="triggerDossierSearch()" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-mono font-bold text-xs uppercase tracking-wider transition-colors shrink-0 flex items-center gap-1.5">
+                   class="w-full bg-transparent border-none text-white placeholder-slate-500 text-xs sm:text-sm px-2.5 sm:px-3 py-2 outline-none font-mono" />
+            <button onclick="triggerDossierSearch()" class="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-mono font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-colors shrink-0 flex items-center gap-1.5">
               <span>View Dossier</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 hidden sm:inline"></i>
             </button>
           </div>
         </div>
-        <p class="text-[11px] font-mono text-slate-500 mt-2 text-center">Type your name and hit Enter to inspect your all-time streaks, rankings, and audits.</p>
+        <p class="text-[10px] sm:text-[11px] font-mono text-slate-500 mt-2 text-center">Type your name and hit Enter to inspect your streaks, rankings, and audits.</p>
       </div>
 
       <!-- Quick Section Anchor Tags -->
@@ -238,8 +268,8 @@
   </section>
 
   <!-- HALL OF FAME PINNACLES -->
-  <section id="milestones" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
-    <div class="max-w-2xl mx-auto text-center mb-16 space-y-3">
+  <section id="milestones" class="py-20 sm:py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
+    <div class="max-w-2xl mx-auto text-center mb-14 sm:mb-16 space-y-3">
       <div class="text-[11px] font-mono tracking-[0.25em] text-accent-gold uppercase font-bold">Pinnacle Standards</div>
       <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Hall of Fame Records</h2>
       <p class="text-slate-400 text-sm">Recognizing historical pinnacle records documented across verified Virtual Library audits.</p>
@@ -311,7 +341,7 @@
   </section>
 
   <!-- MONTHLY AUDIT LEADERBOARD -->
-  <section id="leaderboard" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
+  <section id="leaderboard" class="py-20 sm:py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-cyan-400 uppercase font-bold">Official Records</div>
@@ -360,7 +390,7 @@
   </section>
 
   <!-- LIVE STREAK VAULT -->
-  <section id="vault" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
+  <section id="vault" class="py-20 sm:py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-14">
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-rose-400 uppercase font-bold">Unbroken Discipline</div>
@@ -384,23 +414,23 @@
     </div>
   </section>
 
-  <!-- EXPANDED RULES & PROTOCOLS -->
-  <section id="protocols" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
+  <!-- EXPANDED RULES & PROTOCOLS (NO BOTTOM TEXT, CLEAN ZOOM) -->
+  <section id="protocols" class="py-20 sm:py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="max-w-2xl mx-auto text-center mb-16 space-y-3">
       <div class="text-[11px] font-mono tracking-[0.25em] text-slate-400 uppercase font-bold">Operational Framework</div>
       <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Room Protocols & Guidelines</h2>
-      <p class="text-slate-400 text-sm">Inspect our official guidelines below. Click any image to view in fullscreen high-resolution.</p>
+      <p class="text-slate-400 text-sm">Official room directives. Click either infographic to view in fullscreen high resolution.</p>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-10">
       
       <!-- Panel 1: Google Meet Protocols -->
-      <div class="rounded-3xl bg-obsidian-card border border-obsidian-border p-8 flex flex-col justify-between">
+      <div class="rounded-3xl bg-obsidian-card border border-obsidian-border p-6 sm:p-8 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
             <div>
               <span class="text-[11px] font-mono text-cyan-400 uppercase tracking-widest block font-bold">Camera Protocol</span>
-              <h3 class="font-display font-bold text-2xl text-white mt-1">Google Meet Room Rules</h3>
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">Google Meet Room Rules</h3>
             </div>
             <span class="text-xs font-mono px-3.5 py-1 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-800 font-bold">24/7 Verified</span>
           </div>
@@ -426,12 +456,12 @@
       </div>
 
       <!-- Panel 2: Competition Regulations -->
-      <div class="rounded-3xl bg-obsidian-card border border-obsidian-border p-8 flex flex-col justify-between">
+      <div class="rounded-3xl bg-obsidian-card border border-obsidian-border p-6 sm:p-8 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
             <div>
               <span class="text-[11px] font-mono text-rose-400 uppercase tracking-widest block font-bold">Squad Discipline</span>
-              <h3 class="font-display font-bold text-2xl text-white mt-1">Competition Directives</h3>
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">Competition Directives</h3>
             </div>
             <span class="text-xs font-mono px-3.5 py-1 rounded-full bg-rose-950/60 text-rose-300 border border-rose-800 font-bold">Squad Audited</span>
           </div>
@@ -460,13 +490,13 @@
   </section>
 
   <!-- DIRECT CONTACT & COMMUNICATION DESK -->
-  <section id="contact" class="py-24 px-6 max-w-4xl mx-auto">
-    <div class="rounded-3xl bg-gradient-to-b from-obsidian-card to-obsidian-surface border border-obsidian-border p-10 sm:p-14 text-center space-y-6 shadow-2xl">
+  <section id="contact" class="py-20 sm:py-24 px-6 max-w-4xl mx-auto">
+    <div class="rounded-3xl bg-gradient-to-b from-obsidian-card to-obsidian-surface border border-obsidian-border p-8 sm:p-14 text-center space-y-6 shadow-2xl">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-slate-300 uppercase tracking-wider">
         <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-400"></i> Official Communication Portal
       </div>
       
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Need to Connect with Admin?</h2>
+      <h2 class="font-display font-bold text-2xl sm:text-4xl text-white tracking-tight">Need to Connect with Admin?</h2>
       <p class="text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
         Choose your preferred channel below. Existing members are routed straight through, while new scholars complete a brief security check.
       </p>
@@ -517,7 +547,7 @@
   <!-- MODAL 1: SCHOLAR DOSSIER MODAL ("SEARCH YOUR NAME")          -->
   <!-- ============================================================= -->
   <div id="dossierModal" class="fixed inset-0 z-[250] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative w-full max-w-2xl bg-obsidian-card border border-obsidian-border rounded-3xl p-8 max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div class="relative w-full max-w-2xl bg-obsidian-card border border-obsidian-border rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl">
       <button onclick="closeDossierModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-xl bg-white/5 hover:bg-white/10 transition">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
@@ -529,7 +559,7 @@
   <!-- MODAL 2: MEMBER ROUTING & QUESTIONNAIRE MODAL                -->
   <!-- ============================================================= -->
   <div id="joinModal" class="fixed inset-0 z-[250] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="relative w-full max-w-xl bg-obsidian-card border border-obsidian-border rounded-3xl p-8 max-h-[92vh] overflow-y-auto shadow-2xl">
+    <div class="relative w-full max-w-xl bg-obsidian-card border border-obsidian-border rounded-3xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto shadow-2xl">
       <button onclick="closeJoinModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-xl bg-white/5 hover:bg-white/10 transition">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
@@ -543,7 +573,7 @@
         </div>
 
         <div class="grid sm:grid-cols-2 gap-4 pt-2">
-          <button onclick="handleStatusSelection('old')" class="p-6 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-emerald-400/80 text-left transition group">
+          <button onclick="handleStatusSelection('old')" class="p-5 sm:p-6 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-emerald-400/80 text-left transition group">
             <div class="w-10 h-10 rounded-xl bg-emerald-950/70 border border-emerald-500/50 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
               <i data-lucide="user-check" class="w-5 h-5"></i>
             </div>
@@ -551,7 +581,7 @@
             <div class="text-xs text-slate-400 font-mono mt-1">Already registered in our Google Meet or Telegram roster.</div>
           </button>
 
-          <button onclick="handleStatusSelection('new')" class="p-6 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-amber-400/80 text-left transition group">
+          <button onclick="handleStatusSelection('new')" class="p-5 sm:p-6 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-amber-400/80 text-left transition group">
             <div class="w-10 h-10 rounded-xl bg-amber-950/70 border border-amber-500/50 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
               <i data-lucide="user-plus" class="w-5 h-5"></i>
             </div>
@@ -561,7 +591,7 @@
         </div>
       </div>
 
-      <!-- Step 2: New Joiner Questionnaire -->
+      <!-- Step 2: New Joiner Questionnaire (Clean Answers-Only Copy) -->
       <div id="modalStep2" class="hidden space-y-6">
         <div class="space-y-2 border-b border-white/10 pb-4">
           <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Security Pre-Screening</div>
@@ -597,7 +627,7 @@
                    class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-slate-600 outline-none focus:border-amber-400 transition" />
           </div>
 
-          <div class="grid grid-cols-2 gap-3 pt-1">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
             <div>
               <label class="block text-slate-400 mb-1">Your Full Name & City (Optional)</label>
               <input type="text" id="q_namecity" placeholder="e.g. Vansh, Rajasthan" 
@@ -614,7 +644,7 @@
             <button type="button" onclick="backToStep1()" class="text-slate-400 hover:text-white flex items-center gap-1.5 transition">
               <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
             </button>
-            <button type="submit" class="px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-bold uppercase tracking-wider flex items-center gap-2 transition">
+            <button type="submit" class="px-5 sm:px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-bold uppercase tracking-wider flex items-center gap-2 transition text-[11px] sm:text-xs">
               <span id="submitBtnLabel">Copy Answers & Proceed</span>
               <i data-lucide="check" class="w-4 h-4"></i>
             </button>
@@ -644,39 +674,61 @@
     let activeChannel = 'telegram';
 
     document.addEventListener("DOMContentLoaded", () => {
-      // 1. RUN INTRO LOGO BUILD ANIMATION SEQUENCE (100% AUTOMATIC)
+      // ===============================================================
+      // 1. EXTENDED LOGO BUILD & MILESTONES PRELOADER (100% AUTOMATED)
+      // ===============================================================
       const circle = document.getElementById("buildCircle");
       const logo = document.getElementById("buildLogo");
       const text = document.getElementById("buildText");
+      const ticker = document.getElementById("milestoneTicker");
+      const tickerLabel = document.getElementById("tickerLabel");
+      const tickerValue = document.getElementById("tickerValue");
+      const bar = document.getElementById("preloaderBar");
       const preloader = document.getElementById("introPreloader");
 
-      // Draw SVG Ring
+      // Phase 0: Progress bar start & Ring Draw
+      if (bar) bar.style.width = "100%";
       circle.classList.add("animate-ring-draw");
 
-      // Reveal Central Logo
+      // Phase 1 (0.5s): Scale up and reveal central logo
       setTimeout(() => {
         logo.classList.remove("opacity-0", "scale-75");
         logo.classList.add("opacity-100", "scale-100");
-      }, 400);
+      }, 500);
 
-      // Reveal Brand Header Text
+      // Phase 2 (1.0s): Reveal Brand Header Text & open ticker box
       setTimeout(() => {
         text.classList.remove("opacity-0", "translate-y-3");
         text.classList.add("opacity-100", "translate-y-0");
-      }, 950);
+        ticker.classList.remove("opacity-0");
+      }, 1000);
 
-      // Dismiss Splash Screen Smoothly
+      // Phase 3 (1.4s): Highlight Devika Jain Record
+      setTimeout(() => {
+        tickerLabel.textContent = "All-Time Single Day Record";
+        tickerValue.innerHTML = `<span class="text-amber-400 font-extrabold">Devika Jain</span> &bull; 22h 39m`;
+      }, 1400);
+
+      // Phase 4 (2.3s): Highlight Vansh Yadav Streak Record
+      setTimeout(() => {
+        tickerLabel.textContent = "All-Time Active Streak Legend";
+        tickerValue.innerHTML = `<span class="text-rose-400 font-extrabold">Vansh Yadav</span> &bull; 351 Days Active`;
+      }, 2300);
+
+      // Phase 5 (3.2s): Smoothly fade out and display website
       setTimeout(() => {
         preloader.style.opacity = "0";
         preloader.style.transform = "scale(1.03)";
         setTimeout(() => {
           preloader.style.display = "none";
         }, 700);
-      }, 1900);
+      }, 3200);
 
       if (typeof lucide !== 'undefined') lucide.createIcons();
 
-      // 2. POPULATE SEPTEMBER MONTHLY REPORT
+      // ===============================================================
+      // 2. POPULATE SEPTEMBER MONTHLY AUDIT TABLE
+      // ===============================================================
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
         const monthly = VirtualLibraryData.monthlyReport.participants;
         const tbody = document.getElementById("monthlyTableBody");
@@ -707,7 +759,9 @@
         }).join('');
       }
 
-      // 3. POPULATE STREAK VAULT
+      // ===============================================================
+      // 3. POPULATE STREAK VAULT (SORTED DESCENDING WITH TIERS)
+      // ===============================================================
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
         const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
         const grid = document.getElementById("streakGrid");
@@ -843,7 +897,7 @@
           <div class="space-y-6">
             <div class="border-b border-white/10 pb-4">
               <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Verified Scholar Dossier</div>
-              <h3 class="font-display font-extrabold text-3xl text-white tracking-tight mt-1">${scholarName}</h3>
+              <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight mt-1">${scholarName}</h3>
               <p class="text-xs font-mono text-emerald-400 mt-1 flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Official Registry Verified Scholar
               </p>
@@ -961,7 +1015,7 @@
       document.getElementById('modalStep1').classList.remove('hidden');
     }
 
-    // SUBMIT & CLIPBOARD ONLY ANSWERS
+    // SUBMIT & CLIPBOARD ONLY ANSWERS (No repeated question prompts)
     function submitNewJoinerForm(event) {
       event.preventDefault();
 
@@ -972,7 +1026,6 @@
       const nameCity = document.getElementById('q_namecity').value.trim();
       const query = document.getElementById('q_query').value.trim();
 
-      // ANSWERS ONLY (No repeated question prompts)
       const answersOnlyPayload = 
 `Exam: ${prep}
 Meet Name: ${meetname}
