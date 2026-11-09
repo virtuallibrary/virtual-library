@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Library | The Elite 24/7 Focus Syndicate</title>
+  <title>Virtual Library | 24/7 Focus Study Session</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Lucide Modern Feather-weight Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
     tailwind.config = {
@@ -23,17 +24,17 @@
           },
           colors: {
             obsidian: {
-              DEFAULT: '#060709',
-              raised: '#0B0D13',
+              DEFAULT: '#050608',
+              surface: '#0B0D13',
               card: '#10131B',
               border: 'rgba(255, 255, 255, 0.08)',
-              borderHover: 'rgba(234, 179, 8, 0.35)',
+              borderHover: 'rgba(234, 179, 8, 0.4)',
             },
             accent: {
               gold: '#EAB308',
-              goldMuted: '#CA8A04',
               cyan: '#00F5FF',
               rose: '#FF2A85',
+              ice: '#7DD3FC'
             }
           }
         }
@@ -42,47 +43,60 @@
   </script>
 
   <style>
-    /* Executive Tricolor Sovereign Accent Strip */
+    /* Indian Flag Sovereign Accent Strip */
     .india-strip {
       height: 4px;
       width: 100%;
       background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%, #138808 100%);
-      box-shadow: 0 1px 12px rgba(255, 153, 51, 0.25);
+      box-shadow: 0 1px 12px rgba(255, 153, 51, 0.3);
     }
 
-    /* Subtle Glassmorphism */
-    .glass-surface {
-      background: rgba(11, 13, 19, 0.72);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+    /* Ambient Dot Grid Pattern */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
 
-    .hero-glow {
-      background: radial-gradient(circle at 50% 30%, rgba(255, 42, 133, 0.08) 0%, rgba(0, 245, 255, 0.05) 35%, transparent 70%);
+    /* Clean Glassmorphic Surfaces */
+    .glass-panel {
+      background: rgba(11, 13, 19, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    /* Subtle cursor glow on cards */
+    .card-hover-fx {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover-fx:hover {
+      border-color: rgba(234, 179, 8, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Custom Minimal Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #060709; }
-    ::-webkit-scrollbar-thumb { background: #1F2430; border-radius: 999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #CA8A04; }
+    ::-webkit-scrollbar-track { background: #050608; }
+    ::-webkit-scrollbar-thumb { background: #1E2330; border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #EAB308; }
   </style>
 </head>
 
-<body class="bg-obsidian text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white">
+<body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen">
 
-  <!-- SOVEREIGN STRIP -->
+  <!-- SOVEREIGN TRICOLOR TOP ACCENT -->
   <div class="india-strip sticky top-0 z-[100]"></div>
 
-  <!-- NAVIGATION -->
-  <header class="sticky top-[4px] z-50 glass-surface border-b border-obsidian-border">
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-[4px] z-50 glass-panel border-b border-obsidian-border">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- Brand & Circular Logo -->
+      <!-- Circular Logo & Branding -->
       <a href="#" class="flex items-center gap-3.5 group">
         <div class="relative w-12 h-12 rounded-full p-[1.5px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan group-hover:scale-105 transition-transform duration-300">
-          <div class="w-full h-full bg-obsidian-raised rounded-full overflow-hidden flex items-center justify-center">
-            <img src="logo.png" alt="VL" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="w-full h-full bg-obsidian-surface rounded-full overflow-hidden flex items-center justify-center">
+            <img src="logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <span class="font-display font-bold text-accent-gold text-sm tracking-wider hidden">VL</span>
           </div>
         </div>
@@ -92,7 +106,7 @@
         </div>
       </a>
 
-      <!-- Navigation Links -->
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-slate-400 font-mono">
         <a href="#milestones" class="hover:text-white transition-colors">Hall of Fame</a>
         <a href="#leaderboard" class="hover:text-white transition-colors">Monthly Audit</a>
@@ -103,26 +117,26 @@
       <!-- Action Button -->
       <div class="flex items-center gap-4">
         <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[11px] font-mono text-emerald-400">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Desk Cams Online
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> GMeet Monitored
         </div>
         <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer"
            class="px-5 py-2.5 rounded-xl bg-white text-black font-semibold text-xs tracking-wider uppercase font-mono hover:bg-amber-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all duration-300 flex items-center gap-2">
-          <i class="fa-brands fa-telegram text-sm"></i>
-          <span>Access Room</span>
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          <span>Join Room</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative min-h-[75vh] flex items-center justify-center px-6 py-20 hero-glow border-b border-obsidian-border">
+  <section class="relative py-24 px-6 border-b border-obsidian-border">
     <div class="max-w-4xl mx-auto text-center space-y-8">
       
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono tracking-widest text-slate-300 uppercase">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono tracking-widest text-slate-300 uppercase">
         <span class="text-amber-400">✦</span> Sovereign Academic Collective &bull; Built in India
       </div>
 
-      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.08]">
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl -tracking-[0.03em] text-white leading-[1.08]">
         Architects of Habit.<br>
         <span class="bg-gradient-to-r from-amber-200 via-rose-300 to-cyan-200 bg-clip-text text-transparent">
           Masters of Time.
@@ -133,34 +147,53 @@
         The premier silent study environment for resolute aspirants. Verified camera feeds, rigorous accountability audits, and unyielding daily consistency.
       </p>
 
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-4 font-mono text-xs tracking-wider uppercase">
-        <a href="#leaderboard" class="px-7 py-3.5 rounded-xl bg-obsidian-raised border border-white/15 text-white hover:border-amber-400/80 hover:bg-white/[0.04] transition-all flex items-center gap-2.5 shadow-lg">
-          <i class="fa-solid fa-chart-column text-amber-400"></i> Explore Audit Reports
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2 font-mono text-xs tracking-wider uppercase">
+        <a href="#leaderboard" class="px-7 py-3.5 rounded-xl bg-obsidian-surface border border-white/15 text-white hover:border-amber-400/80 hover:bg-white/[0.04] transition-all flex items-center gap-2.5 shadow-lg">
+          <i data-lucide="bar-chart-3" class="w-4 h-4 text-amber-400"></i> Explore Audit Reports
         </a>
-        <a href="#vault" class="px-7 py-3.5 rounded-xl bg-obsidian-raised border border-white/15 text-white hover:border-cyan-400/80 hover:bg-white/[0.04] transition-all flex items-center gap-2.5 shadow-lg">
-          <i class="fa-solid fa-fire text-rose-400"></i> Active Streak Standings
+        <a href="#vault" class="px-7 py-3.5 rounded-xl bg-obsidian-surface border border-white/15 text-white hover:border-cyan-400/80 hover:bg-white/[0.04] transition-all flex items-center gap-2.5 shadow-lg">
+          <i data-lucide="flame" class="w-4 h-4 text-rose-400"></i> Active Streak Standings
         </a>
+      </div>
+
+      <!-- Live Hero Stats Ticker -->
+      <div class="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div class="p-5 rounded-2xl bg-obsidian-card/80 border border-obsidian-border text-center">
+          <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Logged Hours</div>
+          <div class="font-display font-bold text-2xl text-white mt-1">2,400+ hrs</div>
+          <div class="text-[10px] text-emerald-400 font-mono mt-0.5">Audited Desk Feeds</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-obsidian-card/80 border border-obsidian-border text-center">
+          <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Active Roster</div>
+          <div class="font-display font-bold text-2xl text-accent-gold mt-1">32 Scholars</div>
+          <div class="text-[10px] text-amber-300 font-mono mt-0.5">Daily Habit Streaks</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-obsidian-card/80 border border-obsidian-border text-center">
+          <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Room Availability</div>
+          <div class="font-display font-bold text-2xl text-cyan-400 mt-1">24 / 7 / 365</div>
+          <div class="text-[10px] text-cyan-300 font-mono mt-0.5">Zero Downtime</div>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- HALL OF FAME / MILESTONES -->
+  <!-- HALL OF FAME MILESTONES -->
   <section id="milestones" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="max-w-2xl mx-auto text-center mb-16 space-y-3">
       <div class="text-[11px] font-mono tracking-[0.25em] text-accent-gold uppercase font-bold">Pinnacle Standards</div>
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Hall of Fame Records</h2>
-      <p class="text-slate-400 text-sm">Recognizing historical peak benchmarks documented and verified by Virtual Library administration.</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Hall of Fame Records</h2>
+      <p class="text-slate-400 text-sm">Recognizing historical peak benchmarks documented and verified by Virtual Library audits.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- Record 1: Devika Jain -->
-      <div class="p-8 rounded-2xl bg-gradient-to-b from-amber-500/[0.07] to-obsidian-card border border-amber-500/30 hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group">
+      <!-- Record 1: Devika Jain (Highlighted) -->
+      <div class="p-8 rounded-2xl bg-gradient-to-b from-amber-500/[0.08] to-obsidian-card border border-amber-500/40 card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-amber-400 tracking-wider uppercase mb-4">
-            <span>Single-Day Output</span>
-            <i class="fa-solid fa-crown text-amber-400 group-hover:scale-125 transition-transform"></i>
+            <span>Single-Day Peak</span>
+            <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
           </div>
           <div class="font-display font-extrabold text-4xl text-white tracking-tight">22h 39m</div>
         </div>
@@ -170,12 +203,12 @@
         </div>
       </div>
 
-      <!-- Record 2: Vansh Streak -->
-      <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border hover:border-rose-400/40 transition-all duration-300 flex flex-col justify-between group">
+      <!-- Record 2: Vansh Yadav -->
+      <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-rose-400 tracking-wider uppercase mb-4">
             <span>Peak Consistency</span>
-            <i class="fa-solid fa-fire text-rose-400 group-hover:scale-125 transition-transform"></i>
+            <i data-lucide="flame" class="w-4 h-4 text-rose-400"></i>
           </div>
           <div class="font-display font-extrabold text-4xl text-white tracking-tight">351 <span class="text-xl text-slate-400 font-sans font-normal">Days</span></div>
         </div>
@@ -186,11 +219,11 @@
       </div>
 
       <!-- Record 3: Apex Club -->
-      <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border hover:border-cyan-400/40 transition-all duration-300 flex flex-col justify-between group">
+      <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-cyan-400 tracking-wider uppercase mb-4">
             <span>Apex 300+ Club</span>
-            <i class="fa-solid fa-shield-halved text-cyan-400 group-hover:scale-125 transition-transform"></i>
+            <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
           </div>
           <div class="font-display font-extrabold text-4xl text-white tracking-tight">03 <span class="text-xl text-slate-400 font-sans font-normal">Scholars</span></div>
         </div>
@@ -200,12 +233,12 @@
         </div>
       </div>
 
-      <!-- Record 4: Monthly Volume -->
-      <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border hover:border-purple-400/40 transition-all duration-300 flex flex-col justify-between group">
+      <!-- Record 4: Monthly Highest Focus -->
+      <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-purple-300 tracking-wider uppercase mb-4">
             <span>Monthly Benchmark</span>
-            <i class="fa-solid fa-award text-purple-300 group-hover:scale-125 transition-transform"></i>
+            <i data-lucide="award" class="w-4 h-4 text-purple-300"></i>
           </div>
           <div class="font-display font-extrabold text-4xl text-white tracking-tight">415h 30m</div>
         </div>
@@ -223,25 +256,25 @@
     <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-12">
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-cyan-400 uppercase font-bold">Official Records</div>
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Monthly Performance Audit</h2>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Monthly Performance Audit</h2>
         <p class="text-slate-400 text-sm">Verified camera-checked study hours and recorded attendance logs.</p>
       </div>
 
-      <!-- Global Search Filter Input -->
+      <!-- Unified Real-time Search -->
       <div class="w-full md:w-80 relative">
-        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-        <input type="text" id="memberSearchInput" onkeyup="filterLeaderboards()" placeholder="Search scholar..." 
-               class="w-full bg-obsidian-card border border-obsidian-border focus:border-amber-400/80 text-white placeholder-slate-500 text-sm rounded-xl pl-10 pr-4 py-3 outline-none font-mono transition-all duration-200" />
+        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"></i>
+        <input type="text" id="memberSearchInput" onkeyup="filterLeaderboards()" placeholder="Search scholar name..." 
+               class="w-full bg-obsidian-card border border-obsidian-border focus:border-amber-400/80 text-white placeholder-slate-500 text-sm rounded-xl pl-10 pr-4 py-3 outline-none font-mono transition-all" />
       </div>
     </div>
 
     <!-- Table Container -->
     <div class="rounded-2xl border border-obsidian-border bg-obsidian-card overflow-hidden shadow-2xl">
-      <div class="px-6 py-4 border-b border-obsidian-border bg-obsidian-raised/60 flex items-center justify-between text-xs font-mono text-slate-400">
+      <div class="px-6 py-4 border-b border-obsidian-border bg-obsidian-surface/60 flex items-center justify-between text-xs font-mono text-slate-400">
         <span class="flex items-center gap-2 text-slate-200 font-semibold tracking-wider uppercase">
           <span class="w-2 h-2 rounded-full bg-accent-gold"></span> Cycle: September 2026
         </span>
-        <span class="hidden sm:block">Ranked by Verified Time</span>
+        <span class="hidden sm:block">Ranked by Verified Desk Time</span>
       </div>
 
       <div class="overflow-x-auto">
@@ -255,9 +288,15 @@
             </tr>
           </thead>
           <tbody id="monthlyTableBody" class="divide-y divide-white/5 text-sm font-medium">
-            <!-- Populated from data.js -->
+            <!-- Dynamically populated from data.js -->
           </tbody>
         </table>
+      </div>
+
+      <!-- Zero-State Search Feedback -->
+      <div id="monthlyZeroState" class="hidden p-12 text-center">
+        <i data-lucide="alert-circle" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
+        <p class="text-sm font-mono text-slate-400">No verified scholar matches your search term.</p>
       </div>
     </div>
   </section>
@@ -267,25 +306,32 @@
     <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-14">
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-rose-400 uppercase font-bold">Unbroken Discipline</div>
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Active Streak Vault</h2>
-        <p class="text-slate-400 text-sm">Documented consecutive days with verifiable desk camera participation.</p>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Active Streak Vault</h2>
+        <p class="text-slate-400 text-sm">Ranked in descending order with categorized discipline tiers.</p>
       </div>
-      <div class="text-xs font-mono text-slate-400 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5">
-        Audit Timestamp: 08-Nov-2026
+      <div class="text-xs font-mono text-slate-400 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
+        <i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i> Audit: 08-Nov-2026
       </div>
     </div>
 
+    <!-- Responsive Grid -->
     <div id="streakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Populated from data.js -->
+      <!-- Dynamically populated from data.js -->
+    </div>
+
+    <!-- Zero-State Search Feedback -->
+    <div id="streakZeroState" class="hidden p-12 text-center rounded-2xl border border-obsidian-border bg-obsidian-card">
+      <i data-lucide="alert-circle" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
+      <p class="text-sm font-mono text-slate-400">No active streaks match your search query.</p>
     </div>
   </section>
 
-  <!-- PROTOCOLS & GUIDELINES -->
+  <!-- ROOM PROTOCOLS & LIGHTBOX-ENABLED INFOGRAPHICS -->
   <section id="protocols" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
     <div class="max-w-2xl mx-auto text-center mb-16 space-y-3">
-      <div class="text-[11px] font-mono tracking-[0.25em] text-slate-400 uppercase font-bold">Operational Framework</div>
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Room Protocols & Standards</h2>
-      <p class="text-slate-400 text-sm">Every participant adheres strictly to these visual discipline parameters.</p>
+      <div class="text-[11px] font-mono tracking-[0.25em] text-slate-400 uppercase font-bold">Operational Standard</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Protocols & Directives</h2>
+      <p class="text-slate-400 text-sm">Click either chart below to inspect in high-resolution full view.</p>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-8">
@@ -302,26 +348,30 @@
           </div>
 
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Visual desk accountability is compulsory. The environment is strictly silent—no microphonic interference is permitted.
+            Visual desk accountability is mandatory. The environment is strictly silent—no microphonic interference is permitted.
           </p>
 
-          <!-- Responsive Graphic Container -->
-          <div class="w-full h-72 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center p-3 mb-6 overflow-hidden">
-            <img src="meet-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-lg" alt="Meeting Guidelines">
+          <!-- Interactive Lightbox Trigger Container -->
+          <div onclick="openLightbox('meet-rules.jpg', 'Google Meet Rules')" 
+               class="cursor-zoom-in group relative w-full h-72 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center p-3 mb-6 overflow-hidden">
+            <img src="meet-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300" alt="Meeting Guidelines">
             <div class="hidden flex-col items-center justify-center text-slate-500 gap-2">
-              <i class="fa-regular fa-image text-3xl text-slate-600"></i>
+              <i data-lucide="image" class="w-8 h-8 text-slate-600"></i>
               <span class="text-xs font-mono">Infographic: <code class="text-slate-300">meet-rules.jpg</code></span>
+            </div>
+            <div class="absolute bottom-3 right-3 bg-black/80 text-white text-[10px] font-mono px-2 py-1 rounded border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+              <i data-lucide="maximize-2" class="w-3 h-3"></i> Expand View
             </div>
           </div>
 
-          <div class="space-y-3 text-xs text-slate-300 font-sans">
+          <div class="space-y-3 text-xs text-slate-300">
             <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
-              <span><strong>Desk & Hands Angle:</strong> Frame must capture your work surface and continuous academic presence.</span>
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span><strong>Desk & Hands Angle:</strong> Frame must capture your work surface, study notes, or screen continuously.</span>
             </div>
             <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i class="fa-solid fa-check text-cyan-400 mt-0.5"></i>
-              <span><strong>Default Muted Audio:</strong> Microphones must stay permanently muted to guarantee zero noise disruption.</span>
+              <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+              <span><strong>Audio Muted:</strong> Microphones must stay permanently muted to prevent noise disruption.</span>
             </div>
           </div>
         </div>
@@ -339,26 +389,30 @@
           </div>
 
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Structured seasons require collective integrity. Unannounced absences result in immediate replacement by reserves.
+            Structured seasons require collective integrity. Unannounced absences result in immediate reserve swaps.
           </p>
 
-          <!-- Responsive Graphic Container -->
-          <div class="w-full h-72 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center p-3 mb-6 overflow-hidden">
-            <img src="competition-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-lg" alt="Competition Directives">
+          <!-- Interactive Lightbox Trigger Container -->
+          <div onclick="openLightbox('competition-rules.jpg', 'Competition Rules')" 
+               class="cursor-zoom-in group relative w-full h-72 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center p-3 mb-6 overflow-hidden">
+            <img src="competition-rules.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform duration-300" alt="Competition Directives">
             <div class="hidden flex-col items-center justify-center text-slate-500 gap-2">
-              <i class="fa-regular fa-image text-3xl text-slate-600"></i>
+              <i data-lucide="image" class="w-8 h-8 text-slate-600"></i>
               <span class="text-xs font-mono">Infographic: <code class="text-slate-300">competition-rules.jpg</code></span>
+            </div>
+            <div class="absolute bottom-3 right-3 bg-black/80 text-white text-[10px] font-mono px-2 py-1 rounded border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+              <i data-lucide="maximize-2" class="w-3 h-3"></i> Expand View
             </div>
           </div>
 
-          <div class="space-y-3 text-xs text-slate-300 font-sans">
+          <div class="space-y-3 text-xs text-slate-300">
             <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i class="fa-solid fa-check text-rose-400 mt-0.5"></i>
+              <i data-lucide="check" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
               <span><strong>Weekly Log Target:</strong> Squad participants log between 5 to 10 hours minimum to retain standing.</span>
             </div>
             <div class="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex gap-3">
-              <i class="fa-solid fa-check text-rose-400 mt-0.5"></i>
-              <span><strong>Reserve Replacements:</strong> Sudden drops activate waitlisted aspirants without squad point waivers.</span>
+              <i data-lucide="check" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+              <span><strong>Reserve Replacements:</strong> Sudden drops activate waitlisted aspirants without point waivers.</span>
             </div>
           </div>
         </div>
@@ -367,27 +421,32 @@
     </div>
   </section>
 
-  <!-- ADMINISTRATIVE CONTACT DESK -->
+  <!-- ADMINISTRATIVE CONTACT & CLIPBOARD ACTIONS -->
   <section id="contact" class="py-24 px-6 max-w-4xl mx-auto">
-    <div class="rounded-3xl bg-gradient-to-b from-obsidian-card to-obsidian-raised border border-obsidian-border p-10 sm:p-14 text-center space-y-6">
+    <div class="rounded-3xl bg-gradient-to-b from-obsidian-card to-obsidian-surface border border-obsidian-border p-10 sm:p-14 text-center space-y-6">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.03] border border-white/10 text-xs font-mono text-slate-300 uppercase tracking-wider">
-        <i class="fa-solid fa-shield-cat text-amber-400"></i> Helpdesk & Oversight
+        <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-400"></i> Helpdesk & Administrative Oversight
       </div>
       
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Administrative Support</h2>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight -tracking-[0.02em]">Administrative Support</h2>
       <p class="text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
-        For streak freezes, attendance disputes, rule guidance, or room access clearances, reach out through our official channels.
+        For streak freezes, attendance adjustments, rule clarifications, or room invitations, contact our administration desk directly.
       </p>
 
       <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center font-mono text-xs uppercase tracking-wider">
-        <a href="https://t.me/VirtualLibraryAdmin" target="_blank" rel="noopener noreferrer"
-           class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white text-black font-bold hover:bg-amber-300 transition-colors flex items-center justify-center gap-2">
-          <i class="fa-brands fa-telegram text-base"></i> DM @VirtualLibraryAdmin
-        </a>
-        <a href="mailto:virtualfocusmod@gmail.com?subject=Virtual%20Library%20Admin%20Inquiry"
-           class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-obsidian-raised border border-white/10 text-slate-200 hover:border-amber-400/60 transition-colors flex items-center justify-center gap-2">
-          <i class="fa-regular fa-envelope text-base"></i> virtualfocusmod@gmail.com
-        </a>
+        <!-- One-Click Copy Telegram Handle -->
+        <button onclick="copyToClipboard('@VirtualLibraryAdmin', this)"
+           class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-black font-bold hover:bg-amber-300 transition-colors flex items-center justify-center gap-2">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>Copy @VirtualLibraryAdmin</span>
+        </button>
+
+        <!-- One-Click Copy Email Address -->
+        <button onclick="copyToClipboard('virtualfocusmod@gmail.com', this)"
+           class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-obsidian-surface border border-white/10 text-slate-200 hover:border-amber-400/60 transition-colors flex items-center justify-center gap-2">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span>Copy Support Email</span>
+        </button>
       </div>
     </div>
   </section>
@@ -403,30 +462,59 @@
       </div>
 
       <div class="flex flex-wrap items-center gap-6">
-        <a href="https://t.me/studyy247" target="_blank" class="hover:text-slate-300 transition-colors">Telegram @studyy247</a>
-        <a href="https://t.me/VirtualLibraryAdmin" target="_blank" class="hover:text-slate-300 transition-colors">Admin @VirtualLibraryAdmin</a>
-        <a href="mailto:virtualfocusmod@gmail.com" class="hover:text-slate-300 transition-colors">Support Email</a>
+        <a href="https://t.me/studyy247" target="_blank" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="send" class="w-3 h-3"></i> Telegram @studyy247
+        </a>
+        <a href="https://t.me/VirtualLibraryAdmin" target="_blank" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="user-check" class="w-3 h-3"></i> DM @VirtualLibraryAdmin
+        </a>
+        <a href="mailto:virtualfocusmod@gmail.com" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-3 h-3"></i> Support Email
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- FULLSCREEN INFOGRAPHIC LIGHTBOX MODAL -->
+  <div id="imageLightbox" class="fixed inset-0 z-[200] bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center">
+      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-slate-400 hover:text-white font-mono text-xs flex items-center gap-1.5 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">
+        <i data-lucide="x" class="w-4 h-4"></i> Close [ESC]
+      </button>
+      <img id="lightboxImg" src="" alt="Enlarged graphic" class="max-w-full max-h-[82vh] object-contain rounded-xl border border-white/10 shadow-2xl">
+      <div id="lightboxCaption" class="mt-3 text-xs font-mono text-slate-400"></div>
+    </div>
+  </div>
+
+  <!-- SCRIPT ENGINE -->
   <script src="data.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // 1. POPULATE MONTHLY LEADERBOARD
+      // Initialize Lucide Vector Icons
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+
+      // 1. POPULATE MONTHLY AUDIT TABLE
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
         const monthly = VirtualLibraryData.monthlyReport.participants;
         const tbody = document.getElementById("monthlyTableBody");
         tbody.innerHTML = monthly.map((p, index) => {
           const rank = index + 1;
           let rankMarkup = `<span class="font-mono text-slate-500 font-semibold text-xs">#${String(rank).padStart(2, '0')}</span>`;
-          if (rank === 1) rankMarkup = `<span class="font-mono font-bold text-amber-400 text-sm flex items-center gap-1.5"><i class="fa-solid fa-crown text-xs"></i>#01</span>`;
-          else if (rank === 2) rankMarkup = `<span class="font-mono font-bold text-slate-300 text-sm flex items-center gap-1.5"><i class="fa-solid fa-medal text-xs"></i>#02</span>`;
-          else if (rank === 3) rankMarkup = `<span class="font-mono font-bold text-amber-700 text-sm flex items-center gap-1.5"><i class="fa-solid fa-medal text-xs"></i>#03</span>`;
+          let rowClass = "hover:bg-white/[0.02]";
+
+          if (rank === 1) {
+            rankMarkup = `<span class="font-mono font-bold text-amber-400 text-sm flex items-center gap-1.5"><i data-lucide="crown" class="w-3.5 h-3.5"></i>#01</span>`;
+            rowClass = "bg-amber-500/[0.03] hover:bg-amber-500/[0.06]";
+          } else if (rank === 2) {
+            rankMarkup = `<span class="font-mono font-bold text-slate-300 text-sm flex items-center gap-1.5"><i data-lucide="medal" class="w-3.5 h-3.5"></i>#02</span>`;
+            rowClass = "bg-white/[0.02] hover:bg-white/[0.04]";
+          } else if (rank === 3) {
+            rankMarkup = `<span class="font-mono font-bold text-amber-700 text-sm flex items-center gap-1.5"><i data-lucide="medal" class="w-3.5 h-3.5"></i>#03</span>`;
+            rowClass = "bg-amber-900/[0.04] hover:bg-amber-900/[0.08]";
+          }
 
           return `
-            <tr class="hover:bg-white/[0.02] transition-colors member-row">
+            <tr class="${rowClass} transition-colors member-row">
               <td class="py-4 px-6">${rankMarkup}</td>
               <td class="py-4 px-6 font-semibold text-slate-100 member-name tracking-wide">${p.name}</td>
               <td class="py-4 px-6 font-mono text-right text-slate-400">${p.daysAppeared} d</td>
@@ -436,7 +524,7 @@
         }).join('');
       }
 
-      // 2. POPULATE STREAK VAULT (DESCENDING)
+      // 2. POPULATE STREAK VAULT (WITH TIER BADGES)
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
         const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
         const grid = document.getElementById("streakGrid");
@@ -444,21 +532,39 @@
           const rank = index + 1;
           const isFrozen = item.status === "FROZEN";
 
+          // Dynamic Discipline Tiers
+          let tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Contender</span>`;
+          if (item.streak >= 300) {
+            tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-500/50">Sovereign Apex</span>`;
+          } else if (item.streak >= 100) {
+            tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/70 text-cyan-300 border border-cyan-500/50">Centurion</span>`;
+          } else if (item.streak >= 50) {
+            tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-950/70 text-rose-300 border border-rose-500/50">Vanguard</span>`;
+          }
+
+          let cardStyling = "bg-obsidian-card border-obsidian-border";
+          if (isFrozen) {
+            cardStyling = "bg-obsidian-card/60 border-sky-900/40 opacity-75";
+          }
+
           return `
-            <div class="streak-card p-6 rounded-2xl bg-obsidian-card border border-obsidian-border hover:border-white/20 transition-all flex flex-col justify-between">
+            <div class="streak-card p-6 rounded-2xl ${cardStyling} border card-hover-fx flex flex-col justify-between">
               <div class="flex items-center justify-between mb-4">
-                <span class="w-8 h-8 rounded-lg bg-obsidian-raised border border-white/5 flex items-center justify-center font-mono text-xs font-bold text-slate-400">
+                <span class="w-8 h-8 rounded-lg bg-obsidian-surface border border-white/5 flex items-center justify-center font-mono text-xs font-bold text-slate-400">
                   #${rank}
                 </span>
-                <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full uppercase tracking-wider font-semibold ${isFrozen ? 'bg-sky-950/70 text-sky-300 border border-sky-800' : 'bg-emerald-950/70 text-emerald-300 border border-emerald-800'}">
-                  ${item.status}
-                </span>
+                <div class="flex items-center gap-1.5">
+                  ${tierBadge}
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold ${isFrozen ? 'bg-sky-950 text-sky-300 border border-sky-800' : 'bg-emerald-950/70 text-emerald-300 border border-emerald-800'}">
+                    ${item.status}
+                  </span>
+                </div>
               </div>
 
               <div>
                 <div class="text-base font-bold text-white streak-name tracking-wide">${item.name}</div>
                 <div class="flex items-baseline gap-2 mt-3 pt-3 border-t border-white/5">
-                  <span class="font-display font-extrabold text-3xl text-amber-400">${item.streak}</span>
+                  <span class="font-display font-extrabold text-3xl ${isFrozen ? 'text-sky-300' : 'text-amber-400'}">${item.streak}</span>
                   <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Consecutive Days</span>
                 </div>
               </div>
@@ -466,22 +572,65 @@
           `;
         }).join('');
       }
+
+      // Re-run Lucide on newly injected template tags
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     });
 
-    // UNIFIED SEARCH: FILTERS BOTH SECTIONS SIMULTANEOUSLY
+    // UNIFIED SEARCH WITH ZERO-STATE DETECTION
     function filterLeaderboards() {
       const query = document.getElementById('memberSearchInput').value.toLowerCase().trim();
       
+      let visibleRows = 0;
       document.querySelectorAll('.member-row').forEach(row => {
         const name = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
-        row.style.display = name.includes(query) ? '' : 'none';
+        const match = name.includes(query);
+        row.style.display = match ? '' : 'none';
+        if (match) visibleRows++;
       });
+      document.getElementById('monthlyZeroState').style.display = (visibleRows === 0) ? 'block' : 'none';
 
+      let visibleCards = 0;
       document.querySelectorAll('.streak-card').forEach(card => {
         const name = card.querySelector('.streak-name')?.textContent.toLowerCase() || '';
-        card.style.display = name.includes(query) ? 'flex' : 'none';
+        const match = name.includes(query);
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visibleCards++;
+      });
+      document.getElementById('streakZeroState').style.display = (visibleCards === 0) ? 'block' : 'none';
+    }
+
+    // ONE-CLICK COPY HELPER
+    function copyToClipboard(text, btnElement) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalHTML = btnElement.innerHTML;
+        btnElement.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i><span>Copied!</span>`;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        setTimeout(() => {
+          btnElement.innerHTML = originalHTML;
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }, 2000);
       });
     }
+
+    // LIGHTBOX CONTROLS
+    function openLightbox(imgSrc, caption) {
+      const modal = document.getElementById('imageLightbox');
+      document.getElementById('lightboxImg').src = imgSrc;
+      document.getElementById('lightboxCaption').textContent = caption;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('imageLightbox');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
   </script>
 </body>
 </html>
