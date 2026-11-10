@@ -62,6 +62,13 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    .glass-pill {
+      background: rgba(10, 12, 18, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
     .card-hover-fx {
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -71,7 +78,6 @@
       box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8);
     }
 
-    /* Modal Animation */
     .modal-active {
       display: flex !important;
       animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -81,7 +87,6 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* Smooth hardware-accelerated SVG draw */
     @keyframes drawRing {
       0% { stroke-dashoffset: 290; }
       100% { stroke-dashoffset: 0; }
@@ -90,6 +95,10 @@
       animation: drawRing 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
     }
 
+    /* Hide scrollbar for clean horizontal tabs */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #040507; }
     ::-webkit-scrollbar-thumb { background: #1C2230; border-radius: 999px; }
@@ -97,21 +106,17 @@
   </style>
 </head>
 
-<body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen">
+<body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen pb-20 md:pb-0">
 
-  <!-- ============================================================= -->
-  <!-- MULTI-STAGE STAGED INTRO: LOGO -> MILESTONES (BIG) -> UNVEIL  -->
-  <!-- ============================================================= -->
+  <!-- INTRO PRELOADER SEQUENCE -->
   <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center transition-all duration-700 ease-in-out select-none">
-    
-    <!-- Instant Skip Button -->
     <button onclick="dismissIntroNow()" class="absolute top-6 right-6 text-[11px] font-mono tracking-widest uppercase text-slate-500 hover:text-white px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 transition z-50">
       Skip ✕
     </button>
 
     <div class="relative w-full max-w-xl px-6 flex flex-col items-center justify-center min-h-[340px]">
       
-      <!-- STAGE 1: LOGO BUILDING ANIMATION -->
+      <!-- Stage 1: Logo Trace & Build -->
       <div id="introStageLogo" class="flex flex-col items-center transition-all duration-500 ease-out">
         <div class="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center">
           <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
@@ -141,7 +146,7 @@
         </div>
       </div>
 
-      <!-- STAGE 2: MILESTONE 1 (DEVIKA JAIN - BIG DISPLAY) -->
+      <!-- Stage 2: Milestone 1 (Devika Jain) -->
       <div id="introStageM1" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono tracking-widest uppercase text-amber-400 mb-4">
           <i data-lucide="crown" class="w-4 h-4"></i> Pinnacle Record 01
@@ -156,14 +161,14 @@
         <div class="text-xs font-mono text-slate-500 mt-1">All-Time Peak Record &bull; Audited Entry</div>
       </div>
 
-      <!-- STAGE 3: MILESTONE 2 (VANSH YADAV - BIG DISPLAY) -->
+      <!-- Stage 3: Milestone 2 (Vansh Yadav) -->
       <div id="introStageM2" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-xs font-mono tracking-widest uppercase text-rose-400 mb-4">
           <i data-lucide="flame" class="w-4 h-4"></i> Pinnacle Record 02
         </div>
         <div class="text-xs font-mono uppercase tracking-[0.25em] text-slate-400 mb-2">Peak Unbroken Desk Streak</div>
         <div class="font-display font-black text-6xl sm:text-8xl text-white tracking-tight leading-none drop-shadow-[0_0_35px_rgba(255,42,133,0.4)]">
-          351 <span class="text-3xl sm:text-5xl text-slate-400 font-sans font-normal">Days</span>
+          352 <span class="text-3xl sm:text-5xl text-slate-400 font-sans font-normal">Days</span>
         </div>
         <div class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-rose-300 tracking-wide">
           Vansh Yadav
@@ -173,13 +178,12 @@
 
     </div>
 
-    <!-- Bottom Stage Progress Dots -->
+    <!-- Dots -->
     <div class="absolute bottom-8 flex items-center gap-2">
       <span id="dot1" class="w-2 h-2 rounded-full bg-amber-400 transition-all duration-300"></span>
       <span id="dot2" class="w-2 h-2 rounded-full bg-white/20 transition-all duration-300"></span>
       <span id="dot3" class="w-2 h-2 rounded-full bg-white/20 transition-all duration-300"></span>
     </div>
-
   </div>
 
   <!-- SOVEREIGN TOP ACCENT -->
@@ -189,7 +193,7 @@
   <header class="sticky top-[4px] z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
       
-      <!-- Brand Identity & Circular Logo (Responsive Sizing to Prevent Congestion) -->
+      <!-- Brand Identity & Circular Logo -->
       <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0 pr-2">
         <div class="relative w-9 h-9 sm:w-12 sm:h-12 rounded-full p-[1.5px] bg-gradient-to-tr from-accent-rose via-white/20 to-accent-cyan group-hover:scale-105 transition-transform duration-300 shrink-0">
           <div class="w-full h-full bg-obsidian-surface rounded-full overflow-hidden flex items-center justify-center">
@@ -225,8 +229,8 @@
     </div>
   </header>
 
-  <!-- IMMERSIVE EDITORIAL HERO -->
-  <section class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
+  <!-- IMMERSIVE HERO -->
+  <section id="hero" class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
 
     <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
@@ -246,7 +250,7 @@
         Where serious aspirants build life-defining careers. Choose your angle—desk view or face view—turn on your camera, join silent rooms, and let accountability do the rest.
       </p>
 
-      <!-- PRIMARY GLOBAL SEARCH BAR: "SEARCH YOUR NAME" -->
+      <!-- PRIMARY GLOBAL SEARCH BAR -->
       <div class="pt-4 max-w-xl mx-auto">
         <div class="relative group">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500/30 via-rose-500/30 to-cyan-500/30 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
@@ -260,10 +264,10 @@
             </button>
           </div>
         </div>
-        <p class="text-[11px] font-mono text-slate-500 mt-2 text-center">Type your name and hit Enter to inspect your all-time streaks, rankings, and audits.</p>
+        <p class="text-[11px] font-mono text-slate-500 mt-2 text-center">Type your name and hit Enter to inspect your unbroken streaks, rankings, and audits.</p>
       </div>
 
-      <!-- Quick Section Anchor Tags -->
+      <!-- Quick Links -->
       <div class="flex flex-wrap items-center justify-center gap-3 pt-2 font-mono text-xs uppercase tracking-wider text-slate-400">
         <a href="#leaderboard" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
           <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-amber-400"></i> Monthly Rankings
@@ -313,7 +317,7 @@
             <span>Peak Consistency</span>
             <i data-lucide="flame" class="w-4 h-4 text-rose-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">351 <span class="text-xl text-slate-400 font-sans font-normal">Days</span></div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight">352 <span class="text-xl text-slate-400 font-sans font-normal">Days</span></div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
           <div class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
@@ -321,18 +325,18 @@
         </div>
       </div>
 
-      <!-- Record 3: 300+ Days Apex Club -->
+      <!-- Record 3: 300+ Days Sovereign Apex Tier -->
       <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-cyan-400 tracking-wider uppercase mb-4">
             <span>Apex 300+ Tier</span>
             <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">03 <span class="text-xl text-slate-400 font-sans font-normal">Members</span></div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight">05 <span class="text-xl text-slate-400 font-sans font-normal">Members</span></div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
-          <div class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Vandana</div>
-          <div class="text-xs font-mono text-slate-400 mt-0.5">351d &bull; 335d &bull; 315d</div>
+          <div class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Shreya, Vandana, Kanchan</div>
+          <div class="text-xs font-mono text-slate-400 mt-0.5">352d &bull; 336d &bull; 317d &bull; 316d &bull; 302d</div>
         </div>
       </div>
 
@@ -365,7 +369,7 @@
 
       <div class="w-full md:w-80 relative">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"></i>
-        <input type="text" id="tableFilterInput" onkeyup="filterBothViews(this.value)" placeholder="Filter table or streaks..." 
+        <input type="text" id="tableFilterInput" onkeyup="filterMonthlyTable(this.value)" placeholder="Filter monthly roster..." 
                class="w-full bg-obsidian-card border border-obsidian-border focus:border-amber-400/80 text-white placeholder-slate-500 text-sm rounded-xl pl-10 pr-4 py-3 outline-none font-mono transition-all" />
       </div>
     </div>
@@ -401,26 +405,49 @@
     </div>
   </section>
 
-  <!-- LIVE STREAK VAULT -->
+  <!-- LIVE STREAK VAULT (FEATURE 1: DEDICATED TIER TABS) -->
   <section id="vault" class="py-24 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
-    <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-14">
+    <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-8">
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-rose-400 uppercase font-bold">Unbroken Discipline</div>
         <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Active Streak Vault</h2>
-        <p class="text-slate-400 text-sm">Ranked in descending order with categorized discipline tiers.</p>
+        <p class="text-slate-400 text-sm">Consecutive camera-verified desk days ranked strictly by volume.</p>
       </div>
-      <div class="text-xs font-mono text-slate-400 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
-        <i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i> Audit: 08-Nov-2026
+      <div class="text-xs font-mono text-emerald-400 px-4 py-2 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Protected under Aegis Protocol
       </div>
     </div>
 
+    <!-- TIER FILTER PILL TABS -->
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-8 border-b border-white/5 text-xs font-mono">
+      <button onclick="setTierFilter('all', this)" class="tier-tab-btn active px-4 py-2 rounded-xl bg-white text-black font-bold whitespace-nowrap transition">
+        All Scholars (<span id="count-all">0</span>)
+      </button>
+      <button onclick="setTierFilter('300', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
+        👑 Sovereign Apex (300+ d)
+      </button>
+      <button onclick="setTierFilter('200', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
+        🏆 Double Crown (200–299 d)
+      </button>
+      <button onclick="setTierFilter('150', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
+        ⚡ Apex (150–199 d)
+      </button>
+      <button onclick="setTierFilter('50', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
+        🛡️ Elite (50–149 d)
+      </button>
+      <button onclick="setTierFilter('under50', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
+        🔥 Developing (<50 d)
+      </button>
+    </div>
+
+    <!-- Responsive Streak Grid -->
     <div id="streakGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <!-- Populated via data.js -->
     </div>
 
     <div id="streakZeroState" class="hidden p-12 text-center rounded-2xl border border-obsidian-border bg-obsidian-card">
       <i data-lucide="search-x" class="w-8 h-8 text-slate-600 mx-auto mb-2"></i>
-      <p class="text-sm font-mono text-slate-400">No active streaks match this filter query.</p>
+      <p class="text-sm font-mono text-slate-400">No active streaks match this tier or filter criteria.</p>
     </div>
   </section>
 
@@ -550,7 +577,29 @@
   </footer>
 
   <!-- ============================================================= -->
-  <!-- MODAL 1: SCHOLAR DOSSIER MODAL ("SEARCH YOUR NAME")          -->
+  <!-- FEATURE 4: MOBILE BOTTOM QUICK-JUMP DOCK (MOBILE ONLY)       -->
+  <!-- ============================================================= -->
+  <div class="md:hidden fixed bottom-4 inset-x-4 z-[90] glass-pill rounded-2xl px-6 py-3 flex items-center justify-around shadow-2xl">
+    <a href="#hero" class="flex flex-col items-center text-slate-400 hover:text-amber-400 transition">
+      <i data-lucide="search" class="w-5 h-5"></i>
+      <span class="text-[9px] font-mono mt-1">Search</span>
+    </a>
+    <a href="#milestones" class="flex flex-col items-center text-slate-400 hover:text-amber-400 transition">
+      <i data-lucide="crown" class="w-5 h-5"></i>
+      <span class="text-[9px] font-mono mt-1">Records</span>
+    </a>
+    <a href="#vault" class="flex flex-col items-center text-slate-400 hover:text-rose-400 transition">
+      <i data-lucide="flame" class="w-5 h-5"></i>
+      <span class="text-[9px] font-mono mt-1">Streaks</span>
+    </a>
+    <button onclick="openJoinModal('telegram')" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 transition">
+      <i data-lucide="message-square" class="w-5 h-5"></i>
+      <span class="text-[9px] font-mono mt-1">Admin</span>
+    </button>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- MODAL 1: SCHOLAR DOSSIER (WITH FEATURE 3: ONE-CLICK SHARE)   -->
   <!-- ============================================================= -->
   <div id="dossierModal" class="fixed inset-0 z-[250] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="relative w-full max-w-2xl bg-obsidian-card border border-obsidian-border rounded-3xl p-8 max-h-[90vh] overflow-y-auto shadow-2xl">
@@ -674,15 +723,13 @@
     </div>
   </div>
 
-  <!-- SCRIPT ENGINE & ANIMATION SEQUENCE -->
+  <!-- SCRIPT ENGINE & LOGIC -->
   <script src="data.js"></script>
   <script>
     let activeChannel = 'telegram';
-    let introTimer = null;
+    let currentTierFilter = 'all';
 
-    // IMMEDIATE SKIP FUNCTION
     function dismissIntroNow() {
-      if (introTimer) clearTimeout(introTimer);
       const preloader = document.getElementById("introPreloader");
       if (preloader) {
         preloader.style.opacity = "0";
@@ -694,41 +741,29 @@
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof lucide !== 'undefined') lucide.createIcons();
 
-      // ============================================================
-      // STAGED INTRO SEQUENCE:
-      // Stage 1: Logo Trace & Build (0ms - 1500ms)
-      // Stage 2: Milestone 1 (Devika Jain - 1500ms - 3200ms)
-      // Stage 3: Milestone 2 (Vansh Yadav - 3200ms - 4900ms)
-      // Stage 4: Clean Page Unveil (4900ms)
-      // ============================================================
+      // INTRO ANIMATION TIMELINE
       const circle = document.getElementById("buildCircle");
       const logo = document.getElementById("buildLogo");
       const text = document.getElementById("buildText");
-      
       const stageLogo = document.getElementById("introStageLogo");
       const stageM1 = document.getElementById("introStageM1");
       const stageM2 = document.getElementById("introStageM2");
-
       const dot1 = document.getElementById("dot1");
       const dot2 = document.getElementById("dot2");
       const dot3 = document.getElementById("dot3");
 
-      // 1. Trigger SVG Contour Draw
       circle.classList.add("animate-ring-draw");
 
-      // Reveal Central Logo
       setTimeout(() => {
         logo.classList.remove("opacity-0", "scale-75");
         logo.classList.add("opacity-100", "scale-100");
       }, 350);
 
-      // Reveal Text
       setTimeout(() => {
         text.classList.remove("opacity-0", "translate-y-3");
         text.classList.add("opacity-100", "translate-y-0");
       }, 700);
 
-      // 2. Transition from Logo to Milestone 1 (Devika Jain)
       setTimeout(() => {
         stageLogo.classList.add("opacity-0", "scale-90");
         setTimeout(() => {
@@ -743,7 +778,6 @@
         }, 350);
       }, 1500);
 
-      // 3. Transition from Milestone 1 to Milestone 2 (Vansh Yadav)
       setTimeout(() => {
         stageM1.classList.remove("opacity-100", "scale-100");
         stageM1.classList.add("opacity-0", "scale-95");
@@ -759,15 +793,11 @@
         }, 350);
       }, 3200);
 
-      // 4. Smooth Exit to Main Website
-      introTimer = setTimeout(() => {
+      setTimeout(() => {
         dismissIntroNow();
       }, 4900);
 
-      // ============================================================
-      // DATA POPULATION
-      // ============================================================
-      // Monthly Report
+      // POPULATE MONTHLY REPORT
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
         const monthly = VirtualLibraryData.monthlyReport.participants;
         const tbody = document.getElementById("monthlyTableBody");
@@ -798,58 +828,108 @@
         }).join('');
       }
 
-      // Streaks
-      if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
-        const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
-        const grid = document.getElementById("streakGrid");
-        grid.innerHTML = streaks.map((item, index) => {
-          const rank = index + 1;
-          const isFrozen = item.status === "FROZEN";
-
-          let tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Contender</span>`;
-          if (item.streak >= 300) {
-            tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-500/50">Sovereign Apex</span>`;
-          } else if (item.streak >= 100) {
-            tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/70 text-cyan-300 border border-cyan-500/50">Centurion</span>`;
-          } else if (item.streak >= 50) {
-            tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-950/70 text-rose-300 border border-rose-500/50">Vanguard</span>`;
-          }
-
-          let cardStyling = "bg-obsidian-card border-obsidian-border";
-          if (isFrozen) {
-            cardStyling = "bg-obsidian-card/60 border-sky-900/40 opacity-75";
-          }
-
-          return `
-            <div class="streak-card p-6 rounded-2xl ${cardStyling} border card-hover-fx flex flex-col justify-between">
-              <div class="flex items-center justify-between mb-4">
-                <span class="w-8 h-8 rounded-lg bg-obsidian-surface border border-white/5 flex items-center justify-center font-mono text-xs font-bold text-slate-400">
-                  #${rank}
-                </span>
-                <div class="flex items-center gap-1.5">
-                  ${tierBadge}
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold ${isFrozen ? 'bg-sky-950 text-sky-300 border border-sky-800' : 'bg-emerald-950/70 text-emerald-300 border border-emerald-800'}">
-                    ${item.status}
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <div class="text-base font-bold text-white streak-name tracking-wide">${item.name}</div>
-                <div class="flex items-baseline gap-2 mt-3 pt-3 border-t border-white/5">
-                  <span class="font-display font-extrabold text-3xl ${isFrozen ? 'text-sky-300' : 'text-amber-400'}">${item.streak}</span>
-                  <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Consecutive Days</span>
-                </div>
-              </div>
-            </div>
-          `;
-        }).join('');
-      }
+      // RENDER STREAKS WITH TIER ATTRIBUTES
+      renderStreaks();
 
       if (typeof lucide !== 'undefined') lucide.createIcons();
     });
 
-    // GLOBAL DOSSIER SEARCH
+    // ============================================================
+    // FEATURE 1: TIER FILTERING SYSTEM FOR STREAK VAULT
+    // ============================================================
+    function renderStreaks() {
+      if (typeof VirtualLibraryData === 'undefined' || !VirtualLibraryData.streaks) return;
+
+      const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
+      document.getElementById('count-all').textContent = streaks.length;
+
+      const grid = document.getElementById("streakGrid");
+      grid.innerHTML = streaks.map((item, index) => {
+        const rank = index + 1;
+        const isFrozen = item.status === "FROZEN";
+
+        let tierKey = "under50";
+        let tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Contender</span>`;
+        
+        if (item.streak >= 300) {
+          tierKey = "300";
+          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-500/50">👑 Sovereign Apex</span>`;
+        } else if (item.streak >= 200) {
+          tierKey = "200";
+          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-900/40 text-amber-200 border border-amber-700/50">🏆 Double Crown</span>`;
+        } else if (item.streak >= 150) {
+          tierKey = "150";
+          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/70 text-cyan-300 border border-cyan-500/50">⚡ Apex</span>`;
+        } else if (item.streak >= 50) {
+          tierKey = "50";
+          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-950/70 text-rose-300 border border-rose-500/50">🛡️ Elite</span>`;
+        }
+
+        let cardStyling = "bg-obsidian-card border-obsidian-border";
+        if (isFrozen) {
+          cardStyling = "bg-obsidian-card/60 border-sky-900/40 opacity-75";
+        }
+
+        return `
+          <div data-tier="${tierKey}" class="streak-card p-6 rounded-2xl ${cardStyling} border card-hover-fx flex flex-col justify-between">
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-8 h-8 rounded-lg bg-obsidian-surface border border-white/5 flex items-center justify-center font-mono text-xs font-bold text-slate-400">
+                #${rank}
+              </span>
+              <div class="flex items-center gap-1.5">
+                ${tierBadge}
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold ${isFrozen ? 'bg-sky-950 text-sky-300 border border-sky-800' : (item.status === 'PRESERVED' ? 'bg-purple-950 text-purple-300 border border-purple-800' : 'bg-emerald-950/70 text-emerald-300 border border-emerald-800')}">
+                  ${item.status}
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-base font-bold text-white streak-name tracking-wide">${item.name}</div>
+              <div class="flex items-baseline gap-2 mt-3 pt-3 border-t border-white/5">
+                <span class="font-display font-extrabold text-3xl ${isFrozen ? 'text-sky-300' : 'text-amber-400'}">${item.streak}</span>
+                <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Consecutive Days</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setTierFilter(tier, btn) {
+      currentTierFilter = tier;
+      
+      document.querySelectorAll('.tier-tab-btn').forEach(b => {
+        b.className = "tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition";
+      });
+      btn.className = "tier-tab-btn px-4 py-2 rounded-xl bg-white text-black font-bold whitespace-nowrap transition";
+
+      let visibleCount = 0;
+      document.querySelectorAll('.streak-card').forEach(card => {
+        const cardTier = card.getAttribute('data-tier');
+        const show = (tier === 'all' || cardTier === tier);
+        card.style.display = show ? 'flex' : 'none';
+        if (show) visibleCount++;
+      });
+
+      document.getElementById('streakZeroState').style.display = (visibleCount === 0) ? 'block' : 'none';
+    }
+
+    function filterMonthlyTable(query) {
+      const q = query.toLowerCase().trim();
+      let visibleRows = 0;
+      document.querySelectorAll('.member-row').forEach(row => {
+        const name = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
+        const match = name.includes(q);
+        row.style.display = match ? '' : 'none';
+        if (match) visibleRows++;
+      });
+      document.getElementById('monthlyZeroState').style.display = (visibleRows === 0) ? 'block' : 'none';
+    }
+
+    // ============================================================
+    // FIXED DOSSIER SEARCH & FEATURE 3 (ONE-CLICK SHARE SNIPPET)
+    // ============================================================
     function handleGlobalSearch(event) {
       if (event.key === 'Enter') triggerDossierSearch();
     }
@@ -859,153 +939,249 @@
       if (!query) return;
 
       const qLower = query.toLowerCase();
-      let matchedStreak = null;
-      let streakRank = null;
-      let matchedMonthly = null;
-      let monthlyRank = null;
-      let milestonesFound = [];
+      const scholarMap = new Map();
+
+      function registerScholar(rawName) {
+        const cleanName = rawName.trim().toUpperCase();
+        if (!scholarMap.has(cleanName)) {
+          scholarMap.set(cleanName, {
+            name: cleanName,
+            streakObj: null,
+            streakRank: null,
+            monthlyObj: null,
+            monthlyRank: null,
+            milestones: []
+          });
+        }
+        return scholarMap.get(cleanName);
+      }
 
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.streaks) {
         const sortedStreaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
         sortedStreaks.forEach((item, index) => {
-          if (item.name.toLowerCase().includes(qLower)) {
-            matchedStreak = item;
-            streakRank = index + 1;
-          }
+          const profile = registerScholar(item.name);
+          profile.streakObj = item;
+          profile.streakRank = index + 1;
         });
       }
 
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyReport) {
         VirtualLibraryData.monthlyReport.participants.forEach((p, index) => {
-          if (p.name.toLowerCase().includes(qLower)) {
-            matchedMonthly = p;
-            monthlyRank = index + 1;
-          }
+          const profile = registerScholar(p.name);
+          profile.monthlyObj = p;
+          profile.monthlyRank = index + 1;
         });
       }
 
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.milestones) {
         const m = VirtualLibraryData.milestones;
-        if (m.peakDailyRecord && m.peakDailyRecord.holder.toLowerCase().includes(qLower)) {
-          milestonesFound.push({ title: "Highest Single-Day Focus Record", stat: m.peakDailyRecord.time });
-        }
-        if (m.peakStreakRecord && m.peakStreakRecord.holder.toLowerCase().includes(qLower)) {
-          milestonesFound.push({ title: "All-Time Active Streak Legend", stat: m.peakStreakRecord.streak });
-        }
-        if (m.septemberPeak && m.septemberPeak.holder.toLowerCase().includes(qLower)) {
-          milestonesFound.push({ title: "September 2026 Monthly Champion", stat: m.septemberPeak.time });
-        }
-        if (m.apexClubCount && m.apexClubCount.members.toLowerCase().includes(qLower)) {
-          milestonesFound.push({ title: "Apex 300+ Days Unbroken Member", stat: "Active Tier" });
-        }
+        scholarMap.forEach((profile, key) => {
+          if (m.peakDailyRecord && m.peakDailyRecord.holder.toUpperCase() === key) {
+            profile.milestones.push({ title: "Highest Single-Day Focus Record", stat: m.peakDailyRecord.time });
+          }
+          if (m.peakStreakRecord && m.peakStreakRecord.holder.toUpperCase() === key) {
+            profile.milestones.push({ title: "All-Time Active Streak Titan", stat: m.peakStreakRecord.streak });
+          }
+          if (m.septemberPeak && m.septemberPeak.holder.toUpperCase() === key) {
+            profile.milestones.push({ title: "September 2026 Monthly Champion", stat: m.septemberPeak.time });
+          }
+          if (m.apexClubCount && m.apexClubCount.members.toUpperCase().includes(key)) {
+            profile.milestones.push({ title: "Apex 300+ Days Unbroken Tier", stat: "Active Legend" });
+          }
+        });
       }
+
+      const exactMatches = [];
+      const wordMatches = [];
+      const partialMatches = [];
+
+      scholarMap.forEach((profile, name) => {
+        const nameLower = name.toLowerCase();
+        if (nameLower === qLower) {
+          exactMatches.push(profile);
+        } else {
+          const wordRegex = new RegExp(`\\b${qLower}\\b`, 'i');
+          if (wordRegex.test(nameLower)) {
+            wordMatches.push(profile);
+          } else if (nameLower.includes(qLower)) {
+            partialMatches.push(profile);
+          }
+        }
+      });
 
       const modal = document.getElementById('dossierModal');
       const container = document.getElementById('dossierModalContent');
 
-      if (!matchedStreak && !matchedMonthly && milestonesFound.length === 0) {
+      if (exactMatches.length === 0 && wordMatches.length === 0 && partialMatches.length === 0) {
         container.innerHTML = `
           <div class="text-center py-8 space-y-4">
             <div class="w-12 h-12 rounded-full bg-rose-950/60 text-rose-400 border border-rose-800 flex items-center justify-center mx-auto">
               <i data-lucide="user-x" class="w-6 h-6"></i>
             </div>
             <h4 class="font-display font-bold text-2xl text-white">No Record Located</h4>
-            <p class="text-slate-400 text-sm max-w-sm mx-auto">Could not find official verification records under "<strong class="text-white">${query}</strong>". Check spelling or browse the full registry.</p>
+            <p class="text-slate-400 text-sm max-w-sm mx-auto">Could not find official verification records under "<strong class="text-white">${query}</strong>". Check spelling or browse the registry.</p>
           </div>
         `;
-      } else {
-        const scholarName = matchedStreak?.name || matchedMonthly?.name || query.toUpperCase();
+        modal.classList.remove('hidden');
+        modal.classList.add('modal-active');
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        return;
+      }
 
-        let milestoneCards = milestonesFound.map(m => `
-          <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
-            <div>
-              <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold block">Hall of Fame Benchmark</span>
-              <span class="text-sm font-bold text-white">${m.title}</span>
+      const candidates = exactMatches.length > 0 
+        ? exactMatches 
+        : (wordMatches.length > 0 ? wordMatches : partialMatches);
+
+      if (candidates.length === 1) {
+        renderDossierView(candidates[0]);
+      } else {
+        let selectionCards = candidates.map(profile => {
+          const streakVal = profile.streakObj ? `${profile.streakObj.streak} Days` : 'No streak recorded';
+          const monthTime = profile.monthlyObj ? profile.monthlyObj.time : 'No cycle data';
+          const cleanKey = profile.name.replace(/'/g, "\\'");
+
+          return `
+            <div onclick="selectScholarDossier('${cleanKey}')" class="p-4 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-amber-400 cursor-pointer transition flex items-center justify-between group">
+              <div>
+                <div class="font-display font-bold text-lg text-white group-hover:text-amber-300 transition">${profile.name}</div>
+                <div class="text-xs font-mono text-slate-400 mt-1 flex items-center gap-3">
+                  <span><i data-lucide="flame" class="w-3.5 h-3.5 text-rose-400 inline"></i> ${streakVal}</span>
+                  <span><i data-lucide="clock" class="w-3.5 h-3.5 text-cyan-400 inline"></i> ${monthTime}</span>
+                </div>
+              </div>
+              <div class="text-xs font-mono text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span>View</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </div>
             </div>
-            <span class="font-mono font-extrabold text-amber-300 text-base">${m.stat}</span>
-          </div>
-        `).join('');
+          `;
+        }).join('');
 
         container.innerHTML = `
-          <div class="space-y-6">
-            <div class="border-b border-white/10 pb-4">
-              <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Verified Scholar Dossier</div>
-              <h3 class="font-display font-extrabold text-3xl text-white tracking-tight mt-1">${scholarName}</h3>
-              <p class="text-xs font-mono text-emerald-400 mt-1 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Official Registry Verified Scholar
-              </p>
+          <div class="space-y-5">
+            <div class="border-b border-white/10 pb-3">
+              <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Multiple Matches Located</div>
+              <h3 class="font-display font-bold text-2xl text-white mt-1">Select Scholar Profile</h3>
+              <p class="text-xs font-mono text-slate-400 mt-0.5">Found ${candidates.length} profiles matching "<span class="text-white">${query}</span>". Click to inspect stats:</p>
             </div>
-
-            ${milestonesFound.length > 0 ? `
-              <div class="space-y-2">
-                <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Pinnacle Benchmark Entries</div>
-                <div class="grid gap-2">${milestoneCards}</div>
-              </div>
-            ` : ''}
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
-                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-                  <span>Streak Vault Standing</span>
-                  <span class="text-rose-400 font-bold">${matchedStreak ? '#' + String(streakRank).padStart(2, '0') : 'Unranked'}</span>
-                </div>
-                <div class="font-display font-extrabold text-3xl text-amber-400">
-                  ${matchedStreak ? matchedStreak.streak + ' <span class="text-sm text-slate-400 font-sans font-normal">Days</span>' : 'N/A'}
-                </div>
-                <div class="text-[11px] font-mono text-slate-400">Status: <strong class="text-white">${matchedStreak?.status || 'N/A'}</strong></div>
-              </div>
-
-              <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
-                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-                  <span>September 2026 Rank</span>
-                  <span class="text-cyan-400 font-bold">${matchedMonthly ? '#' + String(monthlyRank).padStart(2, '0') : 'Unranked'}</span>
-                </div>
-                <div class="font-display font-extrabold text-3xl text-white">
-                  ${matchedMonthly ? matchedMonthly.time : 'N/A'}
-                </div>
-                <div class="text-[11px] font-mono text-slate-400">Days Logged: <strong class="text-white">${matchedMonthly?.daysAppeared || 0} Days</strong></div>
-              </div>
-            </div>
-
-            <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-slate-400 font-mono">
-              Accountability Protocol: <strong>24/7 Verified Camera Feed</strong> &bull; Face & Desk Permitted.
+            <div class="grid gap-3 max-h-[60vh] overflow-y-auto pr-1">
+              ${selectionCards}
             </div>
           </div>
         `;
+        modal.classList.remove('hidden');
+        modal.classList.add('modal-active');
+        if (typeof lucide !== 'undefined') lucide.createIcons();
       }
+    }
+
+    window.selectScholarDossier = function(scholarName) {
+      document.getElementById('globalNameSearchInput').value = scholarName;
+      triggerDossierSearch();
+    };
+
+    function renderDossierView(profile) {
+      const modal = document.getElementById('dossierModal');
+      const container = document.getElementById('dossierModalContent');
+
+      let milestoneCards = profile.milestones.map(m => `
+        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold block">Hall of Fame Benchmark</span>
+            <span class="text-sm font-bold text-white">${m.title}</span>
+          </div>
+          <span class="font-mono font-extrabold text-amber-300 text-base">${m.stat}</span>
+        </div>
+      `).join('');
+
+      // Build clean shareable text payload
+      const streakText = profile.streakObj ? `${profile.streakObj.streak} Days (#${profile.streakRank || 'Active'})` : 'N/A';
+      const monthlyText = profile.monthlyObj ? `${profile.monthlyObj.time} (Rank #${profile.monthlyRank})` : 'N/A';
+      
+      const sharePayload = 
+`⚡ Virtual Library Verified Scholar ⚡
+Scholar: ${profile.name}
+🔥 Unbroken Streak: ${streakText}
+⏱️ September Audit: ${monthlyText}
+🛡️ Status: ${profile.streakObj?.status || 'Active'}
+🔗 Join the 24/7 Silent Desk Protocol: https://t.me/studyy247`;
+
+      window.activeScholarSharePayload = sharePayload;
+
+      container.innerHTML = `
+        <div class="space-y-6">
+          <div class="border-b border-white/10 pb-4">
+            <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Verified Scholar Dossier</div>
+            <h3 class="font-display font-extrabold text-3xl text-white tracking-tight mt-1">${profile.name}</h3>
+            <p class="text-xs font-mono text-emerald-400 mt-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Official Registry Verified Scholar
+            </p>
+          </div>
+
+          ${profile.milestones.length > 0 ? `
+            <div class="space-y-2">
+              <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Pinnacle Benchmark Entries</div>
+              <div class="grid gap-2">${milestoneCards}</div>
+            </div>
+          ` : ''}
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                <span>Streak Vault Standing</span>
+                <span class="text-rose-400 font-bold">${profile.streakRank ? '#' + String(profile.streakRank).padStart(2, '0') : 'Unranked'}</span>
+              </div>
+              <div class="font-display font-extrabold text-3xl text-amber-400">
+                ${profile.streakObj ? profile.streakObj.streak + ' <span class="text-sm text-slate-400 font-sans font-normal">Days</span>' : 'N/A'}
+              </div>
+              <div class="text-[11px] font-mono text-slate-400">Status: <strong class="text-white">${profile.streakObj?.status || 'N/A'}</strong></div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 space-y-2">
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                <span>September 2026 Rank</span>
+                <span class="text-cyan-400 font-bold">${profile.monthlyRank ? '#' + String(profile.monthlyRank).padStart(2, '0') : 'Unranked'}</span>
+              </div>
+              <div class="font-display font-extrabold text-3xl text-white">
+                ${profile.monthlyObj ? profile.monthlyObj.time : 'N/A'}
+              </div>
+              <div class="text-[11px] font-mono text-slate-400">Days Logged: <strong class="text-white">${profile.monthlyObj?.daysAppeared || 0} Days</strong></div>
+            </div>
+          </div>
+
+          <!-- Feature 3: One-Click Copy Dossier Record -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <button onclick="copyScholarShareSnippet(this)" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white text-black font-mono font-bold text-xs uppercase tracking-wider hover:bg-amber-300 transition flex items-center justify-center gap-2">
+              <i data-lucide="share-2" class="w-4 h-4"></i>
+              <span>Copy Verified Dossier Snippet</span>
+            </button>
+            <span class="text-[11px] font-mono text-slate-500">Ready to share directly to Telegram</span>
+          </div>
+        </div>
+      `;
 
       modal.classList.remove('hidden');
       modal.classList.add('modal-active');
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
+    function copyScholarShareSnippet(btn) {
+      if (!window.activeScholarSharePayload) return;
+      navigator.clipboard.writeText(window.activeScholarSharePayload).then(() => {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-600"></i><span>Copied to Clipboard!</span>`;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }, 2200);
+      });
+    }
+
     function closeDossierModal() {
       const modal = document.getElementById('dossierModal');
       modal.classList.add('hidden');
       modal.classList.remove('modal-active');
-    }
-
-    // FILTERING (BOTH MONTHLY & STREAKS)
-    function filterBothViews(query) {
-      const q = query.toLowerCase().trim();
-
-      let visibleRows = 0;
-      document.querySelectorAll('.member-row').forEach(row => {
-        const name = row.querySelector('.member-name')?.textContent.toLowerCase() || '';
-        const match = name.includes(q);
-        row.style.display = match ? '' : 'none';
-        if (match) visibleRows++;
-      });
-      document.getElementById('monthlyZeroState').style.display = (visibleRows === 0) ? 'block' : 'none';
-
-      let visibleCards = 0;
-      document.querySelectorAll('.streak-card').forEach(card => {
-        const name = card.querySelector('.streak-name')?.textContent.toLowerCase() || '';
-        const match = name.includes(q);
-        card.style.display = match ? 'flex' : 'none';
-        if (match) visibleCards++;
-      });
-      document.getElementById('streakZeroState').style.display = (visibleCards === 0) ? 'block' : 'none';
     }
 
     // MEMBER ROUTING MODAL LOGIC
@@ -1044,7 +1220,6 @@
       document.getElementById('modalStep1').classList.remove('hidden');
     }
 
-    // SUBMIT & CLIPBOARD ONLY ANSWERS
     function submitNewJoinerForm(event) {
       event.preventDefault();
 
