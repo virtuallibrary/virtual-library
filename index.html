@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Library | India's Premier 24/7 Live Focus Sanctuary</title>
+  <title>Virtual Library | Free 24/7 Online Study Community</title>
+  <meta name="description" content="Join Virtual Library, a free and verified 24/7 online study community. Study in focused Google Meet rooms, track consistency and explore audited community rankings." />
+  <meta name="theme-color" content="#070910" />
+  <meta property="og:title" content="Virtual Library — Study with Purpose" />
+  <meta property="og:description" content="A free, verified virtual study space for serious students and aspirants." />
 
   <!-- Circular Favicon Engine -->
   <link id="siteFavicon" rel="icon" type="image/png" href="logo.png">
@@ -117,9 +121,32 @@
     ::-webkit-scrollbar-track { background: #040507; }
     ::-webkit-scrollbar-thumb { background: #1C2230; border-radius: 999px; }
     ::-webkit-scrollbar-thumb:hover { background: #EAB308; }
+
+    /* Virtual Library refinement layer */
+    :root { color-scheme: dark; scroll-padding-top: 92px; }
+    body { background-color: #070910; background-image: radial-gradient(ellipse at 50% -12%, rgba(201,164,91,.13), transparent 42%), radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px); background-size: auto, 28px 28px; }
+    ::selection { background: rgba(201,164,91,.35); color: #fff; }
+    .glass-nav { background: rgba(7,9,16,.88); }
+    .india-strip { box-shadow: 0 1px 18px rgba(201,164,91,.14); }
+    .section-kicker { letter-spacing: .22em; }
+    .premium-panel { background: linear-gradient(145deg, rgba(20,25,37,.96), rgba(10,13,21,.96)); border: 1px solid rgba(255,255,255,.09); box-shadow: 0 24px 70px rgba(0,0,0,.22); }
+    .card-hover-fx { border-radius: 1.25rem; }
+    .card-hover-fx:hover { border-color: rgba(201,164,91,.48); box-shadow: 0 20px 50px rgba(0,0,0,.32); }
+    .hero-orb { position:absolute; width: min(70vw,720px); height: min(70vw,720px); border-radius:50%; background: radial-gradient(circle, rgba(201,164,91,.10), rgba(70,91,130,.06) 42%, transparent 70%); filter: blur(10px); pointer-events:none; }
+    .eyebrow { display:inline-flex; align-items:center; gap:.55rem; border:1px solid rgba(201,164,91,.24); background:rgba(201,164,91,.07); color:#d9bd82; border-radius:999px; padding:.55rem .9rem; font:600 10px 'Space Grotesk',monospace; letter-spacing:.16em; text-transform:uppercase; }
+    .btn-primary { background:linear-gradient(135deg,#e7c987,#c69c50); color:#111318; box-shadow:0 8px 24px rgba(198,156,80,.16); }
+    .btn-primary:hover { filter:brightness(1.08); transform:translateY(-1px); }
+    .btn-secondary { border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.045); }
+    .step-card { position:relative; background:linear-gradient(145deg,rgba(20,25,37,.92),rgba(11,14,22,.92)); border:1px solid rgba(255,255,255,.08); }
+    .step-number { width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.8rem;background:rgba(201,164,91,.12);border:1px solid rgba(201,164,91,.25);color:#e2c17f;font:700 .8rem 'Space Grotesk',monospace; }
+    input:focus-visible, button:focus-visible, a:focus-visible, select:focus-visible { outline:2px solid #d7b66f; outline-offset:3px; }
+    .mobile-dock { padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
+    .modal-active { overflow-y:auto; }
+    @media (max-width: 640px) { .hero-title { font-size:clamp(2.45rem,11vw,3.7rem); } section { scroll-margin-top:88px; } #protocols .relative { min-height:300px; } #protocols .relative img { max-height:420px; } }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
   </style>
 </head>
-<body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen pb-20 md:pb-0">
+<body class="bg-obsidian bg-grid-pattern text-slate-100 antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen pb-28 md:pb-0">
 
   <!-- PRELOADER -->
   <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center transition-all duration-700 ease-in-out select-none">
@@ -230,18 +257,17 @@
   <section id="hero" class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
     <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono tracking-widest text-slate-300 uppercase">
-        <span class="text-amber-400">✦</span> 24/7 Silent Study Sanctuary &bull; Built in India
-      </div>
-      <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.06]">
-        India’s Unbroken Circle of<br>
-        <span class="bg-gradient-to-r from-amber-200 via-rose-300 to-cyan-200 bg-clip-text text-transparent">
-          Disciplined Minds.
-        </span>
+      <div class="eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Free · 24/7 Camera-on Study Community · India</div>
+      <h1 class="hero-title font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.06]">
+        Build discipline.<br><span class="bg-gradient-to-r from-[#f0d9a5] via-[#d8b36c] to-[#9db8c9] bg-clip-text text-transparent">Study with purpose.</span>
       </h1>
-      <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
-        Where serious aspirants build life-defining careers. Choose your angle—desk view or face view—turn on your camera, join silent rooms, and let accountability do the rest.
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+        A free, verified virtual study space for serious students and aspirants. Join focused Google Meet rooms, stay accountable, track your consistency and grow alongside a community that takes preparation seriously.
       </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-3 pt-1">
+        <button onclick="openJoinModal('telegram')" class="btn-primary px-7 py-3.5 rounded-xl font-bold text-sm inline-flex items-center justify-center gap-2 transition"><i data-lucide="door-open" class="w-4 h-4"></i> Apply to Join</button>
+        <a href="#how-it-works" class="btn-secondary px-7 py-3.5 rounded-xl text-slate-100 font-semibold text-sm inline-flex items-center justify-center gap-2 hover:bg-white/10 transition"><i data-lucide="circle-play" class="w-4 h-4"></i> How it works</a>
+      </div>
 
       <div class="pt-4 max-w-xl mx-auto">
         <div class="relative group">
@@ -255,7 +281,7 @@
             </button>
           </div>
         </div>
-        <p class="text-[11px] font-mono text-slate-500 mt-2 text-center">Type your name and hit Enter to inspect all recorded monthly audits and active streaks.</p>
+        <p class="text-[11px] font-mono text-slate-500 mt-2 text-center">Look up your recorded monthly audits, streak standing and milestones.</p>
       </div>
 
       <div class="flex flex-wrap items-center justify-center gap-3 pt-2 font-mono text-xs uppercase tracking-wider text-slate-400">
@@ -271,6 +297,21 @@
           <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-cyan-400"></i> Room Guidelines
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 px-6 max-w-7xl mx-auto border-b border-obsidian-border">
+    <div class="max-w-2xl mx-auto text-center mb-10 space-y-3">
+      <div class="text-[11px] font-mono section-kicker text-amber-300 uppercase font-bold">A simple process</div>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Your focus starts with four steps</h2>
+      <p class="text-slate-400 text-sm">A structured entry process keeps the rooms focused, private and accountable.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <article class="step-card rounded-2xl p-6"><div class="step-number">01</div><h3 class="text-white font-bold mt-5">Apply to join</h3><p class="text-slate-400 text-sm leading-relaxed mt-2">Contact the admin through Telegram or email and complete the short screening questions.</p></article>
+      <article class="step-card rounded-2xl p-6"><div class="step-number">02</div><h3 class="text-white font-bold mt-5">Get verified</h3><p class="text-slate-400 text-sm leading-relaxed mt-2">The admin reviews your details before sharing access to the private study environment.</p></article>
+      <article class="step-card rounded-2xl p-6"><div class="step-number">03</div><h3 class="text-white font-bold mt-5">Join a focus room</h3><p class="text-slate-400 text-sm leading-relaxed mt-2">Choose a permitted camera setup, keep your microphone muted and study with the group.</p></article>
+      <article class="step-card rounded-2xl p-6"><div class="step-number">04</div><h3 class="text-white font-bold mt-5">Track consistency</h3><p class="text-slate-400 text-sm leading-relaxed mt-2">Build your study routine and follow audited monthly rankings, streaks and community challenges.</p></article>
     </div>
   </section>
 
@@ -347,7 +388,7 @@
       <div class="space-y-2">
         <div class="text-[11px] font-mono tracking-[0.25em] text-cyan-400 uppercase font-bold">Official Records</div>
         <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Monthly Performance Audit</h2>
-        <p class="text-slate-400 text-sm">Verified camera-checked study hours and recorded attendance logs.</p>
+        <p class="text-slate-400 text-sm">Monthly study-time records and attendance, organised by the published audit data.</p>
       </div>
 
       <div class="w-full md:w-80 relative">
@@ -367,7 +408,7 @@
           <span class="w-2 h-2 rounded-full bg-accent-gold"></span>
           <span id="activeCycleLabel">Cycle: Loading...</span>
         </span>
-        <span class="hidden sm:block">Ranked Strictly by Total Audited Time</span>
+        <span class="hidden sm:block">Sorted by recorded focus time</span>
       </div>
 
       <div class="overflow-x-auto">
@@ -455,7 +496,7 @@
             <span class="text-xs font-mono px-3.5 py-1 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-800 font-bold">24/7 Verified</span>
           </div>
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Both <strong>Face Cam</strong> and <strong>Desk Cam</strong> setups are completely permitted. Microphones remain permanently muted.
+            Both <strong>Face Cam</strong> and <strong>Desk Cam</strong> setups are permitted. Keep your microphone muted and follow the room instructions displayed in the official rules image.
           </p>
           <div class="relative w-full min-h-[460px] max-h-[600px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center p-4 overflow-hidden group">
             <img src="meet-rules.jpg" onclick="openLightbox('meet-rules.jpg', 'Daily Google Meet Rules')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-300" alt="Daily Meet Rules">
@@ -480,7 +521,7 @@
             <span class="text-xs font-mono px-3.5 py-1 rounded-full bg-rose-950/60 text-rose-300 border border-rose-800 font-bold">Squad Audited</span>
           </div>
           <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Seasonal competitions hold squads to rigorous minimum weekly focus hours. Unannounced dropouts are replaced by waitlist reserves.
+            Seasonal competitions reward consistent, recorded focus time. Check the current season’s official directives for eligibility, team requirements and participation rules.
           </p>
           <div class="relative w-full min-h-[460px] max-h-[600px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center p-4 overflow-hidden group">
             <img src="competition-rules.jpg" onclick="openLightbox('competition-rules.jpg', 'Squad Competition Directives')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-contain rounded-xl cursor-zoom-in group-hover:scale-[1.01] transition-transform duration-300" alt="Competition Regulations">
@@ -505,7 +546,7 @@
       </div>
       <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">Need to Connect with Admin?</h2>
       <p class="text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
-        Choose your preferred channel below. Existing members are routed straight through, while new scholars complete a brief security check.
+        Choose your preferred channel below. Study rooms are private. Existing members can contact the admin directly; new applicants complete a brief verification check before access is considered.
       </p>
       <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center font-mono text-xs uppercase tracking-wider">
         <button onclick="openJoinModal('telegram')" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white text-black font-bold hover:bg-amber-300 transition-colors flex items-center justify-center gap-2.5 shadow-lg">
@@ -525,11 +566,11 @@
         <div class="w-8 h-8 rounded-full bg-obsidian-card border border-white/10 flex items-center justify-center text-white font-display font-bold text-xs">
           VL
         </div>
-        <span class="text-slate-400 font-medium">Virtual Library &bull; 24/7 Silent Focus Syndicate</span>
+        <span class="text-slate-400 font-medium">Virtual Library &bull; Free, verified virtual study community</span>
       </div>
       <div class="flex flex-wrap items-center gap-6">
-        <a href="javascript:void(0)" onclick="openJoinModal('telegram')" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
-          <i data-lucide="send" class="w-3 h-3"></i> Telegram Channel
+        <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
+          <i data-lucide="send" class="w-3 h-3"></i> Telegram Community
         </a>
         <a href="javascript:void(0)" onclick="openJoinModal('telegram')" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
           <i data-lucide="user-check" class="w-3 h-3"></i> Admin Desk
@@ -542,7 +583,7 @@
   </footer>
 
   <!-- MOBILE BOTTOM DOCK -->
-  <div class="md:hidden fixed bottom-4 inset-x-4 z-[90] glass-pill rounded-2xl px-6 py-3 flex items-center justify-around shadow-2xl">
+  <div class="mobile-dock md:hidden fixed bottom-4 inset-x-4 z-[90] glass-pill rounded-2xl px-6 py-3 flex items-center justify-around shadow-2xl">
     <a href="#hero" class="flex flex-col items-center text-slate-400 hover:text-amber-400 transition">
       <i data-lucide="search" class="w-5 h-5"></i>
       <span class="text-[9px] font-mono mt-1">Search</span>
@@ -682,7 +723,10 @@
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof lucide !== 'undefined') lucide.createIcons();
 
-      // Preloader Timeline
+      // Preloader timeline. Skip the animation for reduced-motion users.
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        dismissIntroNow();
+      }
       const circle = document.getElementById("buildCircle");
       const logo = document.getElementById("buildLogo");
       const text = document.getElementById("buildText");
@@ -693,6 +737,7 @@
       const dot2 = document.getElementById("dot2");
       const dot3 = document.getElementById("dot3");
 
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       circle.classList.add("animate-ring-draw");
       setTimeout(() => {
         logo.classList.remove("opacity-0", "scale-75");
@@ -748,10 +793,22 @@
         ? VirtualLibraryData.monthlyArchives 
         : (typeof monthlyArchives !== 'undefined' ? monthlyArchives : null);
 
-      if (!archives) return;
+      if (!archives) {
+        selectorContainer.innerHTML = '<span class="text-rose-300 text-xs">Audit data could not be loaded. Check that data.js is published beside index.html.</span>';
+        const label = document.getElementById("activeCycleLabel");
+        if (label) label.textContent = "Cycle: Data unavailable";
+        const body = document.getElementById("monthlyTableBody");
+        if (body) body.innerHTML = '<tr><td colspan="4" class="p-8 text-center text-rose-300 font-mono">Could not load audit data. Please try again later.</td></tr>';
+        return;
+      }
 
       const keys = Object.keys(archives);
-      if (keys.length === 0) return;
+      if (keys.length === 0) {
+        selectorContainer.innerHTML = '<span class="text-slate-500 text-xs">No monthly audit cycles have been published yet.</span>';
+        const label = document.getElementById("activeCycleLabel");
+        if (label) label.textContent = "Cycle: No published records";
+        return;
+      }
 
       // Default to the first key (e.g. oct_2026)
       currentSelectedMonthKey = keys[0];
@@ -838,18 +895,27 @@
         row.style.display = match ? '' : 'none';
         if (match) visibleRows++;
       });
-      document.getElementById('monthlyZeroState').style.display = (visibleRows === 0) ? 'block' : 'none';
+      const zeroState = document.getElementById('monthlyZeroState');
+      if (zeroState) zeroState.style.display = (visibleRows === 0) ? 'block' : 'none';
     }
 
     // ============================================================
     // STREAK VAULT LOGIC
     // ============================================================
     function renderStreaks() {
-      if (typeof VirtualLibraryData === 'undefined' || !VirtualLibraryData.streaks) return;
-      const streaks = [...VirtualLibraryData.streaks].sort((a, b) => b.streak - a.streak);
-      document.getElementById('count-all').textContent = streaks.length;
       const grid = document.getElementById("streakGrid");
+      if (typeof VirtualLibraryData === 'undefined' || !Array.isArray(VirtualLibraryData.streaks)) {
+        document.getElementById('count-all').textContent = '0';
+        grid.innerHTML = '<div class="col-span-full p-8 rounded-2xl border border-white/10 text-center text-rose-300 text-sm">Streak data could not be loaded. Check that data.js is published beside index.html.</div>';
+        return;
+      }
+      const streaks = [...VirtualLibraryData.streaks].sort((a, b) => Number(b.streak) - Number(a.streak));
+      document.getElementById('count-all').textContent = streaks.length;
 
+      if (streaks.length === 0) {
+        grid.innerHTML = '<div class="col-span-full p-8 rounded-2xl border border-white/10 text-center text-slate-400 text-sm">No streak entries have been published yet.</div>';
+        return;
+      }
       grid.innerHTML = streaks.map((item, index) => {
         const rank = index + 1;
         const isFrozen = item.status === "FROZEN";
@@ -918,6 +984,10 @@
     // ============================================================
     // MULTI-MONTH CROSS-ARCHIVE SEARCH & DOSSIER BUILDER
     // ============================================================
+    function escapeHTML(value) {
+      return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+
     function handleGlobalSearch(event) {
       if (event.key === 'Enter') triggerDossierSearch();
     }
@@ -926,6 +996,7 @@
       const query = document.getElementById('globalNameSearchInput').value.trim();
       if (!query) return;
       const qLower = query.toLowerCase();
+      const safeQuery = escapeHTML(query);
       const scholarMap = new Map();
 
       function registerScholar(rawName) {
@@ -1020,7 +1091,7 @@
               <i data-lucide="user-x" class="w-6 h-6"></i>
             </div>
             <h4 class="font-display font-bold text-2xl text-white">No Record Located</h4>
-            <p class="text-slate-400 text-sm max-w-sm mx-auto">Could not find official verification records under "<strong class="text-white">${query}</strong>". Check spelling or browse the registry.</p>
+            <p class="text-slate-400 text-sm max-w-sm mx-auto">Could not find official verification records under "<strong class="text-white">${safeQuery}</strong>". Check spelling or browse the registry.</p>
           </div>
         `;
         modal.classList.remove('hidden');
@@ -1060,7 +1131,7 @@
             <div class="border-b border-white/10 pb-3">
               <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Multiple Matches Located</div>
               <h3 class="font-display font-bold text-2xl text-white mt-1">Select Scholar Profile</h3>
-              <p class="text-xs font-mono text-slate-400 mt-0.5">Found ${candidates.length} profiles matching "<span class="text-white">${query}</span>":</p>
+              <p class="text-xs font-mono text-slate-400 mt-0.5">Found ${candidates.length} profiles matching "<span class="text-white">${safeQuery}</span>":</p>
             </div>
             <div class="grid gap-3 max-h-[60vh] overflow-y-auto pr-1">
               ${selectionCards}
@@ -1242,7 +1313,7 @@
     function handleStatusSelection(status) {
       if (status === 'old') {
         if (activeChannel === 'telegram') {
-          window.open('https://t.me/VirtualLibraryAdmin', '_blank');
+          window.open('https://t.me/VirtualLibraryAdmin', '_blank', 'noopener,noreferrer');
         } else {
           window.location.href = 'mailto:virtualfocusmod@gmail.com?subject=Virtual%20Library%20Member%20Check-In';
         }
@@ -1269,12 +1340,15 @@
 
       const answersOnlyPayload = `Exam: ${prep}\nMeet Name: ${meetname}\nCamera Setup: ${camera}\nReferral Source: ${source}${nameCity ? '\nIdentity & City: ' + nameCity : ''}${query ? '\nQuery: ' + query : ''}`;
 
-      navigator.clipboard.writeText(answersOnlyPayload).then(() => {
+      const copyPromise = navigator.clipboard?.writeText
+        ? navigator.clipboard.writeText(answersOnlyPayload)
+        : Promise.reject(new Error('Clipboard unavailable'));
+      copyPromise.then(() => {
         const btn = document.getElementById('submitBtnLabel');
         btn.textContent = "Answers Copied to Clipboard!";
         setTimeout(() => {
           if (activeChannel === 'telegram') {
-            window.open('https://t.me/VirtualLibraryAdmin', '_blank');
+            window.open('https://t.me/VirtualLibraryAdmin', '_blank', 'noopener,noreferrer');
           } else {
             const subject = encodeURIComponent('New Member Verification - ' + meetname);
             const body = encodeURIComponent(answersOnlyPayload);
@@ -1282,6 +1356,8 @@
           }
           closeJoinModal();
         }, 800);
+      }).catch(() => {
+        alert('Your browser could not copy the answers automatically. Please allow clipboard access and try again.');
       });
     }
 
