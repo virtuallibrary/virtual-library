@@ -883,7 +883,8 @@
       if (!archives || !archives[monthKey]) return;
 
       const currentAudit = archives[monthKey];
-      document.getElementById("activeCycleLabel").textContent = `Cycle: ${currentAudit.title || monthKey}`;
+      const cycleLabel = document.getElementById("activeCycleLabel");
+      if (cycleLabel) cycleLabel.textContent = `Cycle: ${currentAudit.title || monthKey}`;
 
       const participants = [...(currentAudit.operatives || currentAudit.participants || [])].sort((a, b) => (b.timeMins || 0) - (a.timeMins || 0));
       const tbody = document.getElementById("monthlyTableBody");
@@ -923,7 +924,8 @@
       }).join('');
 
       if (typeof lucide !== 'undefined') lucide.createIcons();
-      const filterVal = document.getElementById("tableFilterInput").value;
+      const filterInput = document.getElementById("tableFilterInput");
+      const filterVal = filterInput ? filterInput.value : '';
       if (filterVal) filterMonthlyTable(filterVal);
     }
 
@@ -1029,7 +1031,8 @@
         }
       });
 
-      document.getElementById('streakZeroState').style.display = (matchingCount === 0) ? 'block' : 'none';
+      const zeroState = document.getElementById('streakZeroState');
+      if (zeroState) zeroState.style.display = (matchingCount === 0) ? 'block' : 'none';
 
       if (expanderWrapper) {
         if (currentTierFilter === 'all' && matchingCount > STREAKS_INITIAL_LIMIT) {
@@ -1060,7 +1063,7 @@
       document.querySelectorAll('.tier-tab-btn').forEach(b => {
         b.className = "tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition";
       });
-      btn.className = "tier-tab-btn px-4 py-2 rounded-xl bg-white text-black font-bold whitespace-nowrap transition";
+      if (btn) btn.className = "tier-tab-btn px-4 py-2 rounded-xl bg-white text-black font-bold whitespace-nowrap transition";
       applyStreakCardVisibility();
     }
 
@@ -1141,7 +1144,14 @@
     // SEARCH, REGISTRY RESOLUTION & DOSSIER BUILDER
     // ============================================================
     function escapeHTML(value) {
-      return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&','<':'<','>':'>','"':'"',"'":'''}[ch]));
+      const entities = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      };
+      return String(value ?? '').replace(/[&<>"']/g, character => entities[character]);
     }
 
     function getRegistryMap() {
@@ -1318,7 +1328,8 @@
         if (nameLower === qLower) {
           exactMatches.push(profile);
         } else {
-          const wordRegex = new RegExp(`\\b${qLower}\\b`, 'i');
+          const escapedQuery = qLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const wordRegex = new RegExp(`\\b${escapedQuery}\\b`, 'i');
           if (wordRegex.test(nameLower)) {
             wordMatches.push(profile);
           } else if (nameLower.includes(qLower)) {
