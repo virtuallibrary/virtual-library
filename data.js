@@ -108,7 +108,7 @@ const VirtualLibraryData = {
         { name: "SATHASIVAM S", time: "27H 07M", timeMins: 1627, daysAppeared: 14 },
         { name: "GATIKKK", time: "26H 02M", timeMins: 1562, daysAppeared: 18 },
         { name: "TARSHA INTSIFUL", time: "25H 53M", timeMins: 1553, daysAppeared: 7 },
-        { name: "AFSHANA IQBAL", time: "25H 12M", daysAppeared: 1512, daysAppeared: 11 },
+        { name: "AFSHANA IQBAL", time: "25H 12M", timeMins: 1512, daysAppeared: 11 },
         { name: "EKUS ARORA", time: "24H 20M", timeMins: 1460, daysAppeared: 28 },
         { name: "ADITI BHOTIKA", time: "24H 10M", timeMins: 1450, daysAppeared: 13 },
         { name: "PRATEEK GAHOI", time: "21H 16M", timeMins: 1276, daysAppeared: 5 },
@@ -120,38 +120,27 @@ const VirtualLibraryData = {
 
   // 3. COMPLETE ACTIVE STREAK VAULT
   streaks: [
-    // 300+ Days Tier (Sovereign Apex)
     { name: "VANSH YADAV", streak: 352, status: "ACTIVE" },
     { name: "EKUS ARORA", streak: 336, status: "ACTIVE" },
     { name: "SHREYA VIRAMGAMA", streak: 317, status: "FROZEN" },
     { name: "VANDANA MENON", streak: 316, status: "ACTIVE" },
     { name: "KANCHAN", streak: 302, status: "PRESERVED" },
-
-    // 200–299 Days Tier (Double Crown)
     { name: "RAJENDRA KUMAR SAHOO", streak: 284, status: "ACTIVE" },
     { name: "SHRUTI", streak: 251, status: "ACTIVE" },
     { name: "JIMMY", streak: 234, status: "ACTIVE" },
     { name: "JHALAK", streak: 209, status: "ACTIVE" },
     { name: "NANDINI VERMA", streak: 201, status: "ACTIVE" },
-
-    // 150–199 Days Tier (Apex)
     { name: "NISHANT SINGH", streak: 190, status: "ACTIVE" },
     { name: "PREM SALUNKE", streak: 184, status: "ACTIVE" },
     { name: "PLUTO", streak: 177, status: "FROZEN" },
     { name: "P SWAYAM PRUSTY", streak: 171, status: "ACTIVE" },
-
-    // 50–149 Days Tier (Elite)
     { name: "CHAITANYA SURESH PANZADE", streak: 149, status: "PRESERVED" },
     { name: "PRACHI SHARMA", streak: 100, status: "ACTIVE" },
     { name: "KESHVI", streak: 66, status: "ACTIVE" },
     { name: "SAKSHI", streak: 66, status: "PRESERVED" },
     { name: "HAZEL", streak: 53, status: "ACTIVE" },
-
-    // 31–49 Days Tier (Veteran)
     { name: "HRITIK GANGWAR", streak: 44, status: "ACTIVE" },
     { name: "SAHIBA", streak: 35, status: "ACTIVE" },
-
-    // 1–30 Days Tier (Core & Developing)
     { name: "ABHIRUCHI ANAND", streak: 22, status: "PRESERVED" },
     { name: "KUNAL SINHA", streak: 22, status: "PRESERVED" },
     { name: "GORANSHI GOEL", streak: 21, status: "ACTIVE" },
@@ -186,5 +175,260 @@ const VirtualLibraryData = {
     { name: "SWARAN C SANTHOSH", streak: 1, status: "PRESERVED" },
     { name: "WAJIDA KHATUN", streak: 1, status: "PRESERVED" },
     { name: "KHUSHI ANAND", streak: 1, status: "PRESERVED" }
+  ],
+
+  // 4. HISTORICAL SQUAD COMPETITIONS (SEASONS 1 - 5)
+  competitions: [
+    {
+      season: "Season 5",
+      title: "Virtual Competition Season 5",
+      status: "COMPLETED",
+      podium: [
+        {
+          position: "Champions",
+          rank: 1,
+          won: true,
+          team: "BEROZGAR KABOOTAR",
+          totalScore: "773H 26M",
+          members: [
+            { name: "VANSH YADAV", role: "Squad Member" },
+            { name: "DR. JAGRITI GUPTA", role: "Squad Member" },
+            { name: "RAJENDRA KUMAR SAHOO", role: "Squad Member" },
+            { name: "ANKURIT SAIKIA", role: "Squad Member" },
+            { name: "SHIVANI SINGH", role: "Squad Member" },
+            { name: "ANAGHAA", role: "Squad Member" },
+            { name: "CHAITANYA SURESH PANZADE", role: "Squad Member" },
+            { name: "VANDANA MENON", role: "Squad Member" }
+          ]
+        },
+        {
+          position: "Runner Up",
+          rank: 2,
+          won: false,
+          team: "RAAT KE SHIKARI",
+          totalScore: "691H 48M",
+          members: [
+            { name: "GARIMA", role: "Squad Member" },
+            { name: "JIMMY", role: "Squad Member" },
+            { name: "ILA AGRAWAL", role: "Squad Member" },
+            { name: "PLUTO", role: "Squad Member" },
+            { name: "EKUS ARORA", role: "Squad Member" },
+            { name: "SHREYA VIRAMGAMA", role: "Squad Member" },
+            { name: "LASYA PRIYA", role: "Squad Member" },
+            { name: "KESHVI", role: "Squad Member" }
+          ]
+        },
+        {
+          position: "Finalist",
+          rank: 3,
+          won: false,
+          team: "ICHHADHAARI NEVLE",
+          totalScore: "661H 16M",
+          members: [
+            { name: "JHALAK", role: "Squad Member" },
+            { name: "SHRUTI", role: "Squad Member" },
+            { name: "KHUSHI ANAND", role: "Squad Member" },
+            { name: "GARIMA SHRESTHA", role: "Squad Member" },
+            { name: "P SWAYAM PRUSTY", role: "Squad Member" },
+            { name: "GANILINE REVILLA", role: "Squad Member" },
+            { name: "CHOCOCHIPS", role: "Squad Member" },
+            { name: "NANDINI VERMA", role: "Squad Member" }
+          ]
+        }
+      ]
+    },
+    {
+      season: "Season 4",
+      title: "Season 04 Grand Finale",
+      status: "COMPLETED",
+      podium: [
+        {
+          position: "Champions",
+          rank: 1,
+          won: true,
+          team: "VAJRAYAAN",
+          totalScore: "1015.5H",
+          members: [
+            { name: "PIYUSH", role: "Squad Member" },
+            { name: "JHALAK", role: "Squad Member" },
+            { name: "ILA AGRAWAL", role: "Squad Member" },
+            { name: "LASYA PRIYA", role: "Squad Member" },
+            { name: "PLUTO", role: "Squad Member" },
+            { name: "ANKURIT SAIKIA", role: "Squad Member" },
+            { name: "RAJENDRA KUMAR SAHOO", role: "Squad Member" },
+            { name: "CHOCOCHIPS", role: "Squad Member" },
+            { name: "AKSHAT GUPTA", role: "Squad Member" },
+            { name: "VANSH YADAV", role: "Squad Member" }
+          ]
+        },
+        {
+          position: "Runner Up",
+          rank: 2,
+          won: false,
+          team: "ANGAREY",
+          totalScore: "921.0H",
+          members: [
+            { name: "GARIMA", role: "Squad Member" },
+            { name: "KESHVI", role: "Squad Member" },
+            { name: "KRISHNA RATHI", role: "Squad Member" },
+            { name: "KHUSHI ANAND", role: "Squad Member" },
+            { name: "PREM SALUNKE", role: "Squad Member" },
+            { name: "EKUS ARORA", role: "Squad Member" },
+            { name: "KAMNA", role: "Squad Member" },
+            { name: "VANDANA MENON", role: "Squad Member" },
+            { name: "PALAK", role: "Squad Member" },
+            { name: "ABHIRUCHI ANAND", role: "Squad Member" }
+          ]
+        },
+        {
+          position: "Finalist",
+          rank: 3,
+          won: false,
+          team: "TANDAV",
+          totalScore: "900.3H",
+          members: [
+            { name: "JIMMY", role: "Squad Member" },
+            { name: "WAJIDA KHATUN", role: "Squad Member" },
+            { name: "NANDINI VERMA", role: "Squad Member" },
+            { name: "SHRUTI", role: "Squad Member" },
+            { name: "DR. JAGRITI", role: "Squad Member" },
+            { name: "KANCHAN TYTLER", role: "Squad Member" },
+            { name: "VAISHALI SHARMA", role: "Squad Member" },
+            { name: "SHIWANI SINGH", role: "Squad Member" },
+            { name: "NISHANT SINGH", role: "Squad Member" },
+            { name: "SHREYA VIRAMGAMA", role: "Squad Member" }
+          ]
+        }
+      ]
+    },
+    {
+      season: "Season 3",
+      title: "Squad Wars Season 3",
+      status: "COMPLETED",
+      podium: [
+        {
+          position: "Champions",
+          rank: 1,
+          won: true,
+          team: "GULGULEY PAKODE",
+          totalScore: "Champions",
+          members: [
+            { name: "SHRUTI", role: "Squad Member" },
+            { name: "WAJIDA", role: "Squad Member" },
+            { name: "GARIMA", role: "Squad Member" },
+            { name: "ILA AGRAWAL", role: "Squad Member" },
+            { name: "PRANAV", role: "Squad Member" },
+            { name: "KHUSHI", role: "Squad Member" },
+            { name: "SHREYA", role: "Squad Member" },
+            { name: "LASYA", role: "Squad Member" },
+            { name: "MONU", role: "Squad Member" }
+          ]
+        },
+        {
+          position: "Runner Up",
+          rank: 2,
+          won: false,
+          team: "TEAM VARCHASVA",
+          totalScore: "Runner Up",
+          members: [
+            { name: "UMANG", role: "Squad Member" },
+            { name: "NIDHEE", role: "Squad Member" },
+            { name: "AYUSH ANAND", role: "Squad Member" },
+            { name: "CXFXINE", role: "Squad Member" },
+            { name: "VANDANA", role: "Squad Member" },
+            { name: "GATIKKK", role: "Squad Member" },
+            { name: "ANKURIT", role: "Squad Member" },
+            { name: "EKUS", role: "Squad Member" },
+            { name: "PREETHAM", role: "Squad Member" }
+          ]
+        },
+        {
+          position: "Third Place",
+          rank: 3,
+          won: false,
+          team: "DHURANDHAR",
+          totalScore: "Bronze",
+          members: [
+            { name: "KESHVI", role: "Squad Member" },
+            { name: "RAJENDRA", role: "Squad Member" },
+            { name: "KANCHAN", role: "Squad Member" },
+            { name: "VAISHNAV", role: "Squad Member" },
+            { name: "CHETANYA", role: "Squad Member" },
+            { name: "YAHIYA", role: "Squad Member" },
+            { name: "SADHNA", role: "Squad Member" },
+            { name: "ABHIRUCHI", role: "Squad Member" },
+            { name: "VANSH", role: "Squad Member" }
+          ]
+        }
+      ]
+    },
+    {
+      season: "Season 2",
+      title: "Royal Superhero League Season 2",
+      status: "COMPLETED",
+      podium: [
+        {
+          position: "Champions",
+          rank: 1,
+          won: true,
+          team: "TEAM B",
+          totalScore: "1,095H",
+          members: [
+            { name: "VANSH YADAV", role: "Superman", individualHours: "150h 50m", squadRank: "#1" },
+            { name: "JHALAK", role: "Wonder Woman", individualHours: "129h 08m", squadRank: "#2" },
+            { name: "VAISHNAV PORWAL", role: "Iron Man", individualHours: "123h 43m", squadRank: "#3" },
+            { name: "SHREY BOTHEA", role: "Thor Odinson", individualHours: "106h 48m", squadRank: "#4" },
+            { name: "SHREYA VIRAMGAMA", role: "Captain Marvel", individualHours: "105h 54m", squadRank: "#5" },
+            { name: "EKUS ARORA", role: "Doctor Strange", individualHours: "93h 41m", squadRank: "#6" },
+            { name: "RICHA AGGARWAL", role: "Scarlet Witch", individualHours: "59h 16m", squadRank: "#7" },
+            { name: "NAMRATA", role: "Storm", individualHours: "43h 54m", squadRank: "#8" },
+            { name: "SAMEEHA", role: "Black Widow", individualHours: "43h 42m", squadRank: "#9" },
+            { name: "LASYAA", role: "Supergirl", individualHours: "41h 35m", squadRank: "#10" },
+            { name: "ABHIRUCHI ANAND", role: "Rogue", individualHours: "39h 00m", squadRank: "#11" },
+            { name: "AYAN SINGH", role: "Captain America", individualHours: "32h 31m", squadRank: "#12" },
+            { name: "HAHAHA", role: "Deadpool", individualHours: "30h 25m", squadRank: "#13" },
+            { name: "AANCHAL SAHAY", role: "Jean Grey", individualHours: "30h 08m", squadRank: "#14" },
+            { name: "UMANG IIP", role: "Spider-Man", individualHours: "26h 42m", squadRank: "#15" },
+            { name: "P SWAYAM PRUSTY", role: "The Flash", individualHours: "24h 17m", squadRank: "#16" },
+            { name: "KARTIK KHIWAL", role: "Hawkeye", individualHours: "18h 36m", squadRank: "#17" }
+          ]
+        }
+      ]
+    },
+    {
+      season: "Season 1",
+      title: "Superhero Championship Season 1",
+      status: "COMPLETED",
+      podium: [
+        {
+          position: "Runner Up",
+          rank: 2,
+          won: false,
+          team: "TEAM BRAHMOS",
+          totalScore: "Podium Finish",
+          members: [
+            { name: "VANSH YADAV", role: "Superman", individualHours: "172h 27m", squadRank: "#1" },
+            { name: "JHALAK", role: "Captain Marvel", individualHours: "171h 17m", squadRank: "#2" },
+            { name: "KANCHAN TYTLER", role: "Wonder Woman", individualHours: "119h 12m", squadRank: "#3" },
+            { name: "EKUS ARORA", role: "Iron Man", individualHours: "111h 46m", squadRank: "#4" },
+            { name: "SHREYA V.", role: "Storm", individualHours: "109h 15m", squadRank: "#5" },
+            { name: "ROHAN ARORA", role: "Cyclops", individualHours: "106h 08m", squadRank: "#6" },
+            { name: "UMANG IIP", role: "Thor Odinson", individualHours: "103h 19m", squadRank: "#7" },
+            { name: "SADHNA", role: "Black Widow", individualHours: "101h 47m", squadRank: "#8" },
+            { name: "RICHA AGGARWAL", role: "Scarlet Witch", individualHours: "96h 07m", squadRank: "#9" },
+            { name: "LASYAA", role: "Supergirl", individualHours: "95h 48m", squadRank: "#10" },
+            { name: "PRANAV VANJARI", role: "The Flash", individualHours: "59h 29m", squadRank: "#11" },
+            { name: "P SWAYAM", role: "Doctor Strange", individualHours: "57h 19m", squadRank: "#12" },
+            { name: "AANCHAL KATTA", role: "Jean Grey", individualHours: "51h 07m", squadRank: "#13" },
+            { name: "PREM SINGH", role: "Black Panther", individualHours: "48h 33m", squadRank: "#14" },
+            { name: "BHAVISHYA S.", role: "Spider-Man", individualHours: "47h 14m", squadRank: "#15" },
+            { name: "PREETHAM", role: "The Hulk", individualHours: "40h 18m", squadRank: "#16" },
+            { name: "HAHAHA", role: "Deadpool", individualHours: "17h 53m", squadRank: "#17" },
+            { name: "ANKUR", role: "Ant-Man", individualHours: "10h 09m", squadRank: "#18" },
+            { name: "JAYASRI M", role: "Gamora", individualHours: "5h 20m", squadRank: "#19" }
+          ]
+        }
+      ]
+    }
   ]
 };
