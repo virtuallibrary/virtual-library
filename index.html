@@ -754,7 +754,6 @@
       }
     }
 
-    // Emergency failsafe: auto-dismiss preloader after 3.5s if animations ever hang
     setTimeout(() => { dismissIntroNow(); }, 3500);
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -1418,7 +1417,6 @@
       const modal = document.getElementById('dossierModal');
       const container = document.getElementById('dossierModalContent');
 
-      // Milestones
       let milestoneCards = profile.milestones.map(m => `
         <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
           <div>
@@ -1429,7 +1427,6 @@
         </div>
       `).join('');
 
-      // Multi-month record calculation
       let totalMinutesAcrossMonths = 0;
       let monthBreakdownHTML = '';
       let shareMonthLines = [];
@@ -1460,7 +1457,6 @@
         monthBreakdownHTML = `<div class="p-4 rounded-xl bg-obsidian-surface text-center text-slate-500 font-mono text-xs col-span-2">No monthly leaderboard cycle on record yet.</div>`;
       }
 
-      // Squad Competition Cards Rendering
       let competitionCardsHTML = '';
       let compShareLines = [];
 
@@ -1501,12 +1497,10 @@
         competitionCardsHTML = `<div class="p-4 rounded-xl bg-[#0A0C12] border border-white/10 text-center text-slate-500 font-mono text-xs col-span-2">No official squad competition appearance on record yet.</div>`;
       }
 
-      // Compute aggregate total time
       const totalHours = Math.floor(totalMinutesAcrossMonths / 60);
       const remainingMins = totalMinutesAcrossMonths % 60;
       const totalTimeFormatted = `${totalHours}H ${String(remainingMins).padStart(2, '0')}M`;
 
-      // Completely Clean, Mobile-Friendly Copy Payload (No broken box lines)
       const streakText = profile.streakObj ? `${profile.streakObj.streak} Days (Rank #${profile.streakRank || 'Active'})` : 'N/A';
       const sharePayload = [
         `⚡ VIRTUAL LIBRARY DATA ⚡`,
@@ -1539,7 +1533,6 @@
             </div>
           ` : ''}
 
-          <!-- Streak Highlight -->
           <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 flex items-center justify-between">
             <div>
               <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block">Consecutive Desk Streak</span>
@@ -1557,7 +1550,6 @@
             ` : ''}
           </div>
 
-          <!-- Monthly Records Grid -->
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Monthly Audited Performance</div>
             <div class="grid sm:grid-cols-2 gap-3">
@@ -1565,7 +1557,6 @@
             </div>
           </div>
 
-          <!-- Squad Competition History -->
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold flex items-center justify-between">
               <span>Squad Wars & Competition History</span>
@@ -1576,7 +1567,6 @@
             </div>
           </div>
 
-          <!-- One-Click Copy Dossier Record -->
           <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/5">
             <button onclick="copyScholarShareSnippet(this)" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white text-black font-mono font-bold text-xs uppercase tracking-wider hover:bg-amber-300 transition flex items-center justify-center gap-2 shadow-lg">
               <i data-lucide="share-2" class="w-4 h-4"></i>
