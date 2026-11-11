@@ -33,7 +33,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -42,7 +42,7 @@
         extend: {
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['Syne', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
             mono: ['"Space Grotesk"', 'monospace'],
           },
           colors: {
@@ -74,6 +74,7 @@
       background-size: 28px 28px !important;
       background-position: 0 0 !important;
       color: #F1F5F9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     ::selection { background: rgba(234, 179, 8, 0.35); color: #FFFFFF; }
@@ -127,17 +128,17 @@
     ::-webkit-scrollbar-thumb:hover { background: #EAB308; }
 
     .eyebrow { display:inline-flex; align-items:center; gap:.55rem; border:1px solid rgba(234,179,8,.24); background:rgba(234,179,8,.07); color:#EAB308; border-radius:999px; padding:.55rem .9rem; font:600 10px 'Space Grotesk',monospace; letter-spacing:.16em; text-transform:uppercase; }
-    .btn-primary { background:linear-gradient(135deg,#e7c987,#c69c50); color:#111318; box-shadow:0 8px 24px rgba(198,156,80,.16); }
+    .btn-primary { background:linear-gradient(135deg,#e7c987,#c69c50); color:#111318; box-shadow:0 8px 24px rgba(198,156,80,.16); font-family: 'Space Grotesk', sans-serif; }
     .btn-primary:hover { filter:brightness(1.08); transform:translateY(-1px); }
-    .btn-secondary { border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.045); }
+    .btn-secondary { border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.045); font-family: 'Space Grotesk', sans-serif; }
     .step-card { position:relative; background:linear-gradient(145deg,rgba(20,25,37,.92),rgba(11,14,22,.92)); border:1px solid rgba(255,255,255,.08); }
     .step-number { width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:.8rem;background:rgba(201,164,91,.12);border:1px solid rgba(201,164,91,.25);color:#e2c17f;font:700 .8rem 'Space Grotesk',monospace; }
     input:focus-visible, button:focus-visible, a:focus-visible, select:focus-visible { outline:2px solid #d7b66f; outline-offset:3px; }
     .mobile-dock { padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
-    @media (max-width: 640px) { .hero-title { font-size:clamp(2.45rem,11vw,3.7rem); } section { scroll-margin-top:88px; } #protocols .relative { min-height:300px; } #protocols .relative img { max-height:420px; } }
+    @media (max-width: 640px) { .hero-title { font-size:clamp(2.45rem,10vw,3.5rem); } section { scroll-margin-top:88px; } }
   </style>
 </head>
-<body class="antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen pb-28 md:pb-0">
+<body class="antialiased selection:bg-accent-rose selection:text-white min-h-screen pb-28 md:pb-0">
 
   <!-- PRELOADER WITH EMERGENCY FAILSAFE -->
   <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center transition-all duration-700 ease-in-out select-none">
@@ -145,6 +146,8 @@
       Skip ✕
     </button>
     <div class="relative w-full max-w-xl px-6 flex flex-col items-center justify-center min-h-[340px]">
+      
+      <!-- Stage 0: Logo Build -->
       <div id="introStageLogo" class="flex flex-col items-center transition-all duration-500 ease-out">
         <div class="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center">
           <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
@@ -171,6 +174,7 @@
         </div>
       </div>
 
+      <!-- Stage 1: Pinnacle Record (Devika Jain) -->
       <div id="introStageM1" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono tracking-widest uppercase text-amber-400 mb-4">
           <i data-lucide="crown" class="w-4 h-4"></i> Pinnacle Record 01
@@ -185,6 +189,7 @@
         <div class="text-xs font-mono text-slate-500 mt-1">All-Time Peak Record • Audited Entry</div>
       </div>
 
+      <!-- Stage 2: Streak Record (Vansh Yadav Restored) -->
       <div id="introStageM2" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-xs font-mono tracking-widest uppercase text-rose-400 mb-4">
           <i data-lucide="flame" class="w-4 h-4"></i> Pinnacle Record 02
@@ -249,7 +254,7 @@
   <section id="hero" class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
     <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-      <div class="eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Free · 24/7 Camera-on Study Community · India</div>
+      <div class="eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Free • 24/7 Camera-on Study Community • India</div>
       <h1 class="hero-title font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.06]">
         Build discipline.<br><span class="bg-gradient-to-r from-[#f0d9a5] via-[#d8b36c] to-[#9db8c9] bg-clip-text text-transparent">Study with purpose.</span>
       </h1>
@@ -1145,11 +1150,11 @@
     // ============================================================
     function escapeHTML(value) {
       const entities = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
+        '&': '&',
+        '<': '<',
+        '>': '>',
+        '"': '"',
+        "'": '''
       };
       return String(value ?? '').replace(/[&<>"']/g, character => entities[character]);
     }
@@ -1407,7 +1412,7 @@
     };
 
     // ============================================================
-    // DOSSIER VIEW & MOBILE-SAFE CLIPBOARD OUTPUT (Virtual Library Data)
+    // DOSSIER VIEW & MOBILE-SAFE CLEAN CLIPBOARD OUTPUT
     // ============================================================
     function renderDossierView(profile) {
       const modal = document.getElementById('dossierModal');
@@ -1435,7 +1440,7 @@
         monthBreakdownHTML = recordedMonths.map(mKey => {
           const m = profile.monthlyRecords[mKey];
           totalMinutesAcrossMonths += (m.record.timeMins || 0);
-          shareMonthLines.push(`⏱️ ${m.title}: ${m.record.time} (Rank #${m.rank})`);
+          shareMonthLines.push(`• ${m.title}: ${m.record.time} (Rank #${m.rank})`);
           return `
             <div class="p-4 rounded-2xl bg-obsidian-surface border border-white/10 flex flex-col justify-between">
               <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
@@ -1474,7 +1479,7 @@
 
           const roleMarkup = (c.role && c.role !== 'Squad Member') ? ` • Superhero: <span class="text-amber-400 font-semibold">${c.role}</span>` : '';
 
-          compShareLines.push(`⚔️ ${c.season} (${c.teamName}): ${c.won ? '🏆 Champions' : c.position}${c.individualHours ? ' [' + c.individualHours + ']' : ''}`);
+          compShareLines.push(`• ${c.season} (${c.teamName}): ${c.won ? '🏆 Champions' : c.position}${c.individualHours ? ' [' + c.individualHours + ']' : ''}`);
 
           return `
             <div class="p-4 rounded-2xl bg-[#0A0C12] border ${c.won ? 'border-amber-400/40 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'border-white/10'} flex flex-col justify-between">
@@ -1501,14 +1506,14 @@
       const remainingMins = totalMinutesAcrossMonths % 60;
       const totalTimeFormatted = `${totalHours}H ${String(remainingMins).padStart(2, '0')}M`;
 
-      // Mobile-Safe Non-Cutting Box Format & Updated Title ("Virtual Library Data")
+      // Completely Clean, Mobile-Friendly Copy Payload (No broken box lines)
       const streakText = profile.streakObj ? `${profile.streakObj.streak} Days (Rank #${profile.streakRank || 'Active'})` : 'N/A';
       const sharePayload = [
         `⚡ VIRTUAL LIBRARY DATA ⚡`,
         `👤 Scholar: ${profile.name}`,
         `🔥 Desk Streak: ${streakText}`,
         `🛡️ Status: ${profile.streakObj?.status || 'Active'}`,
-        ...(shareMonthLines.length > 0 ? [``, ...shareMonthLines] : []),
+        ...(shareMonthLines.length > 0 ? [``, `⏱️ MONTHLY AUDITS:`, ...shareMonthLines] : []),
         ...(compShareLines.length > 0 ? [``, `⚔️ TOURNAMENTS:`, ...compShareLines] : []),
         ...(totalMinutesAcrossMonths > 0 ? [``, `📊 Combined Focus: ${totalTimeFormatted}`] : []),
         ``,
