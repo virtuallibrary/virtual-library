@@ -754,7 +754,7 @@
       }
     }
 
-    setTimeout(() => { dismissIntroNow(); }, 3500);
+    // Removed the 3.5s emergency dismissal: it hid the Vansh Yadav stage before it appeared.
 
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof lucide !== 'undefined') lucide.createIcons();
@@ -808,7 +808,7 @@
             }, 350);
           }
         }, 3200);
-        setTimeout(() => { dismissIntroNow(); }, 4500);
+        setTimeout(() => { dismissIntroNow(); }, 7000);
       }
 
       setupMonthlySelector();
@@ -1149,11 +1149,11 @@
     // ============================================================
     function escapeHTML(value) {
       const entities = {
-        '&': '&',
-        '<': '<',
-        '>': '>',
-        '"': '"',
-        "'": '''
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
       };
       return String(value ?? '').replace(/[&<>"']/g, character => entities[character]);
     }
