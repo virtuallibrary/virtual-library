@@ -98,6 +98,7 @@
     }
     .card-hover-fx {
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 1.25rem;
     }
     .card-hover-fx:hover {
       border-color: rgba(234, 179, 8, 0.45);
@@ -107,6 +108,7 @@
     .modal-active {
       display: flex !important;
       animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      overflow-y: auto;
     }
     @keyframes modalFadeIn {
       from { opacity: 0; transform: scale(0.96); }
@@ -126,7 +128,8 @@
     ::-webkit-scrollbar-thumb { background: #1C2230; border-radius: 999px; }
     ::-webkit-scrollbar-thumb:hover { background: #EAB308; }
 
-    .eyebrow { display:inline-flex; align-items:center; gap:.55rem; border:1px solid rgba(234,179,8,.24); background:rgba(234,179,8,.07); color:#EAB308; border-radius:999px; padding:.55rem .9rem; font:600 10px 'Space Grotesk',monospace; letter-spacing:.16em; text-transform:uppercase; }
+    .section-kicker { letter-spacing: .22em; }
+    .eyebrow { display:inline-flex; align-items:center; gap:.55rem; border:1px solid rgba(201,164,91,.24); background:rgba(201,164,91,.07); color:#d9bd82; border-radius:999px; padding:.55rem .9rem; font:600 10px 'Space Grotesk',monospace; letter-spacing:.16em; text-transform:uppercase; }
     .btn-primary { background:linear-gradient(135deg,#e7c987,#c69c50); color:#111318; box-shadow:0 8px 24px rgba(198,156,80,.16); }
     .btn-primary:hover { filter:brightness(1.08); transform:translateY(-1px); }
     .btn-secondary { border:1px solid rgba(255,255,255,.14); background:rgba(255,255,255,.045); }
@@ -135,63 +138,18 @@
     input:focus-visible, button:focus-visible, a:focus-visible, select:focus-visible { outline:2px solid #d7b66f; outline-offset:3px; }
     .mobile-dock { padding-bottom: max(.75rem, env(safe-area-inset-bottom)); }
     @media (max-width: 640px) { .hero-title { font-size:clamp(2.45rem,11vw,3.7rem); } section { scroll-margin-top:88px; } #protocols .relative { min-height:300px; } #protocols .relative img { max-height:420px; } }
-
-
-    /* Virtual Library refinement pass — clearer hierarchy, calmer surfaces,
-       stronger mobile readability, and reduced-motion support. */
-    :root { scroll-padding-top: 104px; }
-    body {
-      background-image:
-        radial-gradient(ellipse at 50% -12%, rgba(201,164,91,.12), transparent 42%),
-        radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px) !important;
-      background-size: auto, 30px 30px !important;
-    }
-    .glass-nav { background: rgba(5,7,11,.94); border-bottom-color: rgba(201,164,91,.16); }
-    header .max-w-7xl { min-height: 76px; }
-    section[id] { scroll-margin-top: 100px; }
-    .hero-title { letter-spacing: -.055em; text-wrap: balance; }
-    #hero { min-height: 76vh; isolation: isolate; }
-    #hero:after {
-      content: ""; position:absolute; inset:auto 8% 0; height:1px;
-      background:linear-gradient(90deg,transparent,rgba(201,164,91,.38),rgba(103,232,249,.22),transparent);
-    }
-    .eyebrow { letter-spacing:.12em; background:rgba(201,164,91,.09); }
-    .btn-primary { border:1px solid rgba(255,239,200,.35); }
-    .btn-secondary { border-color:rgba(255,255,255,.18); }
-    .card-hover-fx { border-radius:1.25rem; }
-    #milestones article, #milestones > div > div > div,
-    #vault .card-hover-fx, #competitions .card-hover-fx { box-shadow:0 18px 50px rgba(0,0,0,.18); }
-    #how-it-works, #milestones, #leaderboard, #vault, #competitions, #protocols { padding-top:clamp(4.5rem,8vw,7rem); padding-bottom:clamp(4.5rem,8vw,7rem); }
-    input, button, a { -webkit-tap-highlight-color:transparent; }
-    input { min-width:0; }
-    .mobile-dock { bottom:max(.75rem,env(safe-area-inset-bottom)); border-color:rgba(201,164,91,.24); box-shadow:0 18px 55px rgba(0,0,0,.55); }
-    .mobile-dock a, .mobile-dock button { min-width:44px; min-height:42px; justify-content:center; }
-    #monthlyTableBody tr:hover { background:rgba(255,255,255,.035); }
-    #monthlyTableBody td, #monthlyTableBody th { vertical-align:middle; }
-    :focus-visible { outline:2px solid #e6c77e !important; outline-offset:3px; }
-    @media (max-width: 640px) {
-      #hero { min-height:auto; padding-top:5.5rem; padding-bottom:4.5rem; }
-      #hero .max-w-4xl { width:100%; }
-      #globalNameSearchInput { font-size:16px; }
-      #globalNameSearchInput + button { padding-left:.8rem; padding-right:.8rem; }
-      #leaderboard .rounded-2xl { border-radius:1rem; }
-      #leaderboard table { min-width:510px; }
-      .mobile-dock { inset-inline:.75rem; padding-inline:.8rem; }
-      .mobile-dock span { letter-spacing:.02em; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
-    }
   </style>
 </head>
 <body class="antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen pb-28 md:pb-0">
 
-  <!-- PRELOADER WITH EMERGENCY FAILSAFE -->
+  <!-- PRELOADER (FULL 3-STAGE TIMELINE: LOGO -> DEVIKA -> VANSH) -->
   <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center transition-all duration-700 ease-in-out select-none">
     <button onclick="dismissIntroNow()" class="absolute top-6 right-6 text-[11px] font-mono tracking-widest uppercase text-slate-500 hover:text-white px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 transition z-50">
       Skip ✕
     </button>
     <div class="relative w-full max-w-xl px-6 flex flex-col items-center justify-center min-h-[340px]">
+      
+      <!-- Stage 0: Logo -->
       <div id="introStageLogo" class="flex flex-col items-center transition-all duration-500 ease-out">
         <div class="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center">
           <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 100 100">
@@ -218,6 +176,7 @@
         </div>
       </div>
 
+      <!-- Stage 1: Devika Jain -->
       <div id="introStageM1" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono tracking-widest uppercase text-amber-400 mb-4">
           <i data-lucide="crown" class="w-4 h-4"></i> Pinnacle Record 01
@@ -229,9 +188,10 @@
         <div class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-amber-300 tracking-wide">
           Devika Jain
         </div>
-        <div class="text-xs font-mono text-slate-500 mt-1">All-Time Peak Record • Audited Entry</div>
+        <div class="text-xs font-mono text-slate-500 mt-1">All-Time Peak Record &bull; Audited Entry</div>
       </div>
 
+      <!-- Stage 2: Vansh Yadav -->
       <div id="introStageM2" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-xs font-mono tracking-widest uppercase text-rose-400 mb-4">
           <i data-lucide="flame" class="w-4 h-4"></i> Pinnacle Record 02
@@ -243,7 +203,7 @@
         <div class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-rose-300 tracking-wide">
           Vansh Yadav
         </div>
-        <div class="text-xs font-mono text-slate-500 mt-1">#1 Active Consistency Titan • Audited Roster</div>
+        <div class="text-xs font-mono text-slate-500 mt-1">#1 Active Consistency Titan &bull; Audited Roster</div>
       </div>
     </div>
 
@@ -296,7 +256,7 @@
   <section id="hero" class="relative min-h-[70vh] flex items-center justify-center px-6 py-24 border-b border-obsidian-border overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-cyan-500/10 blur-[130px] pointer-events-none rounded-full"></div>
     <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-      <div class="eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Free · 24/7 Camera-on Study Community · India</div>
+      <div class="eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Free &bull; 24/7 Camera-on Study Community &bull; India</div>
       <h1 class="hero-title font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.06]">
         Build discipline.<br><span class="bg-gradient-to-r from-[#f0d9a5] via-[#d8b36c] to-[#9db8c9] bg-clip-text text-transparent">Study with purpose.</span>
       </h1>
@@ -314,7 +274,7 @@
           <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500/30 via-rose-500/30 to-cyan-500/30 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
           <div class="relative flex items-center bg-obsidian-card border border-white/15 rounded-2xl p-2 shadow-2xl">
             <i data-lucide="search" class="w-5 h-5 text-amber-400 ml-3 shrink-0"></i>
-            <input aria-label="Search scholar records by name" type="text" id="globalNameSearchInput" oninput="handleSearchInput(this.value)" onkeyup="handleGlobalSearch(event)" placeholder="Search your name (e.g. Vansh, Jhalak, Ekus, Prachi)..." class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm px-3 py-2 outline-none font-mono" autocomplete="off" />
+            <input type="text" id="globalNameSearchInput" oninput="handleSearchInput(this.value)" onkeyup="handleGlobalSearch(event)" placeholder="Search your name (e.g. Vansh, Jhalak, Ekus, Prachi)..." class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm px-3 py-2 outline-none font-mono" autocomplete="off" />
             <button onclick="triggerDossierSearch()" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-mono font-bold text-xs uppercase tracking-wider transition-colors shrink-0 flex items-center gap-1.5">
               <span>View Dossier</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
@@ -332,11 +292,11 @@
         <a href="#leaderboard" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
           <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-amber-400"></i> Monthly Rankings
         </a>
-        <span class="text-slate-700">•</span>
+        <span class="text-slate-700">&bull;</span>
         <a href="#vault" class="hover:text-cyan-300 transition-colors flex items-center gap-1.5">
           <i data-lucide="flame" class="w-3.5 h-3.5 text-rose-400"></i> Active Streak Vault
         </a>
-        <span class="text-slate-700">•</span>
+        <span class="text-slate-700">&bull;</span>
         <a href="#competitions" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
           <i data-lucide="swords" class="w-3.5 h-3.5 text-amber-400"></i> Squad Wars
         </a>
@@ -406,7 +366,7 @@
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
           <div class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Shreya, Vandana, Kanchan</div>
-          <div class="text-xs font-mono text-slate-400 mt-0.5">352d • 336d • 317d • 316d • 302d</div>
+          <div class="text-xs font-mono text-slate-400 mt-0.5">352d &bull; 336d &bull; 317d &bull; 316d &bull; 302d</div>
         </div>
       </div>
 
@@ -437,7 +397,7 @@
 
       <div class="w-full md:w-80 relative">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500"></i>
-        <input aria-label="Filter monthly scholar rankings" type="text" id="tableFilterInput" onkeyup="filterMonthlyTable(this.value)" placeholder="Filter active roster..." class="w-full bg-obsidian-card border border-obsidian-border focus:border-amber-400/80 text-white placeholder-slate-500 text-sm rounded-xl pl-10 pr-4 py-3 outline-none font-mono transition-all" />
+        <input type="text" id="tableFilterInput" onkeyup="filterMonthlyTable(this.value)" placeholder="Filter active roster..." class="w-full bg-obsidian-card border border-obsidian-border focus:border-amber-400/80 text-white placeholder-slate-500 text-sm rounded-xl pl-10 pr-4 py-3 outline-none font-mono transition-all" />
       </div>
     </div>
 
@@ -505,7 +465,7 @@
         🛡️ Elite (50–149 d)
       </button>
       <button onclick="setTierFilter('under50', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
-        🔥 Developing (<50 d)
+        🔥 Developing (&lt;50 d)
       </button>
     </div>
 
@@ -635,7 +595,7 @@
         <div class="w-8 h-8 rounded-full bg-obsidian-card border border-white/10 flex items-center justify-center text-white font-display font-bold text-xs">
           VL
         </div>
-        <span class="text-slate-400 font-medium">Virtual Library • Free, verified virtual study community</span>
+        <span class="text-slate-400 font-medium">Virtual Library &bull; Data Updated on 10 November 2026</span>
       </div>
       <div class="flex flex-wrap items-center gap-6">
         <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
@@ -719,7 +679,7 @@
         <div class="space-y-2 border-b border-white/10 pb-4">
           <div class="text-[11px] font-mono tracking-widest text-amber-400 uppercase font-bold">Security Pre-Screening</div>
           <h3 class="font-display font-bold text-2xl text-white">New Scholar Verification</h3>
-          <p class="text-slate-400 text-xs">Fill in your answers below. Clicking submit will copy <strong>only your answers</strong> directly to your clipboard.</p>
+          <p class="text-slate-400 text-xs">Fill in your answers below. Clicking submit will copy your formatted application directly to your clipboard.</p>
         </div>
         <form id="newJoinerForm" onsubmit="submitNewJoinerForm(event)" class="space-y-4 text-xs font-mono">
           <div>
@@ -744,8 +704,8 @@
           </div>
           <div class="grid grid-cols-2 gap-3 pt-1">
             <div>
-              <label class="block text-slate-400 mb-1">Your Full Name & City (Optional)</label>
-              <input type="text" id="q_namecity" placeholder="e.g. Vansh, Rajasthan" class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-3 py-2 text-white placeholder-slate-600 outline-none focus:border-amber-400" />
+              <label class="block text-slate-400 mb-1">Your City (Optional)</label>
+              <input type="text" id="q_namecity" placeholder="e.g. Jaipur, Rajasthan" class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-3 py-2 text-white placeholder-slate-600 outline-none focus:border-amber-400" />
             </div>
             <div>
               <label class="block text-slate-400 mb-1">Specific Query / Message</label>
@@ -778,9 +738,8 @@
   </div>
 
   <!-- SCRIPT ENGINE -->
-  <!-- Load shared data from the separate data.js file first -->
   <script src="data.js"></script>
-<script>
+  <script>
     let activeChannel = 'telegram';
     let currentTierFilter = 'all';
     let currentSelectedMonthKey = '';
@@ -797,65 +756,82 @@
       }
     }
 
+    setTimeout(() => { dismissIntroNow(); }, 5500);
+
     document.addEventListener("DOMContentLoaded", () => {
-      if (typeof lucide !== 'undefined') lucide.createIcons();
+      try {
+        if (typeof lucide !== 'undefined') lucide.createIcons();
 
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          dismissIntroNow();
+        } else {
+          const circle = document.getElementById("buildCircle");
+          const logo = document.getElementById("buildLogo");
+          const text = document.getElementById("buildText");
+          const stageLogo = document.getElementById("introStageLogo");
+          const stageM1 = document.getElementById("introStageM1");
+          const stageM2 = document.getElementById("introStageM2");
+          const dot1 = document.getElementById("dot1");
+          const dot2 = document.getElementById("dot2");
+          const dot3 = document.getElementById("dot3");
+
+          if (circle) circle.classList.add("animate-ring-draw");
+          setTimeout(() => {
+            if (logo) { logo.classList.remove("opacity-0", "scale-75"); logo.classList.add("opacity-100", "scale-100"); }
+          }, 350);
+          setTimeout(() => {
+            if (text) { text.classList.remove("opacity-0", "translate-y-3"); text.classList.add("opacity-100", "translate-y-0"); }
+          }, 700);
+
+          setTimeout(() => {
+            if (stageLogo) {
+              stageLogo.classList.add("opacity-0", "scale-90");
+              setTimeout(() => {
+                stageLogo.style.display = "none";
+                if (stageM1) {
+                  stageM1.classList.remove("hidden");
+                  stageM1.classList.add("flex");
+                }
+                setTimeout(() => {
+                  if (stageM1) { stageM1.classList.remove("opacity-0", "scale-95"); stageM1.classList.add("opacity-100", "scale-100"); }
+                  if (dot1) dot1.classList.replace("bg-amber-400", "bg-white/20");
+                  if (dot2) dot2.classList.replace("bg-white/20", "bg-amber-400");
+                }, 50);
+              }, 350);
+            }
+          }, 1500);
+
+          setTimeout(() => {
+            if (stageM1) {
+              stageM1.classList.remove("opacity-100", "scale-100");
+              stageM1.classList.add("opacity-0", "scale-95");
+              setTimeout(() => {
+                stageM1.classList.add("hidden");
+                stageM1.classList.remove("flex");
+                if (stageM2) {
+                  stageM2.classList.remove("hidden");
+                  stageM2.classList.add("flex");
+                }
+                setTimeout(() => {
+                  if (stageM2) { stageM2.classList.remove("opacity-0", "scale-95"); stageM2.classList.add("opacity-100", "scale-100"); }
+                  if (dot2) dot2.classList.replace("bg-amber-400", "bg-white/20");
+                  if (dot3) dot3.classList.replace("bg-white/20", "bg-rose-400");
+                }, 50);
+              }, 350);
+            }
+          }, 3200);
+
+          setTimeout(() => { dismissIntroNow(); }, 4900);
+        }
+
+        setupMonthlySelector();
+        renderStreaks();
+        setupCompetitionSection();
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      } catch (err) {
+        console.error("Initialization error:", err);
         dismissIntroNow();
-      } else {
-        const circle = document.getElementById("buildCircle");
-        const logo = document.getElementById("buildLogo");
-        const text = document.getElementById("buildText");
-        const stageLogo = document.getElementById("introStageLogo");
-        const stageM1 = document.getElementById("introStageM1");
-        const stageM2 = document.getElementById("introStageM2");
-        const dot1 = document.getElementById("dot1");
-        const dot2 = document.getElementById("dot2");
-        const dot3 = document.getElementById("dot3");
-
-        if (circle) circle.classList.add("animate-ring-draw");
-        setTimeout(() => {
-          if (logo) { logo.classList.remove("opacity-0", "scale-75"); logo.classList.add("opacity-100", "scale-100"); }
-        }, 350);
-        setTimeout(() => {
-          if (text) { text.classList.remove("opacity-0", "translate-y-3"); text.classList.add("opacity-100", "translate-y-0"); }
-        }, 700);
-        setTimeout(() => {
-          if (stageLogo) {
-            stageLogo.classList.add("opacity-0", "scale-90");
-            setTimeout(() => {
-              stageLogo.style.display = "none";
-              if (stageM1) stageM1.classList.remove("hidden");
-              setTimeout(() => {
-                if (stageM1) { stageM1.classList.remove("opacity-0", "scale-95"); stageM1.classList.add("opacity-100", "scale-100"); }
-                if (dot1) dot1.classList.replace("bg-amber-400", "bg-white/20");
-                if (dot2) dot2.classList.replace("bg-white/20", "bg-amber-400");
-              }, 50);
-            }, 350);
-          }
-        }, 1500);
-        setTimeout(() => {
-          if (stageM1) {
-            stageM1.classList.remove("opacity-100", "scale-100");
-            stageM1.classList.add("opacity-0", "scale-95");
-            setTimeout(() => {
-              stageM1.classList.add("hidden");
-              if (stageM2) stageM2.classList.remove("hidden");
-              setTimeout(() => {
-                if (stageM2) { stageM2.classList.remove("opacity-0", "scale-95"); stageM2.classList.add("opacity-100", "scale-100"); }
-                if (dot2) dot2.classList.replace("bg-amber-400", "bg-white/20");
-                if (dot3) dot3.classList.replace("bg-white/20", "bg-rose-400");
-              }, 50);
-            }, 350);
-          }
-        }, 3200);
-        setTimeout(() => { dismissIntroNow(); }, 7000);
       }
-
-      setupMonthlySelector();
-      renderStreaks();
-      setupCompetitionSection();
-      if (typeof lucide !== 'undefined') lucide.createIcons();
 
       document.addEventListener("click", (e) => {
         const box = document.getElementById("searchSuggestionsBox");
@@ -866,9 +842,6 @@
       });
     });
 
-    // ============================================================
-    // DYNAMIC MULTI-MONTH SELECTOR & RENDERING
-    // ============================================================
     function setupMonthlySelector() {
       const selectorContainer = document.getElementById("monthSelectorContainer");
       if (!selectorContainer) return;
@@ -987,9 +960,6 @@
       if (zeroState) zeroState.style.display = (visibleRows === 0) ? 'block' : 'none';
     }
 
-    // ============================================================
-    // STREAK VAULT LOGIC
-    // ============================================================
     function renderStreaks() {
       const grid = document.getElementById("streakGrid");
       const expanderWrapper = document.getElementById("streakExpanderWrapper");
@@ -1112,9 +1082,6 @@
       applyStreakCardVisibility();
     }
 
-    // ============================================================
-    // SQUAD COMPETITIONS LOGIC
-    // ============================================================
     function setupCompetitionSection() {
       const container = document.getElementById("seasonTabsContainer");
       if (!container || typeof VirtualLibraryData === 'undefined' || !Array.isArray(VirtualLibraryData.competitions)) return;
@@ -1185,9 +1152,6 @@
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
-    // ============================================================
-    // SEARCH, REGISTRY RESOLUTION & DOSSIER BUILDER
-    // ============================================================
     function escapeHTML(value) {
       const entities = {
         '&': '&amp;',
@@ -1217,7 +1181,6 @@
         return scholarMap.get(cleanName);
       }
 
-      // Streaks
       if (typeof VirtualLibraryData !== 'undefined' && Array.isArray(VirtualLibraryData.streaks)) {
         const sortedStreaks = [...VirtualLibraryData.streaks].sort((a, b) => Number(b.streak) - Number(a.streak));
         sortedStreaks.forEach((item, index) => {
@@ -1227,7 +1190,6 @@
         });
       }
 
-      // Monthly Archives
       const archives = (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyArchives)
         ? VirtualLibraryData.monthlyArchives
         : (typeof monthlyArchives !== 'undefined' ? monthlyArchives : null);
@@ -1247,7 +1209,6 @@
         });
       }
 
-      // Competitions Cross-Referencing
       if (typeof VirtualLibraryData !== 'undefined' && Array.isArray(VirtualLibraryData.competitions)) {
         VirtualLibraryData.competitions.forEach(comp => {
           comp.podium.forEach(teamObj => {
@@ -1270,7 +1231,6 @@
         });
       }
 
-      // Milestones
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.milestones) {
         const m = VirtualLibraryData.milestones;
         scholarMap.forEach((profile, key) => {
@@ -1283,18 +1243,8 @@
           if (m.septemberPeak && m.septemberPeak.holder.toUpperCase() === key) {
             profile.milestones.push({ title: "September 2026 Monthly Champion", stat: m.septemberPeak.time });
           }
-          // Apex data currently stores short display names (e.g. "Vansh (352d)")
-          // while scholar dossiers use full names. Compare normalized first names
-          // rather than searching the entire full name inside the display string.
-          if (m.apexClubCount && typeof m.apexClubCount.members === 'string') {
-            const firstName = key.split(/\s+/)[0];
-            const apexNames = m.apexClubCount.members
-              .split(',')
-              .map(entry => entry.replace(/\s*\([^)]*\)/g, '').trim().toUpperCase())
-              .filter(Boolean);
-            if (apexNames.includes(firstName)) {
-              profile.milestones.push({ title: "Apex 300+ Days Unbroken Tier", stat: "Active Legend" });
-            }
+          if (m.apexClubCount && m.apexClubCount.members.toUpperCase().includes(key)) {
+            profile.milestones.push({ title: "Apex 300+ Days Unbroken Tier", stat: "Active Legend" });
           }
         });
       }
@@ -1461,14 +1411,10 @@
       triggerDossierSearch();
     };
 
-    // ============================================================
-    // DOSSIER VIEW & MOBILE-SAFE CLIPBOARD OUTPUT (Virtual Library Data)
-    // ============================================================
     function renderDossierView(profile) {
       const modal = document.getElementById('dossierModal');
       const container = document.getElementById('dossierModalContent');
 
-      // Milestones
       let milestoneCards = profile.milestones.map(m => `
         <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
           <div>
@@ -1479,7 +1425,6 @@
         </div>
       `).join('');
 
-      // Multi-month record calculation
       let totalMinutesAcrossMonths = 0;
       let monthBreakdownHTML = '';
       let shareMonthLines = [];
@@ -1490,7 +1435,7 @@
         monthBreakdownHTML = recordedMonths.map(mKey => {
           const m = profile.monthlyRecords[mKey];
           totalMinutesAcrossMonths += (m.record.timeMins || 0);
-          shareMonthLines.push(`⏱️ ${m.title}: ${m.record.time} (Rank #${m.rank})`);
+          shareMonthLines.push(`▸ *${m.title}:* \`${m.record.time}\` _(Rank #${String(m.rank).padStart(2, '0')})_`);
           return `
             <div class="p-4 rounded-2xl bg-obsidian-surface border border-white/10 flex flex-col justify-between">
               <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
@@ -1510,7 +1455,6 @@
         monthBreakdownHTML = `<div class="p-4 rounded-xl bg-obsidian-surface text-center text-slate-500 font-mono text-xs col-span-2">No monthly leaderboard cycle on record yet.</div>`;
       }
 
-      // Squad Competition Cards Rendering
       let competitionCardsHTML = '';
       let compShareLines = [];
 
@@ -1527,9 +1471,9 @@
                </div>`
             : '';
 
-          const roleMarkup = (c.role && c.role !== 'Squad Member') ? ` • Superhero: <span class="text-amber-400 font-semibold">${c.role}</span>` : '';
+          const roleMarkup = (c.role && c.role !== 'Squad Member') ? ` &bull; Superhero: <span class="text-amber-400 font-semibold">${c.role}</span>` : '';
 
-          compShareLines.push(`⚔️ ${c.season} (${c.teamName}): ${c.won ? '🏆 Champions' : c.position}${c.individualHours ? ' [' + c.individualHours + ']' : ''}`);
+          compShareLines.push(`▸ *${c.season}* (${c.teamName}): ${c.won ? '🏆 *Champions*' : '_' + c.position + '_'}${c.individualHours ? ' — `' + c.individualHours + '`' : ''}`);
 
           return `
             <div class="p-4 rounded-2xl bg-[#0A0C12] border ${c.won ? 'border-amber-400/40 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'border-white/10'} flex flex-col justify-between">
@@ -1551,23 +1495,23 @@
         competitionCardsHTML = `<div class="p-4 rounded-xl bg-[#0A0C12] border border-white/10 text-center text-slate-500 font-mono text-xs col-span-2">No official squad competition appearance on record yet.</div>`;
       }
 
-      // Compute aggregate total time
       const totalHours = Math.floor(totalMinutesAcrossMonths / 60);
       const remainingMins = totalMinutesAcrossMonths % 60;
       const totalTimeFormatted = `${totalHours}H ${String(remainingMins).padStart(2, '0')}M`;
 
-      // Mobile-Safe Non-Cutting Box Format & Updated Title ("Virtual Library Data")
-      const streakText = profile.streakObj ? `${profile.streakObj.streak} Days (Rank #${profile.streakRank || 'Active'})` : 'N/A';
+      const streakText = profile.streakObj ? `\`${profile.streakObj.streak} Days\` _(Rank #${String(profile.streakRank || 1).padStart(2, '0')})_` : '`N/A`';
       const sharePayload = [
-        `⚡ VIRTUAL LIBRARY DATA ⚡`,
-        `👤 Scholar: ${profile.name}`,
-        `🔥 Desk Streak: ${streakText}`,
-        `🛡️ Status: ${profile.streakObj?.status || 'Active'}`,
-        ...(shareMonthLines.length > 0 ? [``, ...shareMonthLines] : []),
-        ...(compShareLines.length > 0 ? [``, `⚔️ TOURNAMENTS:`, ...compShareLines] : []),
-        ...(totalMinutesAcrossMonths > 0 ? [``, `📊 Combined Focus: ${totalTimeFormatted}`] : []),
+        `🏛️ *VIRTUAL LIBRARY DATA* ⚡`,
         ``,
-        `🔗 Protocol Desk: https://t.me/studyy247`
+        `👤 *Scholar:* \`${profile.name}\``,
+        `🔥 *Desk Streak:* ${streakText}`,
+        `🛡️ *Vault Status:* \`${profile.streakObj?.status || 'ACTIVE'}\``,
+        ...(shareMonthLines.length > 0 ? [``, `📊 *MONTHLY AUDITS*`, ...shareMonthLines] : []),
+        ...(compShareLines.length > 0 ? [``, `⚔️ *SQUAD WARS RECORD*`, ...compShareLines] : []),
+        ...(totalMinutesAcrossMonths > 0 ? [``, `⏱️ *Combined Focus:* \`${totalTimeFormatted}\``] : []),
+        ``,
+        `🔗 *Join 24/7 Study Sanctuary:*`,
+        `https://t.me/studyy247`
       ].join('\n');
 
       window.activeScholarSharePayload = sharePayload;
@@ -1589,14 +1533,13 @@
             </div>
           ` : ''}
 
-          <!-- Streak Highlight -->
           <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 flex items-center justify-between">
             <div>
               <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block">Consecutive Desk Streak</span>
               <div class="font-display font-extrabold text-3xl text-amber-400 mt-1">
                 ${profile.streakObj ? profile.streakObj.streak + ' <span class="text-sm text-slate-400 font-sans font-normal">Days</span>' : 'N/A'}
               </div>
-              <span class="text-[11px] font-mono text-slate-400">Vault Standing: <strong class="text-white">${profile.streakRank ? '#' + profile.streakRank : 'Unranked'}</strong> • Status: <strong class="text-white">${profile.streakObj?.status || 'N/A'}</strong></span>
+              <span class="text-[11px] font-mono text-slate-400">Vault Standing: <strong class="text-white">${profile.streakRank ? '#' + profile.streakRank : 'Unranked'}</strong> &bull; Status: <strong class="text-white">${profile.streakObj?.status || 'N/A'}</strong></span>
             </div>
             ${totalMinutesAcrossMonths > 0 ? `
               <div class="text-right border-l border-white/10 pl-6 hidden sm:block">
@@ -1607,7 +1550,6 @@
             ` : ''}
           </div>
 
-          <!-- Monthly Records Grid -->
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Monthly Audited Performance</div>
             <div class="grid sm:grid-cols-2 gap-3">
@@ -1615,24 +1557,22 @@
             </div>
           </div>
 
-          <!-- Squad Competition History -->
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold flex items-center justify-between">
               <span>Squad Wars & Competition History</span>
-              <span class="text-[10px] text-amber-400">${profile.competitionRecords.length} Tournaments</span>
+              <span class="text-[10px] font-mono text-amber-400">${profile.competitionRecords.length} Tournaments</span>
             </div>
             <div class="grid sm:grid-cols-2 gap-3">
               ${competitionCardsHTML}
             </div>
           </div>
 
-          <!-- One-Click Copy Dossier Record -->
           <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/5">
             <button onclick="copyScholarShareSnippet(this)" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white text-black font-mono font-bold text-xs uppercase tracking-wider hover:bg-amber-300 transition flex items-center justify-center gap-2 shadow-lg">
               <i data-lucide="share-2" class="w-4 h-4"></i>
-              <span>Copy Verified Dossier Snippet</span>
+              <span>Copy Virtual Library Data</span>
             </button>
-            <span class="text-[11px] font-mono text-slate-500">Ready to share directly to Telegram</span>
+            <span class="text-[11px] font-mono text-slate-500">Formatted with bold &amp; mono fonts for Telegram</span>
           </div>
         </div>
       `;
@@ -1661,9 +1601,6 @@
       modal.classList.remove('modal-active');
     }
 
-    // ============================================================
-    // QUESTIONNAIRE & MODAL ROUTING
-    // ============================================================
     function openJoinModal(channel) {
       activeChannel = channel;
       document.getElementById('modalStep1').classList.remove('hidden');
@@ -1704,24 +1641,33 @@
       const meetname = document.getElementById('q_meetname').value.trim();
       const camera = document.getElementById('q_camera').value;
       const source = document.getElementById('q_source').value.trim();
-      const nameCity = document.getElementById('q_namecity').value.trim();
+      const city = document.getElementById('q_namecity').value.trim();
       const query = document.getElementById('q_query').value.trim();
 
-      const answersOnlyPayload = `Exam: ${prep}\nMeet Name: ${meetname}\nCamera Setup: ${camera}\nReferral Source: ${source}${nameCity ? '\nIdentity & City: ' + nameCity : ''}${query ? '\nQuery: ' + query : ''}`;
+      const formattedJoinPayload = [
+        `🏛️ *VIRTUAL LIBRARY — ENTRY VERIFICATION*`,
+        ``,
+        `🎯 *Target Exam:* \`${prep}\``,
+        `👤 *Google Meet Name:* \`${meetname}\``,
+        `📷 *Camera Protocol:* \`${camera}\``,
+        `🌐 *Referral Source:* ${source}`,
+        ...(city ? [`📍 *City:* ${city}`] : []),
+        ...(query ? [`💬 *Note:* _${query}_`] : [])
+      ].join('\n');
 
       const copyPromise = navigator.clipboard?.writeText
-        ? navigator.clipboard.writeText(answersOnlyPayload)
+        ? navigator.clipboard.writeText(formattedJoinPayload)
         : Promise.reject(new Error('Clipboard unavailable'));
 
       copyPromise.then(() => {
         const btn = document.getElementById('submitBtnLabel');
-        btn.textContent = "Answers Copied to Clipboard!";
+        btn.textContent = "Copied! Opening Admin Desk...";
         setTimeout(() => {
           if (activeChannel === 'telegram') {
             window.open('https://t.me/VirtualLibraryAdmin', '_blank', 'noopener,noreferrer');
           } else {
             const subject = encodeURIComponent('New Member Verification - ' + meetname);
-            const body = encodeURIComponent(answersOnlyPayload);
+            const body = encodeURIComponent(formattedJoinPayload);
             window.location.href = `mailto:virtualfocusmod@gmail.com?subject=${subject}&body=${body}`;
           }
           closeJoinModal();
@@ -1731,9 +1677,6 @@
       });
     }
 
-    // ============================================================
-    // LIGHTBOX
-    // ============================================================
     function openLightbox(imgSrc, caption) {
       const modal = document.getElementById('imageLightbox');
       document.getElementById('lightboxImg').src = imgSrc;
