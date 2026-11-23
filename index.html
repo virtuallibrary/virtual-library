@@ -1,4 +1,31 @@
-const fav = document.getElementById('siteFavicon');
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Library | Free 24/7 Online Study Community</title>
+  <meta name="description" content="Join Virtual Library, a free and verified 24/7 online study community. Study in focused Google Meet rooms, track consistency and explore audited community rankings." />
+  <meta name="theme-color" content="#040507" />
+  <meta property="og:title" content="Virtual Library — Study with Purpose" />
+  <meta property="og:description" content="A free, verified virtual study space for serious students and aspirants." />
+
+  <!-- Circular Favicon Engine -->
+  <link id="siteFavicon" rel="icon" type="image/png" href="logo.png">
+  <script>
+    (function () {
+      const img = new Image();
+      img.src = 'logo.png';
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = 64;
+        canvas.height = 64;
+        const ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(32, 32, 32, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(img, 0, 0, 64, 64);
+        const fav = document.getElementById('siteFavicon');
         if (fav) fav.href = canvas.toDataURL('image/png');
       };
     })();
