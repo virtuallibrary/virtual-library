@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Virtual Library | Free 24/7 Online Study Community</title>
-  <meta name="description" content="Join Virtual Library, a free and verified 24/7 online study community. Study in focused Google Meet rooms, track consistency and explore audited community rankings." />
-  <meta name="theme-color" content="#040507" />
-  <meta property="og:title" content="Virtual Library — Study with Purpose" />
-  <meta property="og:description" content="A free, verified virtual study space for serious students and aspirants." />
-
-  <!-- Circular Favicon Engine -->
-  <link id="siteFavicon" rel="icon" type="image/png" href="logo.png">
-  <script>
-    (function () {
-      const img = new Image();
-      img.src = 'logo.png';
-      img.onload = function () {
-        const canvas = document.createElement('canvas');
-        canvas.width = 64;
-        canvas.height = 64;
-        const ctx = canvas.getContext('2d');
-        ctx.beginPath();
-        ctx.arc(32, 32, 32, 0, Math.PI * 2, true);
-        ctx.closePath();
-        ctx.clip();
-        ctx.drawImage(img, 0, 0, 64, 64);
-        const fav = document.getElementById('siteFavicon');
+const fav = document.getElementById('siteFavicon');
         if (fav) fav.href = canvas.toDataURL('image/png');
       };
     })();
@@ -142,13 +115,13 @@
 </head>
 <body class="antialiased font-sans selection:bg-accent-rose selection:text-white min-h-screen pb-28 md:pb-0">
 
-  <!-- PRELOADER (FULL 3-STAGE TIMELINE: LOGO -> DEVIKA -> VANSH) -->
+  <!-- PRELOADER (FULL 3-STAGE TIMELINE: LOGO -> SHRUTI 23h 53m -> VANSH 365d) -->
   <div id="introPreloader" class="fixed inset-0 z-[9999] bg-[#040507] flex flex-col items-center justify-center transition-all duration-700 ease-in-out select-none">
     <button onclick="dismissIntroNow()" class="absolute top-6 right-6 text-[11px] font-mono tracking-widest uppercase text-slate-500 hover:text-white px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 transition z-50">
       Skip ✕
     </button>
     <div class="relative w-full max-w-xl px-6 flex flex-col items-center justify-center min-h-[340px]">
-      
+
       <!-- Stage 0: Logo -->
       <div id="introStageLogo" class="flex flex-col items-center transition-all duration-500 ease-out">
         <div class="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center">
@@ -176,29 +149,29 @@
         </div>
       </div>
 
-      <!-- Stage 1: Devika Jain -->
+      <!-- Stage 1: Shruti (23h 53m All-Time Record) -->
       <div id="introStageM1" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono tracking-widest uppercase text-amber-400 mb-4">
           <i data-lucide="crown" class="w-4 h-4"></i> Pinnacle Record 01
         </div>
         <div class="text-xs font-mono uppercase tracking-[0.25em] text-slate-400 mb-2">Highest Single-Day Focus Record</div>
         <div class="font-display font-black text-6xl sm:text-8xl text-white tracking-tight leading-none drop-shadow-[0_0_35px_rgba(234,179,8,0.4)]">
-          22h 39m
+          23h 53m
         </div>
         <div class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-amber-300 tracking-wide">
-          Devika Jain
+          Shruti
         </div>
         <div class="text-xs font-mono text-slate-500 mt-1">All-Time Peak Record &bull; Audited Entry</div>
       </div>
 
-      <!-- Stage 2: Vansh Yadav -->
+      <!-- Stage 2: Vansh Yadav (365 Days) -->
       <div id="introStageM2" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-xs font-mono tracking-widest uppercase text-rose-400 mb-4">
           <i data-lucide="flame" class="w-4 h-4"></i> Pinnacle Record 02
         </div>
         <div class="text-xs font-mono uppercase tracking-[0.25em] text-slate-400 mb-2">Peak Unbroken Desk Streak</div>
         <div class="font-display font-black text-6xl sm:text-8xl text-white tracking-tight leading-none drop-shadow-[0_0_35px_rgba(255,42,133,0.4)]">
-          352 <span class="text-3xl sm:text-5xl text-slate-400 font-sans font-normal">Days</span>
+          365 <span class="text-3xl sm:text-5xl text-slate-400 font-sans font-normal">Days</span>
         </div>
         <div class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-rose-300 tracking-wide">
           Vansh Yadav
@@ -274,7 +247,7 @@
           <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500/30 via-rose-500/30 to-cyan-500/30 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
           <div class="relative flex items-center bg-obsidian-card border border-white/15 rounded-2xl p-2 shadow-2xl">
             <i data-lucide="search" class="w-5 h-5 text-amber-400 ml-3 shrink-0"></i>
-            <input type="text" id="globalNameSearchInput" oninput="handleSearchInput(this.value)" onkeyup="handleGlobalSearch(event)" placeholder="Search your name (e.g. Vansh, Jhalak, Ekus, Prachi)..." class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm px-3 py-2 outline-none font-mono" autocomplete="off" />
+            <input type="text" id="globalNameSearchInput" oninput="handleSearchInput(this.value)" onkeyup="handleGlobalSearch(event)" placeholder="Search your name (e.g. Vansh, Shruti, Ekus, Prachi)..." class="w-full bg-transparent border-none text-white placeholder-slate-500 text-sm px-3 py-2 outline-none font-mono" autocomplete="off" />
             <button onclick="triggerDossierSearch()" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-mono font-bold text-xs uppercase tracking-wider transition-colors shrink-0 flex items-center gap-1.5">
               <span>View Dossier</span>
               <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
@@ -334,10 +307,10 @@
             <span>Single-Day Benchmark</span>
             <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">22h 39m</div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight">23h 53m</div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
-          <div class="text-white font-bold text-base tracking-wide">Devika Jain</div>
+          <div class="text-white font-bold text-base tracking-wide">Shruti</div>
           <div class="text-xs font-mono text-amber-400/90 mt-0.5 font-semibold">Highest Single Day Record</div>
         </div>
       </div>
@@ -348,7 +321,7 @@
             <span>Peak Consistency</span>
             <i data-lucide="flame" class="w-4 h-4 text-rose-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">352 <span class="text-xl text-slate-400 font-sans font-normal">Days</span></div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight">365 <span class="text-xl text-slate-400 font-sans font-normal">Days</span></div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
           <div class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
@@ -359,14 +332,14 @@
       <div class="p-8 rounded-2xl bg-obsidian-card border border-obsidian-border card-hover-fx flex flex-col justify-between group">
         <div>
           <div class="flex items-center justify-between text-xs font-mono text-cyan-400 tracking-wider uppercase mb-4">
-            <span>Apex 300+ Tier</span>
+            <span>Double Crown 300+ Tier</span>
             <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">05 <span class="text-xl text-slate-400 font-sans font-normal">Members</span></div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight">04 <span class="text-xl text-slate-400 font-sans font-normal">Members</span></div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
-          <div class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Shreya, Vandana, Kanchan</div>
-          <div class="text-xs font-mono text-slate-400 mt-0.5">352d &bull; 336d &bull; 317d &bull; 316d &bull; 302d</div>
+          <div class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Vandana, Kanchan</div>
+          <div class="text-xs font-mono text-slate-400 mt-0.5">365d &bull; 348d &bull; 329d &bull; 310d</div>
         </div>
       </div>
 
@@ -453,16 +426,16 @@
         All Scholars (<span id="count-all">0</span>)
       </button>
       <button onclick="setTierFilter('300', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
-        👑 Sovereign Apex (300+ d)
+        👑 Double Crown (300+ d)
       </button>
       <button onclick="setTierFilter('200', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
-        🏆 Double Crown (200–299 d)
+        🏆 Crown (200–299 d)
       </button>
       <button onclick="setTierFilter('150', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
-        ⚡ Apex (150–199 d)
+        ⚡ Apex (151–199 d)
       </button>
       <button onclick="setTierFilter('50', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
-        🛡️ Elite (50–149 d)
+        🛡️ Elite &amp; Veteran (50–150 d)
       </button>
       <button onclick="setTierFilter('under50', this)" class="tier-tab-btn px-4 py-2 rounded-xl bg-obsidian-card border border-white/10 text-slate-300 hover:text-white whitespace-nowrap transition">
         🔥 Developing (&lt;50 d)
@@ -595,7 +568,7 @@
         <div class="w-8 h-8 rounded-full bg-obsidian-card border border-white/10 flex items-center justify-center text-white font-display font-bold text-xs">
           VL
         </div>
-        <span class="text-slate-400 font-medium">Virtual Library &bull; Data Updated on 10 November 2026</span>
+        <span class="text-slate-400 font-medium">Virtual Library &bull; Data Updated on 23 November 2026</span>
       </div>
       <div class="flex flex-wrap items-center gap-6">
         <a href="https://t.me/studyy247" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors flex items-center gap-1.5">
@@ -705,7 +678,7 @@
           <div class="grid grid-cols-2 gap-3 pt-1">
             <div>
               <label class="block text-slate-400 mb-1">Your City (Optional)</label>
-              <input type="text" id="q_namecity" placeholder="e.g. Jaipur, Rajasthan" class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-3 py-2 text-white placeholder-slate-600 outline-none focus:border-amber-400" />
+              <input type="text" id="q_namecity" placeholder="e.g. Aspur, Rajasthan" class="w-full bg-obsidian-surface border border-white/10 rounded-xl px-3 py-2 text-white placeholder-slate-600 outline-none focus:border-amber-400" />
             </div>
             <div>
               <label class="block text-slate-400 mb-1">Specific Query / Message</label>
@@ -756,6 +729,7 @@
       }
     }
 
+    // Failsafe set to 5500ms so Stage 2 (Vansh Yadav: 3200ms - 4900ms) always completes
     setTimeout(() => { dismissIntroNow(); }, 5500);
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -783,6 +757,7 @@
             if (text) { text.classList.remove("opacity-0", "translate-y-3"); text.classList.add("opacity-100", "translate-y-0"); }
           }, 700);
 
+          // Stage 1: Shruti 23h 53m (1500ms)
           setTimeout(() => {
             if (stageLogo) {
               stageLogo.classList.add("opacity-0", "scale-90");
@@ -801,6 +776,7 @@
             }
           }, 1500);
 
+          // Stage 2: Vansh Yadav 365 Days (3200ms)
           setTimeout(() => {
             if (stageM1) {
               stageM1.classList.remove("opacity-100", "scale-100");
@@ -821,6 +797,7 @@
             }
           }, 3200);
 
+          // Complete Intro after Stage 2 finishes (4900ms)
           setTimeout(() => { dismissIntroNow(); }, 4900);
         }
 
@@ -842,6 +819,9 @@
       });
     });
 
+    // ============================================================
+    // DYNAMIC MULTI-MONTH SELECTOR & RENDERING
+    // ============================================================
     function setupMonthlySelector() {
       const selectorContainer = document.getElementById("monthSelectorContainer");
       if (!selectorContainer) return;
@@ -960,6 +940,9 @@
       if (zeroState) zeroState.style.display = (visibleRows === 0) ? 'block' : 'none';
     }
 
+    // ============================================================
+    // STREAK VAULT LOGIC
+    // ============================================================
     function renderStreaks() {
       const grid = document.getElementById("streakGrid");
       const expanderWrapper = document.getElementById("streakExpanderWrapper");
@@ -982,24 +965,26 @@
         const rank = index + 1;
         const isFrozen = item.status === "FROZEN";
         let tierKey = "under50";
-        let tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Contender</span>`;
+        let tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">Core</span>`;
 
         if (item.streak >= 300) {
           tierKey = "300";
-          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-500/50">👑 Sovereign Apex</span>`;
+          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/70 text-amber-300 border border-amber-500/50">👑 Double Crown</span>`;
         } else if (item.streak >= 200) {
           tierKey = "200";
-          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-900/40 text-amber-200 border border-amber-700/50">🏆 Double Crown</span>`;
-        } else if (item.streak >= 150) {
+          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-900/40 text-amber-200 border border-amber-700/50">👑 Crown</span>`;
+        } else if (item.streak >= 151) {
           tierKey = "150";
           tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-950/70 text-cyan-300 border border-cyan-500/50">⚡ Apex</span>`;
         } else if (item.streak >= 50) {
           tierKey = "50";
-          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-950/70 text-rose-300 border border-rose-500/50">🛡️ Elite</span>`;
+          tierBadge = `<span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-950/70 text-purple-300 border border-purple-500/50">🛡️ Elite/Vet</span>`;
         }
 
         let cardBg = "bg-[#0A0C12] border-white/10";
         if (isFrozen) cardBg = "bg-[#0A0C12] border-sky-900/40 opacity-75";
+
+        const statusIcon = isFrozen ? "❄️" : (item.status === "PRESERVED" ? "🛡️" : "🔥");
 
         return `
           <div data-tier="${tierKey}" data-rank="${rank}" class="streak-card p-6 rounded-2xl ${cardBg} border card-hover-fx flex flex-col justify-between shadow-lg">
@@ -1010,7 +995,7 @@
               <div class="flex items-center gap-1.5">
                 ${tierBadge}
                 <span class="text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold ${isFrozen ? 'bg-sky-950 text-sky-300 border border-sky-800' : (item.status === 'PRESERVED' ? 'bg-purple-950 text-purple-300 border border-purple-800' : 'bg-emerald-950/70 text-emerald-300 border border-emerald-800')}">
-                  ${item.status}
+                  ${statusIcon} ${item.status}
                 </span>
               </div>
             </div>
@@ -1082,6 +1067,9 @@
       applyStreakCardVisibility();
     }
 
+    // ============================================================
+    // SQUAD COMPETITIONS LOGIC
+    // ============================================================
     function setupCompetitionSection() {
       const container = document.getElementById("seasonTabsContainer");
       if (!container || typeof VirtualLibraryData === 'undefined' || !Array.isArray(VirtualLibraryData.competitions)) return;
@@ -1152,6 +1140,9 @@
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
+    // ============================================================
+    // SEARCH, REGISTRY RESOLUTION & DOSSIER BUILDER
+    // ============================================================
     function escapeHTML(value) {
       const entities = {
         '&': '&amp;',
@@ -1181,6 +1172,7 @@
         return scholarMap.get(cleanName);
       }
 
+      // Streaks
       if (typeof VirtualLibraryData !== 'undefined' && Array.isArray(VirtualLibraryData.streaks)) {
         const sortedStreaks = [...VirtualLibraryData.streaks].sort((a, b) => Number(b.streak) - Number(a.streak));
         sortedStreaks.forEach((item, index) => {
@@ -1190,6 +1182,7 @@
         });
       }
 
+      // Monthly Archives
       const archives = (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.monthlyArchives)
         ? VirtualLibraryData.monthlyArchives
         : (typeof monthlyArchives !== 'undefined' ? monthlyArchives : null);
@@ -1209,6 +1202,7 @@
         });
       }
 
+      // Competitions Cross-Referencing
       if (typeof VirtualLibraryData !== 'undefined' && Array.isArray(VirtualLibraryData.competitions)) {
         VirtualLibraryData.competitions.forEach(comp => {
           comp.podium.forEach(teamObj => {
@@ -1231,6 +1225,7 @@
         });
       }
 
+      // Milestones
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.milestones) {
         const m = VirtualLibraryData.milestones;
         scholarMap.forEach((profile, key) => {
@@ -1244,7 +1239,7 @@
             profile.milestones.push({ title: "September 2026 Monthly Champion", stat: m.septemberPeak.time });
           }
           if (m.apexClubCount && m.apexClubCount.members.toUpperCase().includes(key)) {
-            profile.milestones.push({ title: "Apex 300+ Days Unbroken Tier", stat: "Active Legend" });
+            profile.milestones.push({ title: "Double Crown 300+ Days Tier", stat: "Active Legend" });
           }
         });
       }
@@ -1285,7 +1280,7 @@
 
       box.innerHTML = matches.slice(0, 6).map(profile => {
         const streakTag = profile.streakObj ? `${profile.streakObj.streak}d Streak` : 'Active Scholar';
-        const cleanName = profile.name.replace(/'/g, "\\'");
+        const cleanName = profile.name.replace(/'/g, "\'");
         return `
           <div onclick="selectScholarFromSuggest('${cleanName}')" class="px-4 py-2.5 hover:bg-white/[0.06] cursor-pointer flex items-center justify-between transition-colors group">
             <div class="flex items-center gap-2">
@@ -1333,8 +1328,8 @@
         if (nameLower === qLower) {
           exactMatches.push(profile);
         } else {
-          const escapedQuery = qLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-          const wordRegex = new RegExp(`\\b${escapedQuery}\\b`, 'i');
+          const escapedQuery = qLower.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+          const wordRegex = new RegExp(`\b${escapedQuery}\b`, 'i');
           if (wordRegex.test(nameLower)) {
             wordMatches.push(profile);
           } else if (nameLower.includes(qLower)) {
@@ -1370,7 +1365,7 @@
         let selectionCards = candidates.map(profile => {
           const streakVal = profile.streakObj ? `${profile.streakObj.streak} Days` : 'No streak logged';
           const monthCount = Object.keys(profile.monthlyRecords).length;
-          const cleanKey = profile.name.replace(/'/g, "\\'");
+          const cleanKey = profile.name.replace(/'/g, "\'");
           return `
             <div onclick="selectScholarDossier('${cleanKey}')" class="p-4 rounded-2xl bg-obsidian-surface border border-white/10 hover:border-amber-400 cursor-pointer transition flex items-center justify-between group">
               <div>
@@ -1411,10 +1406,14 @@
       triggerDossierSearch();
     };
 
+    // ============================================================
+    // DOSSIER VIEW & STYLED TELEGRAM CLIPBOARD OUTPUT
+    // ============================================================
     function renderDossierView(profile) {
       const modal = document.getElementById('dossierModal');
       const container = document.getElementById('dossierModalContent');
 
+      // Milestones
       let milestoneCards = profile.milestones.map(m => `
         <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between">
           <div>
@@ -1425,6 +1424,7 @@
         </div>
       `).join('');
 
+      // Multi-month record calculation
       let totalMinutesAcrossMonths = 0;
       let monthBreakdownHTML = '';
       let shareMonthLines = [];
@@ -1455,6 +1455,7 @@
         monthBreakdownHTML = `<div class="p-4 rounded-xl bg-obsidian-surface text-center text-slate-500 font-mono text-xs col-span-2">No monthly leaderboard cycle on record yet.</div>`;
       }
 
+      // Squad Competition Cards Rendering
       let competitionCardsHTML = '';
       let compShareLines = [];
 
@@ -1495,10 +1496,12 @@
         competitionCardsHTML = `<div class="p-4 rounded-xl bg-[#0A0C12] border border-white/10 text-center text-slate-500 font-mono text-xs col-span-2">No official squad competition appearance on record yet.</div>`;
       }
 
+      // Compute aggregate total time
       const totalHours = Math.floor(totalMinutesAcrossMonths / 60);
       const remainingMins = totalMinutesAcrossMonths % 60;
       const totalTimeFormatted = `${totalHours}H ${String(remainingMins).padStart(2, '0')}M`;
 
+      // Styled Telegram Markdown Payload (Bolding + Monospace, zero mobile line-cutoff)
       const streakText = profile.streakObj ? `\`${profile.streakObj.streak} Days\` _(Rank #${String(profile.streakRank || 1).padStart(2, '0')})_` : '`N/A`';
       const sharePayload = [
         `🏛️ *VIRTUAL LIBRARY DATA* ⚡`,
@@ -1512,7 +1515,8 @@
         ``,
         `🔗 *Join 24/7 Study Sanctuary:*`,
         `https://t.me/studyy247`
-      ].join('\n');
+      ].join('
+');
 
       window.activeScholarSharePayload = sharePayload;
 
@@ -1533,6 +1537,7 @@
             </div>
           ` : ''}
 
+          <!-- Streak Highlight -->
           <div class="p-5 rounded-2xl bg-obsidian-surface border border-white/10 flex items-center justify-between">
             <div>
               <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block">Consecutive Desk Streak</span>
@@ -1550,6 +1555,7 @@
             ` : ''}
           </div>
 
+          <!-- Monthly Records Grid -->
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Monthly Audited Performance</div>
             <div class="grid sm:grid-cols-2 gap-3">
@@ -1557,16 +1563,18 @@
             </div>
           </div>
 
+          <!-- Squad Competition History -->
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold flex items-center justify-between">
               <span>Squad Wars & Competition History</span>
-              <span class="text-[10px] font-mono text-amber-400">${profile.competitionRecords.length} Tournaments</span>
+              <span class="text-[10px] text-amber-400">${profile.competitionRecords.length} Tournaments</span>
             </div>
             <div class="grid sm:grid-cols-2 gap-3">
               ${competitionCardsHTML}
             </div>
           </div>
 
+          <!-- One-Click Copy Dossier Record -->
           <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/5">
             <button onclick="copyScholarShareSnippet(this)" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white text-black font-mono font-bold text-xs uppercase tracking-wider hover:bg-amber-300 transition flex items-center justify-center gap-2 shadow-lg">
               <i data-lucide="share-2" class="w-4 h-4"></i>
@@ -1601,6 +1609,9 @@
       modal.classList.remove('modal-active');
     }
 
+    // ============================================================
+    // QUESTIONNAIRE & MODAL ROUTING
+    // ============================================================
     function openJoinModal(channel) {
       activeChannel = channel;
       document.getElementById('modalStep1').classList.remove('hidden');
@@ -1653,7 +1664,8 @@
         `🌐 *Referral Source:* ${source}`,
         ...(city ? [`📍 *City:* ${city}`] : []),
         ...(query ? [`💬 *Note:* _${query}_`] : [])
-      ].join('\n');
+      ].join('
+');
 
       const copyPromise = navigator.clipboard?.writeText
         ? navigator.clipboard.writeText(formattedJoinPayload)
@@ -1677,6 +1689,9 @@
       });
     }
 
+    // ============================================================
+    // LIGHTBOX
+    // ============================================================
     function openLightbox(imgSrc, caption) {
       const modal = document.getElementById('imageLightbox');
       document.getElementById('lightboxImg').src = imgSrc;
