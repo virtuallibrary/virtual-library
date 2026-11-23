@@ -2,10 +2,10 @@ const VirtualLibraryData = {
   // 1. ALL-TIME MILESTONES & RECORDS
   milestones: {
     peakDailyRecord: {
-      holder: "Devika Jain",
-      time: "22h 39m",
-      tag: "All-Time Highest Single Day Record"
-    },
+  holder: "Shruti",
+  time: "23h 51m",
+  tag: "All-Time Highest Single Day Record"
+},
     peakStreakRecord: {
       holder: "Vansh Yadav",
       streak: "363 Days",
