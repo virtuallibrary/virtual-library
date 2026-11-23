@@ -176,31 +176,31 @@
         </div>
       </div>
 
-      <!-- Stage 1: Shruti (23h 53m All-Time Record) -->
+      <!-- Stage 1: Dynamic all-time daily record -->
       <div id="introStageM1" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono tracking-widest uppercase text-amber-400 mb-4">
           <i data-lucide="crown" class="w-4 h-4"></i> Pinnacle Record 01
         </div>
         <div class="text-xs font-mono uppercase tracking-[0.25em] text-slate-400 mb-2">Highest Single-Day Focus Record</div>
         <div class="font-display font-black text-6xl sm:text-8xl text-white tracking-tight leading-none drop-shadow-[0_0_35px_rgba(234,179,8,0.4)]">
-          23h 53m
+          <span id="introPeakDailyTime">23h 53m</span>
         </div>
-        <div class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-amber-300 tracking-wide">
+        <div id="introPeakDailyHolder" class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-amber-300 tracking-wide">
           Shruti
         </div>
         <div class="text-xs font-mono text-slate-500 mt-1">All-Time Peak Record &bull; Audited Entry</div>
       </div>
 
-      <!-- Stage 2: Vansh Yadav (365 Days) -->
+      <!-- Stage 2: Dynamic peak streak record -->
       <div id="introStageM2" class="absolute inset-0 hidden flex-col items-center justify-center text-center opacity-0 scale-95 transition-all duration-500 ease-out">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-xs font-mono tracking-widest uppercase text-rose-400 mb-4">
           <i data-lucide="flame" class="w-4 h-4"></i> Pinnacle Record 02
         </div>
         <div class="text-xs font-mono uppercase tracking-[0.25em] text-slate-400 mb-2">Peak Unbroken Desk Streak</div>
         <div class="font-display font-black text-6xl sm:text-8xl text-white tracking-tight leading-none drop-shadow-[0_0_35px_rgba(255,42,133,0.4)]">
-          365 <span class="text-3xl sm:text-5xl text-slate-400 font-sans font-normal">Days</span>
+          <span id="introPeakStreakNumber">365</span> <span class="text-3xl sm:text-5xl text-slate-400 font-sans font-normal">Days</span>
         </div>
-        <div class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-rose-300 tracking-wide">
+        <div id="introPeakStreakHolder" class="mt-4 text-xl sm:text-2xl font-display font-extrabold text-rose-300 tracking-wide">
           Vansh Yadav
         </div>
         <div class="text-xs font-mono text-slate-500 mt-1">#1 Active Consistency Titan &bull; Audited Roster</div>
@@ -334,10 +334,10 @@
             <span>Single-Day Benchmark</span>
             <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">23h 53m</div>
+          <div id="hallPeakDailyTime" class="font-display font-extrabold text-4xl text-white tracking-tight">23h 53m</div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
-          <div class="text-white font-bold text-base tracking-wide">Shruti</div>
+          <div id="hallPeakDailyHolder" class="text-white font-bold text-base tracking-wide">Shruti</div>
           <div class="text-xs font-mono text-amber-400/90 mt-0.5 font-semibold">Highest Single Day Record</div>
         </div>
       </div>
@@ -348,10 +348,10 @@
             <span>Peak Consistency</span>
             <i data-lucide="flame" class="w-4 h-4 text-rose-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">365 <span class="text-xl text-slate-400 font-sans font-normal">Days</span></div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight"><span id="hallPeakStreakNumber">365</span> <span class="text-xl text-slate-400 font-sans font-normal">Days</span></div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
-          <div class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
+          <div id="hallPeakStreakHolder" class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
           <div class="text-xs font-mono text-slate-400 mt-0.5">Active #1 Desk Streak</div>
         </div>
       </div>
@@ -362,11 +362,11 @@
             <span>Double Crown 300+ Tier</span>
             <i data-lucide="shield-check" class="w-4 h-4 text-cyan-400"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">04 <span class="text-xl text-slate-400 font-sans font-normal">Members</span></div>
+          <div class="font-display font-extrabold text-4xl text-white tracking-tight"><span id="hallApexCount">04</span> <span class="text-xl text-slate-400 font-sans font-normal">Members</span></div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
-          <div class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Vandana, Kanchan</div>
-          <div class="text-xs font-mono text-slate-400 mt-0.5">365d &bull; 348d &bull; 329d &bull; 310d</div>
+          <div id="hallApexMembers" class="text-white font-bold text-sm tracking-wide">Vansh, Ekus, Vandana, Kanchan</div>
+          <div id="hallApexStreaks" class="text-xs font-mono text-slate-400 mt-0.5">365d &bull; 348d &bull; 329d &bull; 310d</div>
         </div>
       </div>
 
@@ -376,10 +376,10 @@
             <span>All-Time Monthly Record</span>
             <i data-lucide="award" class="w-4 h-4 text-purple-300"></i>
           </div>
-          <div class="font-display font-extrabold text-4xl text-white tracking-tight">415h 30m</div>
+          <div id="hallMonthlyRecordTime" class="font-display font-extrabold text-4xl text-white tracking-tight">415h 30m</div>
         </div>
         <div class="pt-6 mt-8 border-t border-white/10">
-          <div class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
+          <div id="hallMonthlyRecordHolder" class="text-white font-bold text-base tracking-wide">Vansh Yadav</div>
           <div class="text-xs font-mono text-slate-400 mt-0.5">Highest Audited Single Month (Sept 2026)</div>
         </div>
       </div>
@@ -738,7 +738,7 @@
   </div>
 
   <!-- SCRIPT ENGINE -->
-  <script src="data.js"></script>
+  <script src="data.js" onerror="window.__VL_DATA_LOAD_ERROR__ = true;"></script>
   <script>
     let activeChannel = 'telegram';
     let currentTierFilter = 'all';
@@ -746,6 +746,40 @@
     let isStreaksExpanded = false;
     const STREAKS_INITIAL_LIMIT = 15;
     let currentSelectedSeason = "Season 5";
+
+    function syncMilestoneDisplays() {
+      if (typeof VirtualLibraryData === "undefined" || !VirtualLibraryData.milestones) return;
+
+      const milestones = VirtualLibraryData.milestones;
+      const daily = milestones.peakDailyRecord || {};
+      const streak = milestones.peakStreakRecord || {};
+      const apex = milestones.apexClubCount || {};
+      const monthly = milestones.septemberPeak || {};
+      const setText = (id, value) => {
+        const node = document.getElementById(id);
+        if (node && value !== undefined && value !== null) node.textContent = String(value);
+      };
+      const streakNumber = String(streak.streak || "").match(/\d+/)?.[0] || "0";
+      const apexCount = String(apex.count || "").match(/\d+/)?.[0] || "0";
+      const apexNames = String(apex.members || "");
+      const apexPairs = [...apexNames.matchAll(/([^,(]+?)\s*\((\d+)d\)/g)];
+      const apexNameList = apexPairs.map(item => item[1].trim()).join(", ");
+      const apexStreakList = apexPairs.map(item => `${item[2]}d`).join(" • ");
+
+      setText("introPeakDailyTime", daily.time);
+      setText("introPeakDailyHolder", daily.holder);
+      setText("hallPeakDailyTime", daily.time);
+      setText("hallPeakDailyHolder", daily.holder);
+      setText("introPeakStreakNumber", streakNumber);
+      setText("introPeakStreakHolder", streak.holder);
+      setText("hallPeakStreakNumber", streakNumber);
+      setText("hallPeakStreakHolder", streak.holder);
+      setText("hallApexCount", apexCount);
+      setText("hallApexMembers", apexNameList || apex.members);
+      setText("hallApexStreaks", apexStreakList || apex.tag);
+      setText("hallMonthlyRecordTime", monthly.time);
+      setText("hallMonthlyRecordHolder", monthly.holder);
+    }
 
     function dismissIntroNow() {
       const preloader = document.getElementById("introPreloader");
@@ -756,11 +790,14 @@
       }
     }
 
-    // Failsafe set to 5500ms so Stage 2 (Vansh Yadav: 3200ms - 4900ms) always completes
-    setTimeout(() => { dismissIntroNow(); }, 5500);
+    // The sequence dismisses after Stage 2; the Skip button remains available.
 
     document.addEventListener("DOMContentLoaded", () => {
       try {
+        if (window.__VL_DATA_LOAD_ERROR__ || typeof VirtualLibraryData === "undefined") {
+          console.error("[Virtual Library] data.js failed to load or VirtualLibraryData is missing. Check exact filename, folder path, and script order.");
+        }
+        syncMilestoneDisplays();
         if (typeof lucide !== 'undefined') lucide.createIcons();
 
         if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -913,6 +950,7 @@
 
       const participants = [...(currentAudit.operatives || currentAudit.participants || [])].sort((a, b) => (b.timeMins || 0) - (a.timeMins || 0));
       const tbody = document.getElementById("monthlyTableBody");
+      if (!tbody) return;
 
       if (participants.length === 0) {
         tbody.innerHTML = `<tr><td colspan="4" class="p-8 text-center text-slate-500 font-mono">No records loaded for this cycle.</td></tr>`;
@@ -939,11 +977,11 @@
           <tr class="${rowClass} transition-colors member-row">
             <td class="py-3.5 px-4 sm:px-6 align-middle">${rankMarkup}</td>
             <td class="py-3.5 px-4 sm:px-6 align-middle">
-              <div class="font-semibold text-slate-100 member-name tracking-wide break-words">${p.name}</div>
+              <div class="font-semibold text-slate-100 member-name tracking-wide break-words">${escapeHTML(p.name)}</div>
               <div class="sm:hidden text-[11px] font-mono text-slate-400 mt-0.5">${p.daysAppeared || 0} days recorded</div>
             </td>
             <td class="py-3.5 px-6 font-mono text-right text-slate-400 hidden sm:table-cell align-middle">${p.daysAppeared || 0} d</td>
-            <td class="py-3.5 px-4 sm:px-6 font-mono text-right text-amber-300 font-bold whitespace-nowrap align-middle">${p.time}</td>
+            <td class="py-3.5 px-4 sm:px-6 font-mono text-right text-amber-300 font-bold whitespace-nowrap align-middle">${escapeHTML(p.time)}</td>
           </tr>
         `;
       }).join('');
@@ -973,14 +1011,16 @@
     function renderStreaks() {
       const grid = document.getElementById("streakGrid");
       const expanderWrapper = document.getElementById("streakExpanderWrapper");
+      if (!grid) return;
+      const countAll = document.getElementById("count-all");
       if (typeof VirtualLibraryData === 'undefined' || !Array.isArray(VirtualLibraryData.streaks)) {
-        document.getElementById('count-all').textContent = '0';
+        if (countAll) countAll.textContent = '0';
         grid.innerHTML = '<div class="col-span-full p-8 rounded-2xl border border-white/10 text-center text-rose-300 text-sm font-mono">Streak data could not be loaded.</div>';
         return;
       }
 
       const allStreaks = [...VirtualLibraryData.streaks].sort((a, b) => Number(b.streak) - Number(a.streak));
-      document.getElementById('count-all').textContent = allStreaks.length;
+      if (countAll) countAll.textContent = allStreaks.length;
 
       if (allStreaks.length === 0) {
         grid.innerHTML = '<div class="col-span-full p-8 rounded-2xl border border-white/10 text-center text-slate-400 text-sm font-mono">No streak entries published yet.</div>';
@@ -1027,7 +1067,7 @@
               </div>
             </div>
             <div>
-              <div class="text-base font-bold text-white streak-name tracking-wide break-words">${item.name}</div>
+              <div class="text-base font-bold text-white streak-name tracking-wide break-words">${escapeHTML(item.name)}</div>
               <div class="flex items-baseline gap-2 mt-3 pt-3 border-t border-white/5">
                 <span class="font-display font-extrabold text-3xl ${isFrozen ? 'text-sky-300' : 'text-amber-400'}">${item.streak}</span>
                 <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Consecutive Days</span>
@@ -1142,7 +1182,7 @@
 
         const memberList = team.members.map(m => `
           <li class="py-1.5 flex items-center justify-between text-xs font-mono border-b border-white/5">
-            <span class="text-slate-200 font-medium">${m.name}</span>
+            <span class="text-slate-200 font-medium">${escapeHTML(m.name)}</span>
             <span class="text-slate-400 text-[11px]">${m.individualHours || (m.role && m.role !== 'Squad Member' ? m.role : '')}</span>
           </li>
         `).join('');
@@ -1154,8 +1194,8 @@
                 <span class="font-mono text-xs text-slate-400 uppercase tracking-widest">Rank #${team.rank}</span>
                 ${rankBadge}
               </div>
-              <h3 class="font-display font-extrabold text-2xl text-white tracking-wide mb-1">${team.team}</h3>
-              <div class="text-xs font-mono text-amber-300 font-bold mb-4">Total Output: ${team.totalScore}</div>
+              <h3 class="font-display font-extrabold text-2xl text-white tracking-wide mb-1">${escapeHTML(team.team)}</h3>
+              <div class="text-xs font-mono text-amber-300 font-bold mb-4">Total Output: ${escapeHTML(team.totalScore)}</div>
               <ul class="space-y-0.5 mb-4 max-h-72 overflow-y-auto no-scrollbar pr-1">
                 ${memberList}
               </ul>
@@ -1255,6 +1295,10 @@
       // Milestones
       if (typeof VirtualLibraryData !== 'undefined' && VirtualLibraryData.milestones) {
         const m = VirtualLibraryData.milestones;
+        const apexMemberTokens = String(m.apexClubCount?.members || "")
+          .split(",")
+          .map(entry => entry.split("(")[0].trim().toUpperCase())
+          .filter(Boolean);
         scholarMap.forEach((profile, key) => {
           if (m.peakDailyRecord && m.peakDailyRecord.holder.toUpperCase() === key) {
             profile.milestones.push({ title: "Highest Single-Day Focus Record", stat: m.peakDailyRecord.time });
@@ -1265,7 +1309,8 @@
           if (m.septemberPeak && m.septemberPeak.holder.toUpperCase() === key) {
             profile.milestones.push({ title: "September 2026 Monthly Champion", stat: m.septemberPeak.time });
           }
-          if (m.apexClubCount && m.apexClubCount.members.toUpperCase().includes(key)) {
+          const scholarFirstName = key.split(/\s+/)[0];
+          if (m.apexClubCount && (apexMemberTokens.includes(key) || apexMemberTokens.includes(scholarFirstName))) {
             profile.milestones.push({ title: "Double Crown 300+ Days Tier", stat: "Active Legend" });
           }
         });
@@ -1355,8 +1400,8 @@
         if (nameLower === qLower) {
           exactMatches.push(profile);
         } else {
-          const escapedQuery = qLower.replace(/[.*+?^${}()|[\]\]/g, '\$&');
-          const wordRegex = new RegExp(`\b${escapedQuery}\b`, 'i');
+          const escapedQuery = qLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          const wordRegex = new RegExp(`\\b${escapedQuery}\\b`, 'i');
           if (wordRegex.test(nameLower)) {
             wordMatches.push(profile);
           } else if (nameLower.includes(qLower)) {
@@ -1542,8 +1587,7 @@
         ``,
         `🔗 *Join 24/7 Study Sanctuary:*`,
         `https://t.me/studyy247`
-      ].join('
-');
+      ].join('\n');
 
       window.activeScholarSharePayload = sharePayload;
 
@@ -1691,8 +1735,7 @@
         `🌐 *Referral Source:* ${source}`,
         ...(city ? [`📍 *City:* ${city}`] : []),
         ...(query ? [`💬 *Note:* _${query}_`] : [])
-      ].join('
-');
+      ].join('\n');
 
       const copyPromise = navigator.clipboard?.writeText
         ? navigator.clipboard.writeText(formattedJoinPayload)
