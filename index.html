@@ -1355,7 +1355,7 @@
         if (nameLower === qLower) {
           exactMatches.push(profile);
         } else {
-          const escapedQuery = qLower.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+          const escapedQuery = qLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
           const wordRegex = new RegExp(`\\b${escapedQuery}\\b`, 'i');
           if (wordRegex.test(nameLower)) {
             wordMatches.push(profile);
